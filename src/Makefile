@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -Wall
+CFLAGS=-g -Wall `gsl-config --cflags --libs`
 DEPS = film.h
 OBJ = factorisation.o
 
