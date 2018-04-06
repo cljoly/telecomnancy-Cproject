@@ -16,9 +16,9 @@ Contient les documents relatifs à la gestion de projet.
 
 ## Licence
 
-   Copyright (C) 2018 Dubourdieu Lucas
-   Copyright (C) 2018 Marlier Romain
-   Copyright (C) 2018 Joly Clément
+    Copyright (C) 2018 Dubourdieu Lucas
+    Copyright (C) 2018 Marlier Romain
+    Copyright (C) 2018 Joly Clément
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
