@@ -4,15 +4,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Création d’une matrice remplie de notes aléatoires, dans [1,5] */
+/* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
+   l’absence de note et est présent à hauteur d’environ 60 %
+   TODO Faire varier la proportion de films non notés */
 gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   gsl_matrix *random_matrix = gsl_matrix_alloc(nb_row, nb_col);
   // XXX Initialisation avec un nombre pour pouvoir reproduire les tests avec
   // les mêmes erreurs
   srand(6);
+  int mark;
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      gsl_matrix_set(random_matrix, row, col, (rand() % 5) + 1);
+      mark = rand()%20-14;
+      mark = (mark>=0 ? mark:0);
+      gsl_matrix_set(random_matrix, row, col, mark);
     }
   }
   return random_matrix;
