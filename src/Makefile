@@ -1,6 +1,6 @@
 CC=gcc
-CFLAGS=-g -Wall
 DEPS = movie.h stringlist.h movies_list_loader.h
+CFLAGS=-g -Wall `gsl-config --cflags --libs`
 OBJ = factorisation.o
 
 %.o: %.c $(DEPS)
