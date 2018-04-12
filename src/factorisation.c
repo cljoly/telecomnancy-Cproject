@@ -10,7 +10,7 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   srand(6); // Initialize with a number for reproductability
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      gsl_matrix_set(random_matrix, row, col, (rand()%5)+1 );
+      gsl_matrix_set(random_matrix, row, col, (rand() % 5) + 1);
     }
   }
   return random_matrix;
@@ -33,7 +33,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
   gsl_vector *P_col_j = gsl_vector_alloc(R->size1); // size1: number of row
   double *pik;
   double *qkj;
-  while (--steps> 0) {
+  while (--steps > 0) {
     for (unsigned long i = 0; i < R->size1; i++) {
       for (unsigned long j = 0; j < R->size2; j++) {
         r_ij = gsl_matrix_get(R, i, j);
@@ -81,10 +81,19 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
 int main() {
   printf("Factorizing a random matrix\n");
 
-  int size = 10;
-  gsl_matrix *random_matrix = gen_random_matrix(size, size);
+  int size = 30;
+  gsl_matrix *R = gen_random_matrix(size, size);
 
-  gsl_matrix_fprintf(stdout, random_matrix, "%f");
+  int k = 5;
+  gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
+  gsl_matrix *Q = gsl_matrix_alloc(k, R->size2); // Will be transposed
+  gsl_matrix_fprintf(stdout, R, "%f");
+  factor(R, P, Q, k);
+  gsl_matrix_fprintf(stdout, P, "%f");
+  gsl_matrix_fprintf(stdout, Q, "%f");
+  // Print product, supposed to be similar to R
+  gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
+  gsl_matrix_fprintf(stdout, R_approx, "%f");
 
   return 0;
 }
