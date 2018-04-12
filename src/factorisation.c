@@ -4,12 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Generate random matrix, filled with mark like data, in [1,5] */
 gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   gsl_matrix *random_matrix = gsl_matrix_alloc(nb_row, nb_col);
   srand(6); // Initialize with a number for reproductability
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      gsl_matrix_set(random_matrix, row, col, rand() / 10e4);
+      gsl_matrix_set(random_matrix, row, col, (rand()%5)+1 );
     }
   }
   return random_matrix;
@@ -78,7 +79,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
 }
 
 int main() {
-  printf("Printing a random matrix\n");
+  printf("Factorizing a random matrix\n");
 
   int size = 10;
   gsl_matrix *random_matrix = gen_random_matrix(size, size);
