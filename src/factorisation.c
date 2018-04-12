@@ -96,9 +96,8 @@ static void factor_error_update(double *p_ik, double *q_kj,
 */
 void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
             double beta) {
-  // TODO Passer ces constantes en paramètres
   int steps = 5000;
-  double close_enough = 0.001;
+  double epsilon = 0.001;
 
   factor_context ctxt;
   ctxt.R = R;
@@ -116,7 +115,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
     factor_walker(factor_nop, factor_gradiant_update, &ctxt);
     ctxt.e = 0;
     factor_walker(factor_error_init, factor_error_update, &ctxt);
-    if (ctxt.e < close_enough)
+    if (ctxt.e < epsilon)
       break;
   }
 }
