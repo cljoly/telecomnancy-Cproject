@@ -15,8 +15,8 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   int mark;
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      mark = rand()%20-14;
-      mark = (mark>=0 ? mark:0);
+      mark = rand() % 20 - 14;
+      mark = (mark >= 0 ? mark : 0);
       gsl_matrix_set(random_matrix, row, col, mark);
     }
   }
