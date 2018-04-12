@@ -1,29 +1,29 @@
 {
-  "films":[
+  "movies":[
     {
-      "id": 1,
-      "titre": "Fast & Furious 7",
-      "annee": 2015,
-      "realisateur": "James Wan",
+      "id": 0,
+      "title": "Fast & Furious 7",
+      "year": 2015,
+      "director": "James Wan",
       "genres": ["Action", "Crime", "Thriller"],
-      "acteurs": ["Vin Diesel", "Paul Walker", "Dwayne Johnson"],
-      "duree": 137,
-      "type": "Film",
+      "actors": ["Vin Diesel", "Paul Walker", "Dwayne Johnson"],
+      "duration": 137,
+      "type": "Movie",
       "synopsis": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
-      "note": 0
+      "grades": []
     },
 
     {
-      "id": 2,
-      "titre": "The Walking Dead",
-      "annee": 2010,
-      "realisateur": "",
+      "id": 1,
+      "title": "The Walking Dead",
+      "year": 2010,
+      "director": "",
       "genres": ["Drama", "Horror"],
-      "acteurs": ["Andrew Lincoln", "Jon Bernthal", "Sarah Wayne Callies"],
-      "duree": 44,
+      "actors": ["Andrew Lincoln", "Jon Bernthal", "Sarah Wayne Callies"],
+      "duration": 44,
       "type": "Serie",
       "synopsis": "Sheriff's Deputy Rick Grimes leads a group of survivors in a world overrun by zombies.",
-      "note": 0
+      "grades": []
     }
   ]
 }
