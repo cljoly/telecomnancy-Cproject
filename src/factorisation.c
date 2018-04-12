@@ -23,70 +23,92 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   return random_matrix;
 }
 
+// TODO Documenter
+typedef struct {
+  gsl_matrix *R;
+  gsl_matrix *P;
+  gsl_matrix *Q;
+  gsl_vector *Q_row_i;
+  gsl_vector *P_col_j;
+  double alpha;
+  double beta;
+  int K;
+  double e;
+  double e_ij;
+} factor_context;
+
+static void factor_walker(void (*g)(factor_context *ctxt),
+                          void (*f)(double *pik, double *qkj,
+                                    factor_context *ctxt),
+                          factor_context *ctxt) {
+  for (int i = 0; i < (int)ctxt->R->size1; i++) {
+    for (int j = 0; j < (int)ctxt->R->size2; j++) {
+      double r_ij = gsl_matrix_get(ctxt->R, i, j);
+
+      if (r_ij > 0) {
+        gsl_matrix_get_row(ctxt->Q_row_i, ctxt->Q, i);
+        gsl_matrix_get_col(ctxt->P_col_j, ctxt->P, j);
+
+        double e_ij;
+        // ddot est moins précis que dsdot, mais cela devrait suffire
+        gsl_blas_ddot(ctxt->Q_row_i, ctxt->P_col_j, &e_ij);
+        g(ctxt);
+
+        for (int k = 0; k < ctxt->K; k++) {
+          double *pik = gsl_matrix_ptr(ctxt->P, i, k);
+          double *qkj = gsl_matrix_ptr(ctxt->Q, k, j);
+
+          f(pik, qkj, ctxt);
+        }
+      }
+    }
+  }
+}
+
+static void factor_nop(factor_context *ctxt) {}
+
+static void factor_error_init(factor_context *ctxt) {
+  ctxt->e = ctxt->e_ij * ctxt->e_ij;
+}
+
+static void factor_gradiant_update(double *pik, double *qkj,
+                                   factor_context *ctxt) {
+  *pik = *pik + ctxt->alpha * (2 * ctxt->e_ij * (*qkj) - ctxt->beta * (*pik));
+  *qkj = *qkj + ctxt->alpha * (2 * ctxt->e_ij * (*pik) - ctxt->beta * (*qkj));
+}
+
+static void factor_error_update(double *pik, double *qkj,
+                                factor_context *ctxt) {
+  ctxt->e += (ctxt->beta / 2) * ((*pik) * (*pik)) + ((*qkj) * (*qkj));
+}
+
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
 /* Modification en place de P et Q, de manière à ce que P et Q constituent une
    factorisation approximative de R.
    K est le nombre de critères latents. */
 void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
+  // TODO Passer ces constantes en paramètres
   int steps = 5000;
-  double alpha = 0.0002;
-  double beta = 0.02;
   double close_enough = 0.001;
 
-  gsl_vector *Q_row_i = gsl_vector_alloc(R->size2);
-  gsl_vector *P_col_j = gsl_vector_alloc(R->size1);
+  factor_context ctxt;
+  ctxt.R = R;
+  ctxt.P = P;
+  ctxt.Q = Q;
+  ctxt.Q_row_i = gsl_vector_alloc(R->size2);
+  ctxt.P_col_j = gsl_vector_alloc(R->size1);
+  ctxt.alpha = 0.0002;
+  ctxt.beta = 0.02;
+  ctxt.K = K;
+  ctxt.e = 0;
+  ctxt.e_ij = 0;
 
   while (--steps > 0) {
-    for (int i = 0; i < (int)R->size1; i++) {
-      for (int j = 0; j < (int)R->size2; j++) {
-        double r_ij = gsl_matrix_get(R, i, j);
-
-        if (r_ij > 0) {
-          gsl_matrix_get_row(Q_row_i, Q, i);
-          gsl_matrix_get_col(P_col_j, P, j);
-
-          double e_ij;
-          // ddot est moins précis que dsdot, mais cela devrait suffire
-          gsl_blas_ddot(Q_row_i, P_col_j, &e_ij);
-          e_ij = r_ij - e_ij;
-
-          for (int k = 0; k < K; k++) {
-            double *pik = gsl_matrix_ptr(P, i, k);
-            double *qkj = gsl_matrix_ptr(Q, k, j);
-
-            *pik = *pik + alpha * (2 * e_ij * (*qkj) - beta * (*pik));
-            *qkj = *qkj + alpha * (2 * e_ij * (*pik) - beta * (*qkj));
-          }
-        }
-      }
-    }
-
-    /* eR = gsl_blas */
-    double e = 0;
-    for (int i = 0; i < (int) R->size1; i++) {
-      for (int j = 0; j < (int) R->size2; j++) {
-        double r_ij = gsl_matrix_get(R, i, j);
-        if (r_ij > 0) {
-          gsl_matrix_get_row(Q_row_i, Q, i);
-          gsl_matrix_get_col(P_col_j, P, j);
-          double e_ij;
-          // ddot est moins précis que dsdot, mais cela devrait suffire
-          gsl_blas_ddot(Q_row_i, P_col_j, &e_ij);
-          e_ij = r_ij - e_ij;
-          e += e_ij * e_ij;
-
-          for (int k = 0; k < K; k++) {
-            double *pik = gsl_matrix_ptr(P, i, k);
-            double *qkj = gsl_matrix_ptr(Q, k, j);
-
-            e += (beta / 2) * ((*pik) * (*pik)) + ((*qkj) * (*qkj));
-          }
-        }
-      }
-    }
-    if (e < close_enough) {
+    factor_walker(factor_nop, factor_gradiant_update, &ctxt);
+    ctxt.e = 0;
+    factor_walker(factor_error_init, factor_error_update, &ctxt);
+    if (ctxt.e < close_enough)
       break;
-    }
   }
 }
 
