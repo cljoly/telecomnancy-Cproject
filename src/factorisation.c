@@ -25,7 +25,6 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
   double beta = 0.02;
   double close_enough = 0.001;
 
-  gsl_matrix_transpose(Q);
   double r_ij;
   double e_ij;
   double e;
@@ -74,8 +73,6 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
       break;
     }
   }
-  // Used all steps, returning
-  gsl_matrix_transpose(Q);
 }
 
 int main() {
@@ -86,7 +83,7 @@ int main() {
 
   int k = 5;
   gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
-  gsl_matrix *Q = gsl_matrix_alloc(k, R->size2); // Will be transposed
+  gsl_matrix *Q = gsl_matrix_alloc(k, R->size2);
   gsl_matrix_fprintf(stdout, R, "%f");
   factor(R, P, Q, k);
   gsl_matrix_fprintf(stdout, P, "%f");
