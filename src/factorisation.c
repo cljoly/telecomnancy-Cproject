@@ -38,7 +38,7 @@ typedef struct {
 } factor_context;
 
 static void factor_walker(void (*g)(factor_context *ctxt),
-                          void (*f)(double *pik, double *qkj,
+                          void (*f)(double *p_ik, double *q_kj,
                                     factor_context *ctxt),
                           factor_context *ctxt) {
   for (int i = 0; i < (int)ctxt->R->size1; i++) {
@@ -55,10 +55,10 @@ static void factor_walker(void (*g)(factor_context *ctxt),
         g(ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
-          double *pik = gsl_matrix_ptr(ctxt->P, i, k);
-          double *qkj = gsl_matrix_ptr(ctxt->Q, k, j);
+          double *p_ik = gsl_matrix_ptr(ctxt->P, i, k);
+          double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
 
-          f(pik, qkj, ctxt);
+          f(p_ik, q_kj, ctxt);
         }
       }
     }
@@ -71,15 +71,15 @@ static void factor_error_init(factor_context *ctxt) {
   ctxt->e = ctxt->e_ij * ctxt->e_ij;
 }
 
-static void factor_gradiant_update(double *pik, double *qkj,
+static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
-  *pik = *pik + ctxt->alpha * (2 * ctxt->e_ij * (*qkj) - ctxt->beta * (*pik));
-  *qkj = *qkj + ctxt->alpha * (2 * ctxt->e_ij * (*pik) - ctxt->beta * (*qkj));
+  *p_ik = *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
+  *q_kj = *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
 }
 
-static void factor_error_update(double *pik, double *qkj,
+static void factor_error_update(double *p_ik, double *q_kj,
                                 factor_context *ctxt) {
-  ctxt->e += (ctxt->beta / 2) * ((*pik) * (*pik)) + ((*qkj) * (*qkj));
+  ctxt->e += (ctxt->beta / 2) * ((*p_ik) * (*p_ik)) + ((*q_kj) * (*q_kj));
 }
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
