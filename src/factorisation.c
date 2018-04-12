@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define ALPHA 0.0002
+#define BETA 0.002
+
 /* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
    l’absence de note et est présent à hauteur d’environ 60 %
    TODO Faire varier la proportion de films non notés */
@@ -85,8 +88,13 @@ static void factor_error_update(double *p_ik, double *q_kj,
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
 /* Modification en place de P et Q, de manière à ce que P et Q constituent une
    factorisation approximative de R.
-   K est le nombre de critères latents. */
-void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
+   K est le nombre de critères latents.
+   alpha est la vitesse d’approche. Utiliser la valeur de la macro en cas de
+   doute. beta est un paramètre de convergeance. Utiliser la valeur de la macro
+   en cas de doute.
+*/
+void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
+            double beta) {
   // TODO Passer ces constantes en paramètres
   int steps = 5000;
   double close_enough = 0.001;
@@ -97,8 +105,8 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K) {
   ctxt.Q = Q;
   ctxt.Q_row_i = gsl_vector_alloc(R->size2);
   ctxt.P_col_j = gsl_vector_alloc(R->size1);
-  ctxt.alpha = 0.0002;
-  ctxt.beta = 0.02;
+  ctxt.alpha = alpha;
+  ctxt.beta = beta;
   ctxt.K = K;
   ctxt.e = 0;
   ctxt.e_ij = 0;
@@ -122,7 +130,7 @@ int main() {
   gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
   gsl_matrix *Q = gsl_matrix_alloc(k, R->size2);
   gsl_matrix_fprintf(stdout, R, "%f");
-  factor(R, P, Q, k);
+  factor(R, P, Q, k, ALPHA, BETA);
   gsl_matrix_fprintf(stdout, P, "%f");
   gsl_matrix_fprintf(stdout, Q, "%f");
   // Print product, supposed to be similar to R
