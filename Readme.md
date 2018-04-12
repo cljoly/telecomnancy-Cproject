@@ -1,6 +1,6 @@
 # Projet de C/SD : groupe 4
 
-## Organisation
+## Organisation du code
 
 ### `src`
 
