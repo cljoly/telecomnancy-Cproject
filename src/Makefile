@@ -1,6 +1,6 @@
 CC=gcc
+DEPS = movie.h stringlist.h movies_list_loader.h
 CFLAGS=-g -Wall `gsl-config --cflags --libs`
-DEPS = film.h
 OBJ = factorisation.o
 
 %.o: %.c $(DEPS)
@@ -8,6 +8,9 @@ OBJ = factorisation.o
 
 factorisation: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
+
+testparser: movie.o stringlist.o movies_list_loader.o testparser.o
+	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
 
 projetcsd: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
