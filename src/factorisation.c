@@ -26,18 +26,17 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   return random_matrix;
 }
 
-// TODO Documenter
 typedef struct {
   gsl_matrix *R;
   gsl_matrix *P;
   gsl_matrix *Q;
-  gsl_vector *Q_row_i;
-  gsl_vector *P_col_j;
+  gsl_vector *Q_row_i; // Ligne i de Q
+  gsl_vector *P_col_j; // Colonne j de P
   double alpha;
   double beta;
   int K;
-  double e;
-  double e_ij;
+  double e;    // Erreur
+  double e_ij; // Erreur sur le coefficient i,j
 } factor_context;
 
 static void factor_walker(void (*g)(factor_context *ctxt),
