@@ -75,8 +75,10 @@ static void factor_error_init(factor_context *ctxt) {
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
-  *p_ik = *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
-  *q_kj = *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
+  *p_ik =
+      *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
+  *q_kj =
+      *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
