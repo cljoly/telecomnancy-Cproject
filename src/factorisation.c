@@ -57,13 +57,15 @@ static void factor_walker(void (*g)(factor_context *ctxt),
           printf("a\n");
         gsl_matrix_get_row(ctxt->Q_row_i, ctxt->Q, i);
         if (DEBUG)
-          printf("a\n");
+          printf("a, %i %i\n", ctxt->P->size2, ctxt->K);
         gsl_matrix_get_row(ctxt->P_row_j, ctxt->P, j);
         if (DEBUG)
           printf("a\n");
 
         double e_ij;
         // ddot est moins précis que dsdot, mais cela devrait suffire
+        if (DEBUG)
+          printf("c\n");
         gsl_blas_ddot(ctxt->Q_row_i, ctxt->P_row_j, &e_ij);
         g(ctxt);
 
@@ -121,7 +123,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.P = P;
   ctxt.Q = Q;
   ctxt.Q_row_i = gsl_vector_alloc(R->size2);
-  ctxt.P_row_j = gsl_vector_alloc(R->size1);
+  ctxt.P_row_j = gsl_vector_alloc(K);
   ctxt.alpha = alpha;
   ctxt.beta = beta;
   ctxt.K = K;
