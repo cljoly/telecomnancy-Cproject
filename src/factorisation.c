@@ -32,7 +32,7 @@ typedef struct {
   gsl_matrix *P;
   gsl_matrix *Q;
   gsl_vector *Q_row_i; // Ligne i de Q
-  gsl_vector *P_col_j; // Colonne j de P
+  gsl_vector *P_row_j; // Colonne j de P
   double alpha;
   double beta;
   int K;
@@ -58,13 +58,13 @@ static void factor_walker(void (*g)(factor_context *ctxt),
         gsl_matrix_get_row(ctxt->Q_row_i, ctxt->Q, i);
         if (DEBUG)
           printf("a\n");
-        gsl_matrix_get_col(ctxt->P_col_j, ctxt->P, j);
+        gsl_matrix_get_row(ctxt->P_row_j, ctxt->P, j);
         if (DEBUG)
           printf("a\n");
 
         double e_ij;
         // ddot est moins précis que dsdot, mais cela devrait suffire
-        gsl_blas_ddot(ctxt->Q_row_i, ctxt->P_col_j, &e_ij);
+        gsl_blas_ddot(ctxt->Q_row_i, ctxt->P_row_j, &e_ij);
         g(ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
@@ -121,7 +121,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.P = P;
   ctxt.Q = Q;
   ctxt.Q_row_i = gsl_vector_alloc(R->size2);
-  ctxt.P_col_j = gsl_vector_alloc(R->size1);
+  ctxt.P_row_j = gsl_vector_alloc(R->size1);
   ctxt.alpha = alpha;
   ctxt.beta = beta;
   ctxt.K = K;
