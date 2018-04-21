@@ -53,10 +53,13 @@ static void factor_walker(void (*g)(factor_context *ctxt),
       double r_ij = gsl_matrix_get(ctxt->R, i, j);
 
       if (r_ij > 0) {
+        if (DEBUG)
         printf("a\n");
         gsl_matrix_get_row(ctxt->Q_row_i, ctxt->Q, i);
+        if (DEBUG)
         printf("a\n");
         gsl_matrix_get_col(ctxt->P_col_j, ctxt->P, j);
+        if (DEBUG)
         printf("a\n");
 
         double e_ij;
@@ -65,10 +68,13 @@ static void factor_walker(void (*g)(factor_context *ctxt),
         g(ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
+          if (DEBUG)
           printf("b\n");
           double *p_ik = gsl_matrix_ptr(ctxt->P, i, k);
+          if (DEBUG)
           printf("b\n");
           double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
+          if (DEBUG)
           printf("b\n");
 
           f(p_ik, q_kj, ctxt);
