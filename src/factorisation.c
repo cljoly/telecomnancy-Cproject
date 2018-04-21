@@ -6,6 +6,7 @@
 
 #define ALPHA 0.0002
 #define BETA 0.002
+#define DEBUG 1
 
 /* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
    l’absence de note et est présent à hauteur d’environ 60 %
@@ -45,11 +46,18 @@ static void factor_walker(void (*g)(factor_context *ctxt),
                           factor_context *ctxt) {
   for (int i = 0; i < (int)ctxt->R->size1; i++) {
     for (int j = 0; j < (int)ctxt->R->size2; j++) {
+      if (DEBUG)
+        printf("i: %i, j: %i, size1: %lu; size2: %lu\n", i, j, ctxt->R->size1,
+               ctxt->R->size2);
+
       double r_ij = gsl_matrix_get(ctxt->R, i, j);
 
       if (r_ij > 0) {
+        printf("a\n");
         gsl_matrix_get_row(ctxt->Q_row_i, ctxt->Q, i);
+        printf("a\n");
         gsl_matrix_get_col(ctxt->P_col_j, ctxt->P, j);
+        printf("a\n");
 
         double e_ij;
         // ddot est moins précis que dsdot, mais cela devrait suffire
@@ -57,8 +65,11 @@ static void factor_walker(void (*g)(factor_context *ctxt),
         g(ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
+          printf("b\n");
           double *p_ik = gsl_matrix_ptr(ctxt->P, i, k);
+          printf("b\n");
           double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
+          printf("b\n");
 
           f(p_ik, q_kj, ctxt);
         }
