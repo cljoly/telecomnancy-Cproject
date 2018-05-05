@@ -31,7 +31,7 @@ typedef struct {
   gsl_matrix *R;
   gsl_matrix *P;
   gsl_matrix *Q;
-  gsl_vector *Q_col_j; // Ligne i de Q
+  gsl_vector *Q_col_i; // Ligne i de Q
   gsl_vector *P_row_j; // Colonne j de P
   double alpha;
   double beta;
@@ -55,7 +55,7 @@ static void factor_walker(void (*g)(factor_context *ctxt),
       if (r_ij > 0) {
         if (DEBUG)
           printf("a\n");
-        gsl_matrix_get_col(ctxt->Q_col_j, ctxt->Q, i);
+        gsl_matrix_get_col(ctxt->Q_col_i, ctxt->Q, i);
         if (DEBUG)
           printf("a, %lu %i\n", ctxt->P->size2, ctxt->K);
         gsl_matrix_get_row(ctxt->P_row_j, ctxt->P, j);
@@ -65,8 +65,8 @@ static void factor_walker(void (*g)(factor_context *ctxt),
         double e_ij;
         // ddot est moins précis que dsdot, mais cela devrait suffire
         if (DEBUG)
-          printf("c %lu %lu\n", ctxt->Q_col_j->size, ctxt->P_row_j->size);
-        gsl_blas_ddot(ctxt->Q_col_j, ctxt->P_row_j, &e_ij);
+          printf("c %lu %lu\n", ctxt->Q_col_i->size, ctxt->P_row_j->size);
+        gsl_blas_ddot(ctxt->Q_col_i, ctxt->P_row_j, &e_ij);
         g(ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
@@ -122,7 +122,7 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.R = R;
   ctxt.P = P;
   ctxt.Q = Q;
-  ctxt.Q_col_j = gsl_vector_alloc(K);
+  ctxt.Q_col_i = gsl_vector_alloc(K);
   ctxt.P_row_j = gsl_vector_alloc(K);
   ctxt.alpha = alpha;
   ctxt.beta = beta;
@@ -142,8 +142,9 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
 int main() {
   printf("Factorizing a random matrix\n");
 
-  int size = 30;
-  gsl_matrix *R = gen_random_matrix(size, size);
+  int size1 = 23;
+  int size2 = 30;
+  gsl_matrix *R = gen_random_matrix(size1, size2);
 
   int k = 5;
   gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
