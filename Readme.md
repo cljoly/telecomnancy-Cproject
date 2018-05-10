@@ -12,7 +12,9 @@ Contient les documents relatifs à la gestion de projet.
 
 ## Bibliothèques utilisées
 
- + [GSL](https://www.gnu.org/software/gsl/) : © Copyright 1996-2017 The GSL Team, [licence GPL](https://www.gnu.org/licenses/gpl.html). Pour l’installation, voir le paquet `libgsl-dev` sous Ubuntu.
+ + [GSL](https://www.gnu.org/software/gsl/) : © Copyright 1996-2017 The GSL Team,
+   [licence GPL](https://www.gnu.org/licenses/gpl.html). Pour l’installation,
+   utiliser le paquet `libgsl-dev` sous Ubuntu.
 
 ## Licence
 
