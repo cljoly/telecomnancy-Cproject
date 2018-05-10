@@ -3,6 +3,7 @@
 #include <gsl/gsl_matrix.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define ALPHA 0.0002
 #define BETA 0.002
@@ -31,8 +32,9 @@ typedef struct {
   gsl_matrix *R;
   gsl_matrix *P;
   gsl_matrix *Q;
-  gsl_vector *Q_col_i; // Ligne i de Q
-  gsl_vector *P_row_j; // Colonne j de P
+  gsl_vector *Q_col_j;   // Colonne j de Q
+  gsl_vector *P_row_i;   // Ligne i de P
+  double dot_product_QP; // Produit scalaire
   double alpha;
   double beta;
   int K;
@@ -40,7 +42,7 @@ typedef struct {
   double e_ij; // Erreur sur le coefficient i,j
 } factor_context;
 
-static void factor_walker(void (*g)(factor_context *ctxt),
+static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
                           void (*f)(double *p_ik, double *q_kj,
                                     factor_context *ctxt),
                           factor_context *ctxt) {
@@ -53,32 +55,16 @@ static void factor_walker(void (*g)(factor_context *ctxt),
       double r_ij = gsl_matrix_get(ctxt->R, i, j);
 
       if (r_ij > 0) {
-        if (DEBUG)
-          printf("a\n");
-        gsl_matrix_get_col(ctxt->Q_col_i, ctxt->Q, i);
-        if (DEBUG)
-          printf("a, %lu %i\n", ctxt->P->size2, ctxt->K);
-        gsl_matrix_get_row(ctxt->P_row_j, ctxt->P, j);
-        if (DEBUG)
-          printf("a\n");
-
-        double e_ij;
+        gsl_matrix_get_col(ctxt->Q_col_j, ctxt->Q, j);
+        gsl_matrix_get_row(ctxt->P_row_i, ctxt->P, i);
         // ddot est moins précis que dsdot, mais cela devrait suffire
-        if (DEBUG)
-          printf("c %lu %lu\n", ctxt->Q_col_i->size, ctxt->P_row_j->size);
-        gsl_blas_ddot(ctxt->Q_col_i, ctxt->P_row_j, &e_ij);
-        g(ctxt);
+        gsl_blas_ddot(ctxt->Q_col_j, ctxt->P_row_i, &ctxt->dot_product_QP);
+
+        g(r_ij, ctxt);
 
         for (int k = 0; k < ctxt->K; k++) {
-          if (DEBUG)
-            printf("b\n");
           double *p_ik = gsl_matrix_ptr(ctxt->P, i, k);
-          if (DEBUG)
-            printf("b\n");
           double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
-          if (DEBUG)
-            printf("b\n");
-
           f(p_ik, q_kj, ctxt);
         }
       }
@@ -86,23 +72,25 @@ static void factor_walker(void (*g)(factor_context *ctxt),
   }
 }
 
-static void factor_nop(factor_context *ctxt) {}
+static void factor_eij_init(double r_ij, factor_context *ctxt) {
+  ctxt->e_ij = r_ij - ctxt->dot_product_QP;
+}
 
-static void factor_error_init(factor_context *ctxt) {
-  ctxt->e = ctxt->e_ij * ctxt->e_ij;
+static void factor_error_init(double r_ij, factor_context *ctxt) {
+  ctxt->e += pow(r_ij - ctxt->dot_product_QP, 2);
 }
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
   *p_ik =
-      *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
+      *p_ik + ctxt->alpha*(2*ctxt->e_ij*(*q_kj) - ctxt->beta*(*p_ik));
   *q_kj =
       *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
                                 factor_context *ctxt) {
-  ctxt->e += (ctxt->beta / 2) * ((*p_ik) * (*p_ik)) + ((*q_kj) * (*q_kj));
+  ctxt->e += (ctxt->beta/2)*pow(*p_ik, 2) + pow(*q_kj, 2);
 }
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
@@ -122,8 +110,8 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.R = R;
   ctxt.P = P;
   ctxt.Q = Q;
-  ctxt.Q_col_i = gsl_vector_alloc(K);
-  ctxt.P_row_j = gsl_vector_alloc(K);
+  ctxt.Q_col_j = gsl_vector_alloc(K);
+  ctxt.P_row_i = gsl_vector_alloc(K);
   ctxt.alpha = alpha;
   ctxt.beta = beta;
   ctxt.K = K;
@@ -131,7 +119,9 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.e_ij = 0;
 
   while (--steps > 0) {
-    factor_walker(factor_nop, factor_gradiant_update, &ctxt);
+    // Manipulation de P, Q
+    factor_walker(factor_eij_init, factor_gradiant_update, &ctxt);
+    // Mise à jour de l’erreur
     ctxt.e = 0;
     factor_walker(factor_error_init, factor_error_update, &ctxt);
     if (ctxt.e < epsilon)
