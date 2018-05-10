@@ -12,5 +12,8 @@ factorisation: $(OBJ)
 testparser: movie.o stringlist.o movies_list_loader.o testparser.o
 	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
 
+testconsoledisplay: movie.o stringlist.o movies_list_loader.o test_console_display.o console_display.o
+	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
+
 projetcsd: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)

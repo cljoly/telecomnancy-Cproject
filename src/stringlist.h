@@ -1,7 +1,7 @@
 #ifndef SRC_STRINGLIST_H
 #define SRC_STRINGLIST_H
 
-#endif //SRC_CHARLIST_H
+
 
 /*
  * structure représentant un élément d'une liste chainée
@@ -41,3 +41,4 @@ int isempty_string_list(string_list l);
  */
 void destroy_string_list(string_list l);
 
+#endif //SRC_CHARLIST_H

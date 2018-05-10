@@ -1,7 +1,6 @@
 #ifndef SRC_MOVIE_H
 #define SRC_MOVIE_H
 
-#endif //SRC_MOVIE_H
 
 #include "stringlist.h"
 
@@ -68,3 +67,6 @@ movie* get_movies(movies* m, int i);
  * fonction permttant d'ajouter un film à une liste de films
  */
 void add_movie(movies* movies_list, movie* m, int i);
+
+
+#endif //SRC_MOVIE_H
