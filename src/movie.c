@@ -3,7 +3,9 @@
 
 
 movie* create_movie(){
-    return malloc(sizeof(movie));
+    movie* m= malloc(sizeof(movie));
+    m->grade=0;
+    return m;
 }
 
 void destroy_movie(movie* m){
