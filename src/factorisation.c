@@ -1,3 +1,4 @@
+#include "tools.h"
 #include <assert.h>
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_matrix.h>
@@ -139,13 +140,13 @@ int main() {
   int k = 5;
   gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
   gsl_matrix *Q = gsl_matrix_alloc(k, R->size2);
-  gsl_matrix_fprintf(stdout, R, "%f");
+  print_float_matrix(R);
   factor(R, P, Q, k, ALPHA, BETA);
-  gsl_matrix_fprintf(stdout, P, "%f");
-  gsl_matrix_fprintf(stdout, Q, "%f");
+  print_float_matrix(P);
+  print_float_matrix(Q);
   // Print product, supposed to be similar to R
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
-  gsl_matrix_fprintf(stdout, R_approx, "%f");
+  print_float_matrix(R_approx);
 
   return 0;
 }
