@@ -2,9 +2,9 @@
 #include <assert.h>
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_matrix.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 #define ALPHA 0.0002
 #define BETA 0.002
@@ -84,14 +84,14 @@ static void factor_error_init(double r_ij, factor_context *ctxt) {
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
   *p_ik =
-      *p_ik + ctxt->alpha*(2*ctxt->e_ij*(*q_kj) - ctxt->beta*(*p_ik));
+      *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
   *q_kj =
       *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
                                 factor_context *ctxt) {
-  ctxt->e += (ctxt->beta/2)*pow(*p_ik, 2) + pow(*q_kj, 2);
+  ctxt->e += (ctxt->beta / 2) * pow(*p_ik, 2) + pow(*q_kj, 2);
 }
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
