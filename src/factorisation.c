@@ -8,7 +8,6 @@
 
 #define ALPHA 0.0002
 #define BETA 0.02
-#define DEBUG 0
 
 /* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
    l’absence de note et est présent à hauteur d’environ 60 %
@@ -80,18 +79,10 @@ static void factor_error_init(double r_ij, factor_context *ctxt) {
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
-  if (DEBUG) {
-    printf("p_ik: %f\n", *p_ik);
-    printf("q_kj: %f\n", *q_kj);
-  }
   *p_ik =
       *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
   *q_kj =
       *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
-  if (DEBUG) {
-    printf("p_ik: %f\n", *p_ik);
-    printf("q_kj: %f\n", *q_kj);
-  }
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
@@ -124,24 +115,9 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.e = 0;
   ctxt.e_ij = 0;
 
-  // XXX
-  gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
-
   while (--steps > 0) {
     // Manipulation de P, Q
     factor_walker(factor_eij_init, factor_gradiant_update, &ctxt);
-
-    if (DEBUG) {
-      printf("R:\n");
-      print_matrix(ctxt.R);
-      printf("P:\n");
-      print_matrix(ctxt.P);
-      printf("Q:\n");
-      print_matrix(ctxt.Q);
-    }
-
-    // XXX Débuggage
-    gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, ctxt.P, ctxt.Q, 0, R_approx);
 
     // Mise à jour de l’erreur
     ctxt.e = 0;
@@ -156,11 +132,9 @@ int main() {
 
   int size1 = 5;
   int size2 = 3;
-  gsl_matrix *R = gen_random_matrix(size1, size2);
-
-  print_matrix(R);
-
   int k = 2;
+
+  gsl_matrix *R = gen_random_matrix(size1, size2);
   gsl_matrix *P = gen_random_matrix(R->size1, k);
   gsl_matrix *Q = gen_random_matrix(k, R->size2);
   printf("R\n");
