@@ -1,3 +1,4 @@
+#include "factorisation.h"
 #include "tools.h"
 #include <assert.h>
 #include <gsl/gsl_blas.h>
@@ -5,9 +6,6 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#define ALPHA 0.0002
-#define BETA 0.02
 
 /* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
    l’absence de note et est présent à hauteur d’environ 60 %
@@ -41,6 +39,14 @@ typedef struct {
   double e;    // Erreur
   double e_ij; // Erreur sur le coefficient i,j
 } factor_context;
+
+factorisation_mat *initialize_mat(int k, gsl_matrix *R) {
+  factorisation_mat *fm = (factorisation_mat*) malloc(sizeof(factorisation_mat));
+  fm->R = R;
+  fm->P = gen_random_matrix(R->size1, k);
+  fm->Q = gen_random_matrix(k, R->size2);
+  return fm;
+}
 
 static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
                           void (*f)(double *p_ik, double *q_kj,
@@ -91,22 +97,18 @@ static void factor_error_update(double *p_ik, double *q_kj,
 }
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
-/* Modification en place de P et Q, de manière à ce que P et Q constituent une
-   factorisation approximative de R.
-   K est le nombre de critères latents.
-   alpha est la vitesse d’approche. Utiliser la valeur de la macro en cas de
-   doute. beta est un paramètre de convergeance. Utiliser la valeur de la macro
-   en cas de doute.
-*/
-void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
-            double beta) {
+void factor(factorisation_mat *fm, double alpha, double beta) {
   int steps = 5000;
   double epsilon = 0.001;
 
+  // Déduction de K
+  assert(fm->Q->size1 == fm->P->size2);
+  int K = fm->Q->size1;
+
   factor_context ctxt;
-  ctxt.R = R;
-  ctxt.P = P;
-  ctxt.Q = Q;
+  ctxt.R = fm->R;
+  ctxt.P = fm->P;
+  ctxt.Q = fm->Q;
   ctxt.Q_col_j = gsl_vector_alloc(K);
   ctxt.P_row_i = gsl_vector_alloc(K);
   ctxt.alpha = alpha;
@@ -135,20 +137,22 @@ int main() {
   int k = 2;
 
   gsl_matrix *R = gen_random_matrix(size1, size2);
-  gsl_matrix *P = gen_random_matrix(R->size1, k);
-  gsl_matrix *Q = gen_random_matrix(k, R->size2);
+  factorisation_mat *fm = initialize_mat(k, R);
   printf("R\n");
-  print_matrix(R);
-  factor(R, P, Q, k, ALPHA, BETA);
+  print_matrix(fm->R);
+  factor(fm, factorisation_alpha, factorisation_beta);
   printf("P\n");
-  print_matrix(P);
+  print_matrix(fm->P);
   printf("Q\n");
-  print_matrix(Q);
+  print_matrix(fm->Q);
   // Print product, supposed to be similar to R
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
-  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, P, Q, 0, R_approx);
+  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
   printf("R appprox\n");
   print_matrix(R_approx);
 
   return 0;
 }
+
+double factorisation_beta = 0.0002;
+double factorisation_alpha = 0.02;

@@ -1,5 +1,5 @@
 CC=gcc
-DEPS = movie.h stringlist.h movies_list_loader.h
+DEPS = movie.h stringlist.h movies_list_loader.h tools.h factorisation.h
 CFLAGS=-g -Wall `gsl-config --cflags --libs`
 OBJ = factorisation.o tools.o
 
