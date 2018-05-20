@@ -14,9 +14,10 @@ void print_matrix(gsl_matrix *M) {
   for (int i = 0; i < nb_row; i++) {
     printf("[ ");
     for (int j = 0; j < nb_col; j++) {
-      printf("%.3e", gsl_matrix_get(M, i, j));
+      printf("%.4f", gsl_matrix_get(M, i, j));
       if (j != nb_col - 1)
         printf(", ");
+      printf("\t");
     }
     printf(" ]\n");
   }
