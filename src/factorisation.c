@@ -7,8 +7,8 @@
 #include <stdlib.h>
 
 #define ALPHA 0.0002
-#define BETA 0.002
-#define DEBUG 1
+#define BETA 0.02
+#define DEBUG 0
 
 /* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
    l’absence de note et est présent à hauteur d’environ 60 %
@@ -17,13 +17,13 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
   gsl_matrix *random_matrix = gsl_matrix_alloc(nb_row, nb_col);
   // XXX Initialisation avec un nombre pour pouvoir reproduire les tests avec
   // les mêmes erreurs
-  srand(6);
+  srand(10);
   int mark;
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      mark = rand() % 20 - 14;
+      mark = rand() % 20 - 5;
       mark = (mark >= 0 ? mark : 0);
-      gsl_matrix_set(random_matrix, row, col, mark);
+      gsl_matrix_set(random_matrix, row, col, (double)mark);
     }
   }
   return random_matrix;
@@ -49,9 +49,6 @@ static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
                           factor_context *ctxt) {
   for (int i = 0; i < (int)ctxt->R->size1; i++) {
     for (int j = 0; j < (int)ctxt->R->size2; j++) {
-      if (DEBUG)
-        printf("i: %i, j: %i, size1: %lu; size2: %lu\n", i, j, ctxt->R->size1,
-               ctxt->R->size2);
 
       double r_ij = gsl_matrix_get(ctxt->R, i, j);
 
@@ -83,10 +80,18 @@ static void factor_error_init(double r_ij, factor_context *ctxt) {
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
+  if (DEBUG) {
+    printf("p_ik: %f\n", *p_ik);
+    printf("q_kj: %f\n", *q_kj);
+  }
   *p_ik =
       *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
   *q_kj =
       *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
+  if (DEBUG) {
+    printf("p_ik: %f\n", *p_ik);
+    printf("q_kj: %f\n", *q_kj);
+  }
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
@@ -119,9 +124,25 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
   ctxt.e = 0;
   ctxt.e_ij = 0;
 
+  // XXX
+  gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
+
   while (--steps > 0) {
     // Manipulation de P, Q
     factor_walker(factor_eij_init, factor_gradiant_update, &ctxt);
+
+    if (DEBUG) {
+      printf("R:\n");
+      print_matrix(ctxt.R);
+      printf("P:\n");
+      print_matrix(ctxt.P);
+      printf("Q:\n");
+      print_matrix(ctxt.Q);
+    }
+
+    // XXX Débuggage
+    gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, ctxt.P, ctxt.Q, 0, R_approx);
+
     // Mise à jour de l’erreur
     ctxt.e = 0;
     factor_walker(factor_error_init, factor_error_update, &ctxt);
@@ -133,20 +154,27 @@ void factor(gsl_matrix *R, gsl_matrix *P, gsl_matrix *Q, int K, double alpha,
 int main() {
   printf("Factorizing a random matrix\n");
 
-  int size1 = 23;
-  int size2 = 30;
+  int size1 = 5;
+  int size2 = 3;
   gsl_matrix *R = gen_random_matrix(size1, size2);
 
-  int k = 5;
-  gsl_matrix *P = gsl_matrix_alloc(R->size1, k);
-  gsl_matrix *Q = gsl_matrix_alloc(k, R->size2);
-  print_float_matrix(R);
+  print_matrix(R);
+
+  int k = 2;
+  gsl_matrix *P = gen_random_matrix(R->size1, k);
+  gsl_matrix *Q = gen_random_matrix(k, R->size2);
+  printf("R\n");
+  print_matrix(R);
   factor(R, P, Q, k, ALPHA, BETA);
-  print_float_matrix(P);
-  print_float_matrix(Q);
+  printf("P\n");
+  print_matrix(P);
+  printf("Q\n");
+  print_matrix(Q);
   // Print product, supposed to be similar to R
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
-  print_float_matrix(R_approx);
+  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, P, Q, 0, R_approx);
+  printf("R appprox\n");
+  print_matrix(R_approx);
 
   return 0;
 }
