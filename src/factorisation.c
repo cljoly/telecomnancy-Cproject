@@ -5,7 +5,6 @@
 #include <gsl/gsl_matrix.h>
 #include <math.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef struct {
   gsl_matrix *R;
