@@ -7,25 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Création d’une matrice remplie de notes aléatoires, dans [1,5]. 0 marque
-   l’absence de note et est présent à hauteur d’environ 60 %
-   TODO Faire varier la proportion de films non notés */
-gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
-  gsl_matrix *random_matrix = gsl_matrix_alloc(nb_row, nb_col);
-  // XXX Initialisation avec un nombre pour pouvoir reproduire les tests avec
-  // les mêmes erreurs
-  srand(10);
-  int mark;
-  for (int row = 0; row < nb_row; row++) {
-    for (int col = 0; col < nb_col; col++) {
-      mark = rand() % 20 - 5;
-      mark = (mark >= 0 ? mark : 0);
-      gsl_matrix_set(random_matrix, row, col, (double)mark);
-    }
-  }
-  return random_matrix;
-}
-
 typedef struct {
   gsl_matrix *R;
   gsl_matrix *P;
@@ -41,7 +22,8 @@ typedef struct {
 } factor_context;
 
 factorisation_mat *initialize_mat(int k, gsl_matrix *R) {
-  factorisation_mat *fm = (factorisation_mat*) malloc(sizeof(factorisation_mat));
+  factorisation_mat *fm =
+      (factorisation_mat *)malloc(sizeof(factorisation_mat));
   fm->R = R;
   fm->P = gen_random_matrix(R->size1, k);
   fm->Q = gen_random_matrix(k, R->size2);
@@ -127,31 +109,6 @@ void factor(factorisation_mat *fm, double alpha, double beta) {
     if (ctxt.e < epsilon)
       break;
   }
-}
-
-int main() {
-  printf("Factorizing a random matrix\n");
-
-  int size1 = 5;
-  int size2 = 3;
-  int k = 2;
-
-  gsl_matrix *R = gen_random_matrix(size1, size2);
-  factorisation_mat *fm = initialize_mat(k, R);
-  printf("R\n");
-  print_matrix(fm->R);
-  factor(fm, factorisation_alpha, factorisation_beta);
-  printf("P\n");
-  print_matrix(fm->P);
-  printf("Q\n");
-  print_matrix(fm->Q);
-  // Print product, supposed to be similar to R
-  gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
-  gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
-  printf("R appprox\n");
-  print_matrix(R_approx);
-
-  return 0;
 }
 
 double factorisation_beta = 0.0002;
