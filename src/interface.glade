@@ -2,10 +2,121 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkWindow" id="MainWindow">
-    <property name="width_request">800</property>
-    <property name="height_request">450</property>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="image5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op10">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op11">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op12">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op13">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op14">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op15">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">ressources/titanic.jpg</property>
+  </object>
+  <object class="GtkImage" id="op8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="op9">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="princ2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="princ3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="width_request">1536</property>
+    <property name="height_request">800</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
     <child>
       <object class="GtkNotebook" id="Notebook">
@@ -17,51 +128,46 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkImage">
-                <property name="width_request">160</property>
-                <property name="height_request">160</property>
+              <object class="GtkImage" id="im_accueil">
+                <property name="width_request">1536</property>
+                <property name="height_request">300</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">ressources/test.png</property>
               </object>
-              <packing>
-                <property name="x">320</property>
-                <property name="y">20</property>
-              </packing>
             </child>
             <child>
               <object class="GtkButton" id="btn_accueil">
                 <property name="label" translatable="yes">Se connecter</property>
-                <property name="width_request">150</property>
-                <property name="height_request">40</property>
+                <property name="width_request">200</property>
+                <property name="height_request">70</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="yalign">0.5</property>
-                <signal name="clicked" handler="vers_page_principale" swapped="no"/>
+                <signal name="clicked" handler="chargement_principale" swapped="no"/>
+                <signal name="clicked" handler="connexion" swapped="no"/>
               </object>
               <packing>
-                <property name="x">59</property>
-                <property name="y">381</property>
+                <property name="x">284</property>
+                <property name="y">700</property>
               </packing>
             </child>
             <child>
               <object class="GtkButton">
                 <property name="label" translatable="yes">Quitter</property>
-                <property name="width_request">112</property>
-                <property name="height_request">65</property>
+                <property name="width_request">200</property>
+                <property name="height_request">70</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
               </object>
               <packing>
-                <property name="x">677</property>
-                <property name="y">377</property>
+                <property name="x">1336</property>
+                <property name="y">758</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="connexion_mdp">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -72,103 +178,122 @@
                 <property name="input_hints">GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NONE</property>
               </object>
               <packing>
-                <property name="x">53</property>
-                <property name="y">330</property>
+                <property name="x">309</property>
+                <property name="y">630</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">110</property>
-                <property name="height_request">30</property>
+                <property name="width_request">176</property>
+                <property name="height_request">34</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Mot de passe</property>
                 <attributes>
+                  <attribute name="scale" value="2"/>
                   <attribute name="underline" value="True"/>
                 </attributes>
               </object>
               <packing>
-                <property name="x">48</property>
-                <property name="y">296</property>
+                <property name="x">309</property>
+                <property name="y">580</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="connexion_id">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
               </object>
               <packing>
-                <property name="x">51</property>
-                <property name="y">254</property>
+                <property name="x">309</property>
+                <property name="y">530</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">100</property>
-                <property name="height_request">30</property>
+                <property name="width_request">150</property>
+                <property name="height_request">49</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Identifiant</property>
                 <attributes>
+                  <attribute name="scale" value="2"/>
                   <attribute name="underline" value="True"/>
                 </attributes>
               </object>
               <packing>
-                <property name="x">42</property>
-                <property name="y">217</property>
+                <property name="x">309</property>
+                <property name="y">475</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">300</property>
-                <property name="height_request">80</property>
+                <property name="width_request">380</property>
+                <property name="height_request">100</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">CREATION</property>
+                <property name="label" translatable="yes">   CREATION 
+D'UN COMPTE</property>
                 <attributes>
-                  <attribute name="scale" value="3"/>
+                  <attribute name="scale" value="4"/>
                   <attribute name="foreground" value="#20204a4a8787"/>
                 </attributes>
               </object>
               <packing>
-                <property name="x">456</property>
-                <property name="y">131</property>
+                <property name="x">962</property>
+                <property name="y">350</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="name">200</property>
-                <property name="width_request">300</property>
+                <property name="width_request">380</property>
                 <property name="height_request">100</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">CONNECTION</property>
+                <property name="label" translatable="yes">CONNEXION</property>
                 <attributes>
-                  <attribute name="scale" value="3"/>
+                  <attribute name="scale" value="4"/>
                   <attribute name="foreground" value="#20204a4a8787"/>
                 </attributes>
               </object>
               <packing>
-                <property name="x">29</property>
-                <property name="y">118</property>
+                <property name="x">194</property>
+                <property name="y">350</property>
               </packing>
             </child>
             <child>
               <object class="GtkButton">
                 <property name="label" translatable="yes">Créer un compte !</property>
-                <property name="width_request">233</property>
-                <property name="height_request">46</property>
+                <property name="width_request">200</property>
+                <property name="height_request">70</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="relief">none</property>
                 <signal name="clicked" handler="vers_page_creation" swapped="no"/>
               </object>
               <packing>
-                <property name="x">491</property>
-                <property name="y">259</property>
+                <property name="x">1052</property>
+                <property name="y">590</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">OU</property>
+                <attributes>
+                  <attribute name="scale" value="4"/>
+                  <attribute name="foreground" value="#20204a4a8787"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">718</property>
+                <property name="y">550</property>
               </packing>
             </child>
           </object>
@@ -206,110 +331,143 @@
             <child>
               <object class="GtkLabel">
                 <property name="width_request">100</property>
-                <property name="height_request">30</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Nom</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">207</property>
-                <property name="y">47</property>
+                <property name="x">243</property>
+                <property name="y">71</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">100</property>
-                <property name="height_request">30</property>
+                <property name="width_request">138</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Prénom</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">207</property>
-                <property name="y">98</property>
+                <property name="x">198</property>
+                <property name="y">134</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">130</property>
-                <property name="height_request">30</property>
+                <property name="width_request">269</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Adresse e-mail</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">187</property>
-                <property name="y">244</property>
+                <property name="x">69</property>
+                <property name="y">327</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">120</property>
-                <property name="height_request">30</property>
+                <property name="width_request">244</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Mot de passe</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">190</property>
-                <property name="y">294</property>
+                <property name="x">92</property>
+                <property name="y">391</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">220</property>
-                <property name="height_request">30</property>
+                <property name="width_request">236</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Confirmation du mot de passe</property>
+                <property name="label" translatable="yes">Confirmation</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">97</property>
-                <property name="y">341</property>
+                <property name="x">103</property>
+                <property name="y">456</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">100</property>
-                <property name="height_request">30</property>
+                <property name="width_request">187</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Identifiant</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">208</property>
-                <property name="y">155</property>
+                <property name="x">148</property>
+                <property name="y">200</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
-                <property name="width_request">100</property>
-                <property name="height_request">30</property>
+                <property name="width_request">128</property>
+                <property name="height_request">41</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Civilité</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">204</property>
-                <property name="y">203</property>
+                <property name="x">208</property>
+                <property name="y">263</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="name">30</property>
-                <property name="width_request">134</property>
-                <property name="height_request">30</property>
+                <property name="width_request">201</property>
+                <property name="height_request">82</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Etes-vous un robot ?</property>
+                <property name="label" translatable="yes">Etes-vous
+un robot ?</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 10"/>
+                  <attribute name="scale" value="3"/>
+                </attributes>
               </object>
               <packing>
-                <property name="x">163</property>
-                <property name="y">396</property>
+                <property name="x">140</property>
+                <property name="y">519</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="nom">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -318,12 +476,12 @@
                 <property name="input_purpose">name</property>
               </object>
               <packing>
-                <property name="x">328</property>
-                <property name="y">44</property>
+                <property name="x">400</property>
+                <property name="y">80</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="mail">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -332,12 +490,12 @@
                 <property name="input_purpose">email</property>
               </object>
               <packing>
-                <property name="x">326</property>
-                <property name="y">245</property>
+                <property name="x">400</property>
+                <property name="y">330</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="identifiant">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -345,12 +503,12 @@
                 <property name="placeholder_text" translatable="yes">Doll</property>
               </object>
               <packing>
-                <property name="x">326</property>
-                <property name="y">153</property>
+                <property name="x">400</property>
+                <property name="y">205</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="prenom">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -359,30 +517,12 @@
                 <property name="input_purpose">name</property>
               </object>
               <packing>
-                <property name="x">326</property>
-                <property name="y">101</property>
+                <property name="x">400</property>
+                <property name="y">138</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
-                <property name="width_request">166</property>
-                <property name="height_request">30</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="visibility">False</property>
-                <property name="invisible_char">•</property>
-                <property name="placeholder_text" translatable="yes">*******</property>
-                <property name="input_purpose">password</property>
-                <property name="input_hints">GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NONE</property>
-                <signal name="changed" handler="comparaison_mdp" swapped="no"/>
-              </object>
-              <packing>
-                <property name="x">323</property>
-                <property name="y">343</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry">
+              <object class="GtkEntry" id="mdp2">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
@@ -394,12 +534,29 @@
                 <property name="input_hints">GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NONE</property>
               </object>
               <packing>
-                <property name="x">326</property>
-                <property name="y">295</property>
+                <property name="x">400</property>
+                <property name="y">461</property>
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton">
+              <object class="GtkEntry" id="mdp">
+                <property name="width_request">166</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="visibility">False</property>
+                <property name="invisible_char">•</property>
+                <property name="placeholder_text" translatable="yes">*******</property>
+                <property name="input_purpose">password</property>
+                <property name="input_hints">GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NONE</property>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">393</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="robot">
                 <property name="label" translatable="yes">Oui et je compte envahir le monde</property>
                 <property name="width_request">260</property>
                 <property name="height_request">30</property>
@@ -409,12 +566,12 @@
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
-                <property name="x">312</property>
-                <property name="y">398</property>
+                <property name="x">400</property>
+                <property name="y">557</property>
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton">
+              <object class="GtkCheckButton" id="femme">
                 <property name="label" translatable="yes">Femme</property>
                 <property name="width_request">110</property>
                 <property name="height_request">30</property>
@@ -424,12 +581,12 @@
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
-                <property name="x">325</property>
-                <property name="y">202</property>
+                <property name="x">400</property>
+                <property name="y">273</property>
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton">
+              <object class="GtkCheckButton" id="homme">
                 <property name="label" translatable="yes">Homme</property>
                 <property name="width_request">110</property>
                 <property name="height_request">30</property>
@@ -439,22 +596,50 @@
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
-                <property name="x">443</property>
-                <property name="y">204</property>
+                <property name="x">520</property>
+                <property name="y">275</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="btn_compte">
                 <property name="label" translatable="yes">Créer un compte</property>
                 <property name="width_request">125</property>
                 <property name="height_request">80</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="clicked" handler="nouveau_compte" swapped="no"/>
               </object>
               <packing>
-                <property name="x">635</property>
-                <property name="y">352</property>
+                <property name="x">400</property>
+                <property name="y">630</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_enregistrer">
+                <property name="width_request">800</property>
+                <property name="height_request">800</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="x">715</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="enr_erreur">
+                <property name="width_request">370</property>
+                <property name="height_request">80</property>
+                <property name="can_focus">False</property>
+                <property name="no_show_all">True</property>
+                <property name="label" translatable="yes">Veuillez entrer correctement toutes les informations :)</property>
+                <attributes>
+                  <attribute name="foreground" value="#efef29292929"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">24</property>
+                <property name="y">628</property>
               </packing>
             </child>
           </object>
@@ -479,25 +664,147 @@
             <property name="can_focus">False</property>
             <child>
               <object class="GtkExpander">
-                <property name="width_request">100</property>
-                <property name="height_request">96</property>
+                <property name="width_request">400</property>
+                <property name="height_request">828</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="margin_right">86</property>
-                <property name="margin_bottom">250</property>
-                <property name="vexpand">True</property>
-                <property name="expanded">True</property>
-                <child type="label">
-                  <object class="GtkLabel">
+                <child>
+                  <object class="GtkBox">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Utilisateur</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op1</property>
+                        <property name="relief">none</property>
+                        <property name="use_underline">True</property>
+                        <property name="always_show_image">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op2</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="chargement_historique" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_historique" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op3</property>
+                        <property name="relief">none</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op4</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="vers_page_accueil" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op5</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="label">
+                  <object class="GtkLabel">
+                    <property name="width_request">380</property>
+                    <property name="height_request">114</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">UTILISATEUR</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Abyssinica SIL 30"/>
+                      <attribute name="underline" value="True"/>
+                      <attribute name="foreground" value="#2e2e34343636"/>
+                    </attributes>
                   </object>
                 </child>
               </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">button</property>
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                <signal name="clicked" handler="vers_page_info" swapped="no"/>
+              </object>
               <packing>
-                <property name="x">285</property>
-                <property name="y">99</property>
+                <property name="x">713</property>
+                <property name="y">289</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="princ1">
+                <property name="width_request">1136</property>
+                <property name="height_request">222</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="x">400</property>
               </packing>
             </child>
           </object>
@@ -513,6 +820,1845 @@
           </object>
           <packing>
             <property name="position">2</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed">
+            <property name="width_request">800</property>
+            <property name="height_request">450</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="width_request">1136</property>
+                <property name="height_request">800</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkViewport">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkGrid">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkImage" id="h1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h4">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h5">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h6">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h7">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h8">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h9">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h10">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h11">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h12">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h13">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h14">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h15">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h16">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h17">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h18">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h19">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h20">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">8</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h21">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h22">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h23">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h24">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">10</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h25">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h26">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h27">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h28">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">12</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h29">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">14</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h30">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">14</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h31">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">14</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h32">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">14</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h33">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">16</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h34">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">16</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h35">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">16</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h36">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">16</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h37">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">18</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h38">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">18</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h39">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">18</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h40">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">18</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h41">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">20</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h42">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">20</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h43">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">20</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h44">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">20</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h45">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">22</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h46">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">22</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h47">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">22</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h48">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">22</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h49">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">24</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h50">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">24</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h51">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">24</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h52">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">24</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h53">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">26</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h54">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">26</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h55">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">26</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h56">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">26</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h57">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">28</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h58">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">28</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h59">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">28</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h60">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">28</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h61">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">30</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h62">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">30</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h63">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">30</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h64">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">30</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h65">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">32</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h66">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">32</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h67">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">32</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h68">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">32</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h69">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">34</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h70">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">34</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h71">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">34</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h72">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">34</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h73">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">36</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h74">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">36</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h75">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">36</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h76">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">36</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h77">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">38</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h78">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">38</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h79">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">38</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h80">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">38</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h81">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">40</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h82">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">40</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h83">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">40</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h84">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">40</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h85">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">42</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h86">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">42</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h87">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">42</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h88">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">42</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h89">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">44</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h90">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">44</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h91">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">44</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h92">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">44</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h93">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">46</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h94">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">46</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h95">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">46</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h96">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">46</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h97">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">48</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h98">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">48</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h99">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">48</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="h100">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">48</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="no_show_all">True</property>
+                            <signal name="clicked" handler="vers_page_film" swapped="no"/>
+                            <child>
+                              <placeholder/>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkExpander">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op6</property>
+                        <property name="relief">none</property>
+                        <property name="use_underline">True</property>
+                        <property name="always_show_image">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op7</property>
+                        <property name="relief">none</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op8</property>
+                        <property name="relief">none</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op9</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="vers_page_accueil" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op10</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="label">
+                  <object class="GtkLabel">
+                    <property name="width_request">380</property>
+                    <property name="height_request">114</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">UTILISATEUR</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Abyssinica SIL 30"/>
+                      <attribute name="underline" value="True"/>
+                      <attribute name="foreground" value="#2e2e34343636"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="width_request">1136</property>
+                <property name="height_request">222</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">princ2</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="chargement_principale" swapped="no"/>
+                <signal name="clicked" handler="vers_page_principale" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">400</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="Fils 4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">page 4</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkExpander">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op11</property>
+                        <property name="relief">none</property>
+                        <property name="use_underline">True</property>
+                        <property name="always_show_image">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op12</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="chargement_historique" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_historique" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">300</property>
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op13</property>
+                        <property name="relief">none</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op14</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="vers_page_accueil" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="height_request">114</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="focus_on_click">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="image">op15</property>
+                        <property name="relief">none</property>
+                        <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="label">
+                  <object class="GtkLabel">
+                    <property name="width_request">380</property>
+                    <property name="height_request">114</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">UTILISATEUR</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Abyssinica SIL 30"/>
+                      <attribute name="underline" value="True"/>
+                      <attribute name="foreground" value="#2e2e34343636"/>
+                    </attributes>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="width_request">1136</property>
+                <property name="height_request">222</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">princ3</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="chargement_principale" swapped="no"/>
+                <signal name="clicked" handler="vers_page_principale" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">400</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage">
+                <property name="width_request">284</property>
+                <property name="height_request">410</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">ressources/titanic.jpg</property>
+              </object>
+              <packing>
+                <property name="x">500</property>
+                <property name="y">260</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">TITRE :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">900</property>
+                <property name="y">270</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">117</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">ACTEURS :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">900</property>
+                <property name="y">590</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">164</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">DESCRIPTION :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">529</property>
+                <property name="y">750</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">ANNÉE :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">900</property>
+                <property name="y">430</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">100</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">GENRE :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">900</property>
+                <property name="y">350</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="width_request">166</property>
+                <property name="height_request">80</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">RÉALISATEUR :</property>
+                <attributes>
+                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="weight" value="bold"/>
+                  <attribute name="underline" value="True"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">900</property>
+                <property name="y">510</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="bnt_vote1">
+                <property name="width_request">56</property>
+                <property name="height_request">56</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">image1</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="note1" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">490</property>
+                <property name="y">700</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_vote2">
+                <property name="width_request">56</property>
+                <property name="height_request">56</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">image2</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="note2" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">551</property>
+                <property name="y">700</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_vote3">
+                <property name="width_request">56</property>
+                <property name="height_request">56</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">image3</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="note3" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">612</property>
+                <property name="y">700</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="bnt_vote4">
+                <property name="width_request">56</property>
+                <property name="height_request">56</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">image4</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="note4" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">673</property>
+                <property name="y">700</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_vote5">
+                <property name="width_request">56</property>
+                <property name="height_request">56</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
+                <property name="receives_default">True</property>
+                <property name="image">image5</property>
+                <property name="relief">none</property>
+                <signal name="clicked" handler="note5" swapped="no"/>
+              </object>
+              <packing>
+                <property name="x">734</property>
+                <property name="y">700</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="FIls 5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">page 5</property>
+          </object>
+          <packing>
+            <property name="position">4</property>
             <property name="tab_fill">False</property>
           </packing>
         </child>
