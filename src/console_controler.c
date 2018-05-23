@@ -2,6 +2,7 @@
 #include "console_display.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "movies_list_loader.h"
 
 void select_user(movies *movies_list) {
   char user[USERNAME_LENGTH];
@@ -19,10 +20,8 @@ void select_user(movies *movies_list) {
       ;
   }
   movies_list->user = user;
-  // ouverture du fichier si utilisateur déjà existant
-
-  // chargement des données
-
+  // chargement des données si utilisateur déjà existant
+  load_grade(movies_list);
   // passe au menu utilisateur
   menu(movies_list);
 }
@@ -60,6 +59,7 @@ void menu(movies *movies_list) {
       break;
     case 3:
       // sauvegarde des modifs
+      save_grade(movies_list);
       menu(movies_list);
       break;
     case 4:

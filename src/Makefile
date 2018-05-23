@@ -9,13 +9,13 @@ OBJ = factorisation.o tools.o
 factorisation: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
 
-testparser: movie.o stringlist.o movies_list_loader.o testparser.o
+testparser: movie.o stringlist.o movies_list_loader.o testparser.o tools.o
 	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
 
-test_console_display: movie.o stringlist.o movies_list_loader.o test_console_display.o console_display.o
+test_console_display: movie.o stringlist.o movies_list_loader.o test_console_display.o console_display.o tools.o
 	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
 
-test_prg_console: movie.o stringlist.o movies_list_loader.o console_display.o console_controler.o test_prg_console.o
+test_prg_console: movie.o stringlist.o movies_list_loader.o console_display.o console_controler.o test_prg_console.o tools.o
 	gcc -o $@ $^ $(CFLAGS) -lwjelement -lwjreader -lwjwriter
 
 projetcsd: $(OBJ)

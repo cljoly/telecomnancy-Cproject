@@ -1,7 +1,10 @@
+#include "tools.h"
 #include "movies_list_loader.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <wjelement.h>
+#include <gsl/gsl_matrix.h>
+
 
 #define MOVIE_NB 2
 
@@ -17,6 +20,7 @@ int main() {
   // préparation du reader afin de lire dans le fichier json
   WJReader doc = WJROpenFILEDocument(f, NULL, 0);
   WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+
   // charge la liste de film
   movies *m = load_movies(elem, MOVIE_NB);
 
@@ -42,6 +46,13 @@ int main() {
   printf("acteur 1.2 : %s\n", get_string(m->tab[1]->actors, 2));
 
   printf("test film null : %p\n", get_movies(m, 2));
+
+  //test matrice
+  printf("==========================\n");
+  gsl_matrix* ma=load_matrix(m);
+
+  gsl_matrix_free(ma);
+
 
   // libéré l'espace mémoire de la liste de film
   destroy_movies_list(m);
