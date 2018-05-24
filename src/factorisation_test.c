@@ -52,10 +52,12 @@ void run_test(gsl_matrix *R, int k) {
 }
 
 int main() {
+  rdm_init();
+
   // Data
   gsl_matrix *R1 = gsl_matrix_alloc(3, 4);
   int R1_val[] = {
-    4, 1, 1, 2, 5, 4, 5, 0, 0, 5, 0, 0,
+      4, 1, 1, 2, 5, 4, 5, 0, 0, 5, 0, 0,
   };
   gsl_matrix *R2 = gsl_matrix_alloc(9, 8);
   gsl_matrix *R3 = gsl_matrix_alloc(30, 40);
@@ -69,6 +71,8 @@ int main() {
   printf("-----------------------\n");
   init_rdm(R3);
   run_test(R3, 10);
+
+  rdm_free();
 
   return 0;
 }

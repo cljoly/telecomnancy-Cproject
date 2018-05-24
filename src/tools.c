@@ -1,6 +1,7 @@
 #include "tools.h"
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_math.h>
+#include <gsl/gsl_rng.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -25,20 +26,38 @@ void print_matrix(gsl_matrix *M) {
   printf("]\n");
 }
 
-gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
+// Seed random number generator
+static int seeded = 0;
+static const gsl_rng_type *T;
+static gsl_rng *r;
 
-  // XXX Initialise random number generation only once
-  static int seeded = 0;
+void rdm_init() {
   if (!seeded) {
-    srand(time(NULL));
+    T = gsl_rng_default;
+    r = gsl_rng_alloc(T);
+    gsl_rng_env_setup();
+    seeded = 1;
+  }
+}
+
+void rdm_free() {
+  if (seeded)
+    gsl_rng_free(r);
+}
+
+gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
+  // Vérifier que le générateur de nombres aléatoires a été correctement
+  // initialisé
+  if (!seeded || r == NULL) {
+    fprintf(
+        stderr,
+        "Problème à l’initialisation du générateur de nombres aléatoires\n");
   }
 
   gsl_matrix *random_matrix = gsl_matrix_alloc(nb_row, nb_col);
-  int mark;
   for (int row = 0; row < nb_row; row++) {
     for (int col = 0; col < nb_col; col++) {
-      mark = (rand() % 5) + 1;
-      gsl_matrix_set(random_matrix, row, col, (double)mark);
+      gsl_matrix_set(random_matrix, row, col, gsl_rng_uniform(r));
     }
   }
   return random_matrix;
