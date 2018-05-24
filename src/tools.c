@@ -21,7 +21,10 @@ void print_matrix(gsl_matrix *M) {
         printf(", ");
       printf("\t");
     }
-    printf(" ]\n");
+    printf(" ]");
+    if (i != nb_row - 1)
+      printf(",");
+    printf("\n");
   }
   printf("]\n");
 }
