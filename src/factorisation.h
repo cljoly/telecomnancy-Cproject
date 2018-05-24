@@ -8,7 +8,7 @@
 /* Groupe P, R et Q */
 typedef struct {
   gsl_matrix *R; // Matrix to be factorised
-  gsl_matrix *P; // P*Q = R
+  gsl_matrix *P; // P*Q ≃ R
   gsl_matrix *Q;
 } factorisation_mat;
 

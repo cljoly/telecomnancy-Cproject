@@ -2,8 +2,8 @@
 #include "tools.h"
 #include <assert.h>
 #include <gsl/gsl_blas.h>
-#include <gsl/gsl_matrix.h>
 #include <gsl/gsl_math.h>
+#include <gsl/gsl_matrix.h>
 #include <stdio.h>
 
 typedef struct {
@@ -51,7 +51,6 @@ static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
           double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
 
           f(p_ik, q_kj, ctxt);
-
         }
       }
     }

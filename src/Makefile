@@ -20,3 +20,6 @@ test_prg_console: movie.o stringlist.o movies_list_loader.o console_display.o co
 
 projetcsd: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
+
+clean:
+	rm *.o $(OBJ)
