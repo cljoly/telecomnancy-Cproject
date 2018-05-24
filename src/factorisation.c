@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_matrix.h>
-#include <math.h>
+#include <gsl/gsl_math.h>
 #include <stdio.h>
 
 typedef struct {
@@ -49,7 +49,9 @@ static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
         for (int k = 0; k < ctxt->K; k++) {
           double *p_ik = gsl_matrix_ptr(ctxt->P, i, k);
           double *q_kj = gsl_matrix_ptr(ctxt->Q, k, j);
+
           f(p_ik, q_kj, ctxt);
+
         }
       }
     }
@@ -61,7 +63,7 @@ static void factor_eij_init(double r_ij, factor_context *ctxt) {
 }
 
 static void factor_error_init(double r_ij, factor_context *ctxt) {
-  ctxt->e += pow(r_ij - ctxt->dot_product_QP, 2);
+  ctxt->e += gsl_pow_2(r_ij - ctxt->dot_product_QP);
 }
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
@@ -74,7 +76,7 @@ static void factor_gradiant_update(double *p_ik, double *q_kj,
 
 static void factor_error_update(double *p_ik, double *q_kj,
                                 factor_context *ctxt) {
-  ctxt->e += (ctxt->beta / 2) * pow(*p_ik, 2) + pow(*q_kj, 2);
+  ctxt->e += (ctxt->beta / 2) * gsl_pow_2(*p_ik) + gsl_pow_2(*q_kj);
 }
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations

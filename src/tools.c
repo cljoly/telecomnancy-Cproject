@@ -1,5 +1,6 @@
 #include "tools.h"
 #include <gsl/gsl_matrix.h>
+#include <gsl/gsl_math.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -24,7 +25,6 @@ void print_matrix(gsl_matrix *M) {
   printf("]\n");
 }
 
-
 gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
 
   // XXX Initialise random number generation only once
@@ -42,4 +42,13 @@ gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
     }
   }
   return random_matrix;
+}
+
+int is_nan_in_matrix(gsl_matrix *M) {
+  int i, j;
+  for (i = 0; i < (int)M->size1; i++)
+    for (j = 0; j < (int)M->size2; j++)
+      if (gsl_isnan(gsl_matrix_get(M, i, j)))
+        return 1;
+  return 0;
 }
