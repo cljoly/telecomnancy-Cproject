@@ -15,7 +15,7 @@ void rdm_init();
 /* Libère le générateur de nombres aléatoires, à n’appeler que s’il a été initialisé */
 void rdm_free();
 
-/* Création d’une matrice remplie de nombres aléatoires, dans [1,6]. */
+/* Création d’une matrice remplie de nombres aléatoires, dans [0,1]. */
 gsl_matrix *gen_random_matrix(int nb_row, int nb_col);
 
 /* Renvoie vrai si la matrice passée en arguement contient NaN */
