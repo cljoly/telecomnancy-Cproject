@@ -17,7 +17,8 @@ void init_rdm(gsl_matrix *R) {
   int i, j;
   for (i = 0; i < (int)R->size1; i++) {
     for (j = 0; j < (int)R->size2; j++) {
-      gsl_matrix_set(R, i, j, GSL_MAX((rand() % 10) - 5, 0));
+      double mark = (rand() % 10) - 5;
+      gsl_matrix_set(R, i, j, GSL_MAX(mark, 0));
     }
   }
 }
