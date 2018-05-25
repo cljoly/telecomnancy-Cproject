@@ -7,8 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX(a, b) a > b ? a : b
-
 // Test de la factorisation de matrice
 
 // Remplissage aléatoire de matrice
