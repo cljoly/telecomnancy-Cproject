@@ -41,7 +41,6 @@ static void factor_walker(void (*g)(double r_ij, factor_context *ctxt),
       if (r_ij > 0) {
         gsl_matrix_get_col(ctxt->Q_col_j, ctxt->Q, j);
         gsl_matrix_get_row(ctxt->P_row_i, ctxt->P, i);
-        // ddot est moins précis que dsdot, mais cela devrait suffire
         gsl_blas_ddot(ctxt->Q_col_j, ctxt->P_row_i, &ctxt->dot_product_QP);
 
         g(r_ij, ctxt);
