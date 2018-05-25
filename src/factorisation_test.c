@@ -7,8 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX(a, b) a > b ? a : b
-
 // Test de la factorisation de matrice
 
 // Remplissage aléatoire de matrice
@@ -39,6 +37,10 @@ void run_test(gsl_matrix *R, int k) {
   factorisation_mat *fm = initialize_mat(k, R);
   printf("R\n");
   print_matrix(fm->R);
+  printf("P\n");
+  print_matrix(fm->P);
+  printf("Q\n");
+  print_matrix(fm->Q);
   factor(fm, factorisation_alpha, factorisation_beta);
   printf("P\n");
   print_matrix(fm->P);
@@ -63,15 +65,21 @@ int main() {
   gsl_matrix *R2 = gsl_matrix_alloc(9, 8);
   gsl_matrix *R3 = gsl_matrix_alloc(30, 40);
 
-  init(R1, R1_val);
-  printf("R1\n");
-  run_test(R1, 2);
-  printf("-----------------------\n");
-  init_rdm(R2);
-  run_test(R2, 5);
-  printf("-----------------------\n");
+  /* init(R1, R1_val); */
+  /* printf("R1\n"); */
+  /* run_test(R1, 2); */
+  /* run_test(R1, 3); */
+  /* printf("-----------------------\n"); */
+  /* init_rdm(R2); */
+  /* run_test(R2, 3); */
+  /* run_test(R2, 5); */
+  /* run_test(R2, 7); */
+  /* printf("-----------------------\n"); */
   init_rdm(R3);
-  run_test(R3, 10);
+  run_test(R3, 5);
+  /* run_test(R3, 10); */
+  /* run_test(R3, 20); */
+  /* run_test(R3, 30); */
 
   rdm_free();
 
