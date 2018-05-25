@@ -1,7 +1,3 @@
-// XXX
-#define _GNU_SOURCE
-#include <fenv.h>
-
 #include "factorisation.h"
 #include "tools.h"
 #include <assert.h>
@@ -9,8 +5,6 @@
 #include <gsl/gsl_math.h>
 #include <gsl/gsl_matrix.h>
 #include <stdio.h>
-
-
 
 typedef struct {
   gsl_matrix *R;
@@ -72,28 +66,10 @@ static void factor_error_init(double r_ij, factor_context *ctxt) {
 
 static void factor_gradiant_update(double *p_ik, double *q_kj,
                                    factor_context *ctxt) {
-  double p, q;
-  p = *p_ik;
-  q = *q_kj;
   *p_ik =
-      *p_ik
-    + ctxt->alpha * (
-                     2 * ctxt->e_ij
-                     * (*q_kj)
-                     - ctxt->beta * (*p_ik));
-
-  /* if (!gsl_finite(*q_kj)) */
-    /* printf("error"); */
-
+      *p_ik + ctxt->alpha * (2 * ctxt->e_ij * (*q_kj) - ctxt->beta * (*p_ik));
   *q_kj =
-      *q_kj +
-    ctxt->alpha * (
-                   2 * ctxt->e_ij * (*p_ik)
-                   - ctxt->beta * (*q_kj));
-
-  /* if (!gsl_finite(*q_kj)) */
-    /* printf("error"); */
-
+      *q_kj + ctxt->alpha * (2 * ctxt->e_ij * (*p_ik) - ctxt->beta * (*q_kj));
 }
 
 static void factor_error_update(double *p_ik, double *q_kj,
@@ -103,8 +79,6 @@ static void factor_error_update(double *p_ik, double *q_kj,
 
 // Basé sur http://bit.ly/2qbhehb, avec les mêmes notations
 void factor(factorisation_mat *fm, double alpha, double beta) {
-  /* feenableexcept(FE_ALL_EXCEPT & ~FE_INEXACT); */
-
   int steps = 5000;
   double epsilon = 0.001;
 

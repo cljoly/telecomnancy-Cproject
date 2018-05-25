@@ -1,6 +1,6 @@
 CC=gcc
 DEPS = movie.h stringlist.h movies_list_loader.h tools.h factorisation.h
-CFLAGS=-g -Wall `gsl-config --cflags --libs` -lm -std=c99
+CFLAGS=-g -Wall `gsl-config --cflags --libs`
 OBJ = factorisation.o factorisation_test.o tools.o
 
 %.o: %.c $(DEPS)
