@@ -112,7 +112,10 @@ void factor(factorisation_mat *fm, double alpha, double beta) {
     // Mise à jour de l’erreur
     ctxt.e = 0;
     factor_walker(factor_error_init, factor_error_update, &ctxt);
-    if (ctxt.e < epsilon)
+
+    // Arrêt si on est suffisament semblable à la matrice originale ou s’il y a
+    // des NaN
+    if (ctxt.e < epsilon || gsl_isnan(ctxt.e))
       break;
   }
 
