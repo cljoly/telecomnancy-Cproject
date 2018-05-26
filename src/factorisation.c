@@ -20,6 +20,13 @@ typedef struct {
   double e_ij; // Erreur sur le coefficient i,j
 } factor_context;
 
+// Libère le contenu de la structure ctxt, sans libérer R, P et Q (résultats
+// renvoyés)
+void free_factor_context(factor_context *ctxt) {
+  gsl_vector_free(ctxt->Q_col_j);
+  gsl_vector_free(ctxt->P_row_i);
+}
+
 factorisation_mat *initialize_mat(int k, gsl_matrix *R) {
   factorisation_mat *fm =
       (factorisation_mat *)malloc(sizeof(factorisation_mat));
@@ -108,6 +115,8 @@ void factor(factorisation_mat *fm, double alpha, double beta) {
     if (ctxt.e < epsilon)
       break;
   }
+
+  free_factor_context(&ctxt);
 }
 
 double factorisation_beta = 0.0002;
