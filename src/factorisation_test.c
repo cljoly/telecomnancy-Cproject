@@ -52,14 +52,14 @@ void run_test(gsl_matrix *R, int k) {
     printf("R\n");
     print_matrix(fm->R);
   }
-  if (VERBOSE >= 2) {
+  if (VERBOSE >= 3) {
     printf("P\n");
     print_matrix(fm->P);
     printf("Q\n");
     print_matrix(fm->Q);
   }
   factor(fm, factorisation_alpha, factorisation_beta);
-  if (VERBOSE) {
+  if (VERBOSE >= 2) {
     printf("P =");
     print_matrix(fm->P);
     printf("Q =");
@@ -94,7 +94,6 @@ int main() {
   gsl_matrix *R5 = gsl_matrix_alloc(100, 100);
 
   init(R1, R1_val);
-  printf("R1\n");
   run_test(R1, 2);
   run_test(R1, 3);
   printf("-----------------------\n");
@@ -126,9 +125,10 @@ int main() {
   }
   printf("-----------------------\n");
   init_rdm(R5);
-  run_test(R5, 20);
+  if (NAN_ERROR)
+    run_test(R5, 20);
+  run_test(R5, 30);
   if (LONG_TEST) {
-    run_test(R5, 30);
     run_test(R5, 40);
     run_test(R5, 50);
     run_test(R5, 60);
