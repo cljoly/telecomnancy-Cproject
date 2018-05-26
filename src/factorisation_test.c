@@ -60,16 +60,43 @@ int main() {
   };
   gsl_matrix *R2 = gsl_matrix_alloc(9, 8);
   gsl_matrix *R3 = gsl_matrix_alloc(30, 40);
+  gsl_matrix *R4 = gsl_matrix_alloc(70, 80);
+  gsl_matrix *R5 = gsl_matrix_alloc(100, 100);
 
   init(R1, R1_val);
   printf("R1\n");
   run_test(R1, 2);
+  run_test(R1, 3);
   printf("-----------------------\n");
   init_rdm(R2);
+  run_test(R2, 3);
   run_test(R2, 5);
+  run_test(R2, 7);
   printf("-----------------------\n");
   init_rdm(R3);
+  /* run_test(R3, 5); */
   run_test(R3, 10);
+  run_test(R3, 20);
+  run_test(R3, 30);
+  printf("-----------------------\n");
+  init_rdm(R4);
+  /* run_test(R4, 5); */
+  /* run_test(R4, 10); */
+  run_test(R4, 20);
+  run_test(R4, 30);
+  run_test(R4, 40);
+  run_test(R4, 50);
+  run_test(R4, 60);
+  printf("-----------------------\n");
+  init_rdm(R5);
+  run_test(R5, 20);
+  run_test(R5, 30);
+  run_test(R5, 40);
+  run_test(R5, 50);
+  run_test(R5, 60);
+  run_test(R5, 70);
+  run_test(R5, 80);
+  run_test(R5, 90);
 
   rdm_free();
 
