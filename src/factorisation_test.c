@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define VERBOSE 0
+
 // Test de la factorisation de matrice
 
 // Remplissage aléatoire de matrice
@@ -35,19 +37,32 @@ void run_test(gsl_matrix *R, int k) {
   printf("Factorizing a random matrix (k=%i)\n", k);
 
   factorisation_mat *fm = initialize_mat(k, R);
-  printf("R\n");
-  print_matrix(fm->R);
+  if (VERBOSE) {
+    printf("R\n");
+    print_matrix(fm->R);
+  }
+  if (VERBOSE >= 2) {
+    printf("P\n");
+    print_matrix(fm->P);
+    printf("Q\n");
+    print_matrix(fm->Q);
+  }
   factor(fm, factorisation_alpha, factorisation_beta);
-  printf("P\n");
-  print_matrix(fm->P);
-  printf("Q\n");
-  print_matrix(fm->Q);
+  if (VERBOSE) {
+    printf("P =");
+    print_matrix(fm->P);
+    printf("Q =");
+    print_matrix(fm->Q);
+  }
 
-  // Print product, supposed to be similar to R
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
   gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
+  if (VERBOSE) {
   printf("R appprox\n");
   print_matrix(R_approx);
+  }
+  if (is_nan_in_matrix(R))
+    printf("Matrice résultat invalide (NaN)\n");
 }
 
 int main() {
