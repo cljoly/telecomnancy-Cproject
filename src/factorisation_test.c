@@ -34,7 +34,8 @@ void init(gsl_matrix *R, int R_val[]) {
 }
 
 void run_test(gsl_matrix *R, int k) {
-  printf("Factorizing a random matrix (k=%i)\n", k);
+  printf("Factorisation d’une matrice (k=%i, size1=%i, size2=%i)\n", k,
+         (int)R->size1, (int)R->size2);
 
   factorisation_mat *fm = initialize_mat(k, R);
   if (VERBOSE) {
@@ -58,8 +59,8 @@ void run_test(gsl_matrix *R, int k) {
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
   gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
   if (VERBOSE) {
-  printf("R appprox\n");
-  print_matrix(R_approx);
+    printf("R appprox\n");
+    print_matrix(R_approx);
   }
   if (is_nan_in_matrix(R))
     printf("Matrice résultat invalide (NaN)\n");
