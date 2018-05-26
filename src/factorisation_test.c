@@ -6,6 +6,7 @@
 #include <gsl/gsl_matrix.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define VERBOSE 0
 
@@ -37,6 +38,13 @@ void run_test(gsl_matrix *R, int k) {
   printf("Factorisation d’une matrice (k=%i, size1=%i, size2=%i)\n", k,
          (int)R->size1, (int)R->size2);
 
+  // Time mesured with help from
+  // https://stackoverflow.com/questions/7215764/how-to-measure-the-actual-execution-time-of-a-c-program-under-linux#7216613
+  clock_t start, end;
+  double cpu_time_used;
+
+  start = clock();
+
   factorisation_mat *fm = initialize_mat(k, R);
   if (VERBOSE) {
     printf("R\n");
@@ -56,6 +64,9 @@ void run_test(gsl_matrix *R, int k) {
     print_matrix(fm->Q);
   }
 
+  end = clock();
+  cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
   gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
   if (VERBOSE) {
@@ -64,6 +75,7 @@ void run_test(gsl_matrix *R, int k) {
   }
   if (is_nan_in_matrix(R))
     printf("Matrice résultat invalide (NaN)\n");
+  printf("Temps CPU : %f seconde(s)\n", cpu_time_used);
 }
 
 int main() {
