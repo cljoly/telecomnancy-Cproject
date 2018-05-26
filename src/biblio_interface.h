@@ -7,14 +7,43 @@ typedef struct
 {
 	GtkBuilder *builder;
 	gpointer user_data;
+	char nom;
 } SGlobalData;
 
+typedef struct
+{
+	GtkBuilder *builder;
+    const char *nom;
+    const char *prenom;
+    const char *identifiant;
+    const char *mail;
+    gboolean sexe;
+    const char *mdp;
+    const int robot;
+    gpointer local_data;
+} SLocalData;
+
 void page_suivante(gpointer user_data, int page);
-
 void vers_page_creation(GtkWidget* widget, gpointer user_data);
-
 void vers_page_principale(GtkWidget* widget, gpointer user_data);
-
 void vers_page_accueil(GtkWidget* widget, gpointer user_data);
+void vers_page_biblio(GtkWidget* widget, gpointer user_data);
+void vers_page_film(GtkWidget* widget, gpointer user_data);
+void vers_page_info(GtkWidget* widget, gpointer user_data);
+void vote_nul(gpointer user_data, char *nom);
+void vote_bien(gpointer user_data, char *nom);
+void note1(GtkWidget *widget, gpointer user_data);
+void note2(GtkWidget *widget, gpointer user_data);
+void note3(GtkWidget *widget, gpointer user_data);
+void note4(GtkWidget *widget, gpointer user_data);
+void note5(GtkWidget *widget, gpointer user_data);
+void chargement_principale(GtkWidget* widget, gpointer user_data);
+//void chargement_biblio(GtkWidget* widget, gpointer user_data);
+void chargement_fiche(GtkWidget* widget, gpointer user_data);
+void changer_image(gpointer user_data);
+void test2(GtkWidget* widget, gpointer user_data);
+void test(GtkWidget* widget, gpointer user_data);
+void *nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data);
+void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data);
 
 #endif //PROJECT_INTERFACE_H

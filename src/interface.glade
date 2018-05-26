@@ -30,7 +30,7 @@
   <object class="GtkImage" id="op1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op10">
     <property name="visible">True</property>
@@ -40,12 +40,12 @@
   <object class="GtkImage" id="op11">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op12">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op13">
     <property name="visible">True</property>
@@ -65,7 +65,7 @@
   <object class="GtkImage" id="op2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op3">
     <property name="visible">True</property>
@@ -85,12 +85,12 @@
   <object class="GtkImage" id="op6">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op7">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">ressources/titanic.jpg</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkImage" id="op8">
     <property name="visible">True</property>
@@ -684,6 +684,8 @@ un robot ?</property>
                         <property name="relief">none</property>
                         <property name="use_underline">True</property>
                         <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="chargement_biblio" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_biblio" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -701,8 +703,6 @@ un robot ?</property>
                         <property name="receives_default">True</property>
                         <property name="image">op2</property>
                         <property name="relief">none</property>
-                        <signal name="clicked" handler="chargement_historique" swapped="no"/>
-                        <signal name="clicked" handler="vers_page_historique" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -786,6 +786,7 @@ un robot ?</property>
                 <property name="height_request">80</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="focus_on_click">False</property>
                 <property name="receives_default">True</property>
                 <signal name="clicked" handler="chargement_fiche" swapped="no"/>
                 <signal name="clicked" handler="vers_page_info" swapped="no"/>
@@ -2160,6 +2161,7 @@ un robot ?</property>
                 <property name="height_request">80</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="expanded">True</property>
                 <child>
                   <object class="GtkBox">
                     <property name="visible">True</property>
@@ -2274,7 +2276,7 @@ un robot ?</property>
                 <property name="width_request">1136</property>
                 <property name="height_request">222</property>
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
+                <property name="can_focus">False</property>
                 <property name="focus_on_click">False</property>
                 <property name="receives_default">True</property>
                 <property name="image">princ2</property>
@@ -2328,6 +2330,8 @@ un robot ?</property>
                         <property name="relief">none</property>
                         <property name="use_underline">True</property>
                         <property name="always_show_image">True</property>
+                        <signal name="clicked" handler="chargement_biblio" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_biblio" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -2345,8 +2349,6 @@ un robot ?</property>
                         <property name="receives_default">True</property>
                         <property name="image">op12</property>
                         <property name="relief">none</property>
-                        <signal name="clicked" handler="chargement_historique" swapped="no"/>
-                        <signal name="clicked" handler="vers_page_historique" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -2441,12 +2443,12 @@ un robot ?</property>
               </packing>
             </child>
             <child>
-              <object class="GtkImage">
+              <object class="GtkImage" id="im_fiche">
                 <property name="width_request">284</property>
                 <property name="height_request">410</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">ressources/titanic.jpg</property>
+                <property name="stock">gtk-about</property>
               </object>
               <packing>
                 <property name="x">500</property>
