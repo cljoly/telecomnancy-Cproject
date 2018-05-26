@@ -9,6 +9,8 @@
 #include <time.h>
 
 #define VERBOSE 0
+#define NAN_ERROR 0
+#define LONG_TEST 0
 
 // Test de la factorisation de matrice
 
@@ -65,7 +67,7 @@ void run_test(gsl_matrix *R, int k) {
   }
 
   end = clock();
-  cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+  cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
   gsl_matrix *R_approx = gsl_matrix_alloc(R->size1, R->size2);
   gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1, fm->P, fm->Q, 0, R_approx);
@@ -73,7 +75,7 @@ void run_test(gsl_matrix *R, int k) {
     printf("R appprox\n");
     print_matrix(R_approx);
   }
-  if (is_nan_in_matrix(R))
+  if (is_nan_in_matrix(R_approx))
     printf("Matrice résultat invalide (NaN)\n");
   printf("Temps CPU : %f seconde(s)\n", cpu_time_used);
 }
@@ -102,29 +104,38 @@ int main() {
   run_test(R2, 7);
   printf("-----------------------\n");
   init_rdm(R3);
-  /* run_test(R3, 5); */
+  if (NAN_ERROR)
+    run_test(R3, 5);
   run_test(R3, 10);
-  run_test(R3, 20);
-  run_test(R3, 30);
+  if (LONG_TEST) {
+    run_test(R3, 20);
+    run_test(R3, 30);
+  }
   printf("-----------------------\n");
   init_rdm(R4);
-  /* run_test(R4, 5); */
-  /* run_test(R4, 10); */
+  if (NAN_ERROR) {
+    run_test(R4, 5);
+    run_test(R4, 10);
+  }
   run_test(R4, 20);
-  run_test(R4, 30);
-  run_test(R4, 40);
-  run_test(R4, 50);
-  run_test(R4, 60);
+  if (LONG_TEST) {
+    run_test(R4, 30);
+    run_test(R4, 40);
+    run_test(R4, 50);
+    run_test(R4, 60);
+  }
   printf("-----------------------\n");
   init_rdm(R5);
   run_test(R5, 20);
-  run_test(R5, 30);
-  run_test(R5, 40);
-  run_test(R5, 50);
-  run_test(R5, 60);
-  run_test(R5, 70);
-  run_test(R5, 80);
-  run_test(R5, 90);
+  if (LONG_TEST) {
+    run_test(R5, 30);
+    run_test(R5, 40);
+    run_test(R5, 50);
+    run_test(R5, 60);
+    run_test(R5, 70);
+    run_test(R5, 80);
+    run_test(R5, 90);
+  }
 
   rdm_free();
 
