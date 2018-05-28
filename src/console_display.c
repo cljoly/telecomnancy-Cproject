@@ -1,6 +1,7 @@
 #include "console_display.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "recommendation_list.h"
 
 void print_movie_details(movie *m) {
   printf("\n");
@@ -39,7 +40,6 @@ void print_movie_details(movie *m) {
 
   printf("Synopsis : %s\n", m->synopsis);
   printf("\n");
-  printf("Veuillez saisir votre note de 1 à 5 (0 pour annuler): \n");
 }
 
 void print_movies_list(movies *m) {
@@ -57,7 +57,6 @@ void print_movies_list(movies *m) {
     i++;
   }
   printf("\n");
-  printf("Veuillez saisir le numéro du film que vous souhaitez noter : \n");
 }
 
 void print_select_user() {
@@ -76,7 +75,23 @@ void print_menu(char *username) {
          username);
   printf("\n");
   printf("1 Noter un film\n");
-  printf("2 Consulter mes recommandations\n");
+  printf("2 Consulter mes recommandations (sauvegarde automatique)\n");
   printf("3 Sauvegarder les modifications\n");
   printf("4 Quitter\n");
+}
+
+void print_recommendations(movies* m){
+  printf("\n");
+  printf("==================================\n");
+  printf("\n");
+  int i = 0;
+  int id=get_id(m->recommendations,i);
+  while (i < NB_RECO && id!=-1) {
+    printf("%d %s\n", i, m->tab[id]->title);
+    i++;
+    id=get_id(m->recommendations, i);
+  }
+  printf("\n");
+  printf("Veuillez saisir le numéro du film dont vous voulez connaitre les détails(-1 retour au menu) : \n");
+
 }

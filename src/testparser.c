@@ -23,6 +23,7 @@ int main() {
 
   // charge la liste de film
   movies *m = load_movies(elem, MOVIE_NB);
+  m->user="test1";
 
   // tests
   printf("id 0 : %d\n", m->tab[0]->id);
@@ -50,7 +51,7 @@ int main() {
   //test matrice
   printf("==========================\n");
   gsl_matrix* ma=load_matrix(m);
-
+  print_matrix(ma);
   gsl_matrix_free(ma);
 
 

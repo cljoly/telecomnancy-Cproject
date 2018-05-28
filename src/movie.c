@@ -19,6 +19,7 @@ movies *create_movies_list(int N) {
   movies *m = malloc(sizeof(movies));
   m->tab = malloc(sizeof(movie *) * N);
   m->max_length = N;
+  m->recommendations=NULL;
   return m;
 }
 
@@ -28,6 +29,7 @@ void destroy_movies_list(movies *m) {
     for (i = 0; i < m->max_length; i++) {
       destroy_movie(m->tab[i]);
     }
+    destroy_recommendations_list(m->recommendations);
     free(m->tab);
     free(m);
   }

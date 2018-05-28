@@ -25,6 +25,11 @@ void print_select_user();
  */
 void print_menu(char* username);
 
+/*
+ * affichage liste de recommandation
+ */
+void print_recommendations(movies* m);
+
 
 
 #endif //PROJECT_CONSOLE_DISPLAY_H

@@ -22,4 +22,14 @@ void movies_choice(movies* movies_list);
  */
 void movie_grade(movies* movies_list, movie* m);
 
+/*
+ * gestion des recommandations
+ */
+void recommendation_menu(movies* movies_list);
+
+/*
+ * gestion details d'un film recommandé
+ */
+void recommendation_details(movies* movies_list, int id);
+
 #endif //PROJECT_CONSOLE_CONTROLER_H

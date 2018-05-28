@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <wjelement.h>
 
-#define MOVIE_NB 2
+#define MOVIE_NB 100
 
 int main() {
 

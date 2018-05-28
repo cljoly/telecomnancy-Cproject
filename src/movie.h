@@ -3,6 +3,7 @@
 
 #define USERNAME_LENGTH 100
 #include "stringlist.h"
+#include "recommendation_list.h"
 
 /*
  * enumération permettant de définir un type de film
@@ -36,6 +37,7 @@ typedef struct movies{
     int max_length; //longueur de la liste
     char* user; //nom d'utilisateur
     movie** tab; //tableau contenant la liste de film
+    recommendations_list recommendations; // liste d'indice des films recommandés
 }movies;
 
 

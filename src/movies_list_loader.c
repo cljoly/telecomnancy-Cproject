@@ -128,6 +128,33 @@ void save_grade(movies* movies_list) {
         WJEInt64(doc, path1, WJE_SET, movies_list->tab[i]->grade);
         strcpy(path1, path);
     }
+    //sauvegarde des recommandations
+    if(movies_list->recommendations!=NULL) {
+        WJEArray(doc, "recommendations", WJE_SET);
+        strcpy(path_b, "recommendations[");
+        movie *m;
+        for (i = 0; i < NB_RECO; i++) {
+            m = movies_list->tab[get_id(movies_list->recommendations, i)];
+            strcpy(path, path_b);
+            strcat(path, "$]");
+            // création de l'objet film
+            WJEObject(doc, path, WJE_NEW);
+            strcpy(path1, path_b);
+            // affectation de l'id
+            strcat(path1, "-1].id");
+            WJEInt64(doc, path1, WJE_SET, m->id);
+            strcpy(path1, path_b);
+            // affectation de l'id
+            strcat(path1, "-1].title");
+            WJEString(doc, path1, WJE_SET, m->title);
+            strcpy(path1, path_b);
+            // affectation de l'id
+            strcat(path1, "-1].grade");
+            WJEDouble(doc, path1, WJE_SET, get_grade_reco(movies_list->recommendations, i));
+            strcpy(path1, path_b);
+        }
+    }
+
     //sauvegarde dans le fichier json
     char file_name[USERNAME_LENGTH + 11];
     strcpy(file_name, "users/");
@@ -203,22 +230,37 @@ gsl_matrix* load_matrix(movies* movies_list){
     int c=0;
     if (dir == NULL)
         exit(1);
+    // nom du fichier de l'utilisateur
+    char file_name[USERNAME_LENGTH + 5];
+    strcpy(file_name, movies_list->user);
+    strcat(file_name, ".json");
     //parcours du repertoire des utilisateurs pour connaitre le nombre d'utilisateurs
     while ((fr = readdir(dir)) != NULL) {
-        //printf("%ld -> %s\n", telldir(rep), fichierLu->d_name);
-        //int isDir(struct dirent* ent) ;
-        if(!isDir(fr))
+        if(!isDir(fr)&&strcmp(fr->d_name, file_name)) {
             c++;
-
+        }
     }
+    c++;
+    printf("%d\n",c);
     gsl_matrix* m= gsl_matrix_alloc(c, movies_list->max_length);
 
     //retour au début du répertoire
     rewinddir(dir);
-    c=0;
+    // chargement de la premier ligne de la matrice avec les notes de l'utilisateur courant
+    int k=0;
+    int g=0;
+    for(k=0; k<movies_list->max_length; k++){
+        g=movies_list->tab[k]->grade;
+        if (!(g == 1 || g == 2 || g == 3 || g == 4 || g == 5))
+            g=0;
+        //affectation de la note dans la matrice
+        gsl_matrix_set(m, 0, k, g);
+    }
+    // c commance à 1 car la ligne 0 correspond à l'utilisateur qui utilise l'application
+    c=1;
     //parcours des fichiers utilisateurs
     while ((fr = readdir(dir)) != NULL) {
-        if(!isDir(fr)){
+        if(!isDir(fr)&&strcmp(fr->d_name, file_name)){
             char file_name[USERNAME_LENGTH + 11];
             strcpy(file_name, "users/");
             strcat(file_name, fr->d_name);
@@ -255,7 +297,10 @@ gsl_matrix* load_matrix(movies* movies_list){
 
     if (closedir(dir) == -1)
         exit(-1);
-    print_matrix(m);
     return m;
 }
+
+//recomandation complémentaire
+//utilisateurs
+//sauvegarde recommandation
 

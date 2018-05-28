@@ -3,17 +3,17 @@
 		{
 			"id":0,
 			"title":"Fast & Furious 7",
-			"grade":4
+			"grade":0
 		},
 		{
 			"id":1,
 			"title":"The Walking Dead",
-			"grade":0
+			"grade":4
 		},
 		{
 			"id":2,
 			"title":"Spectre",
-			"grade":0
+			"grade":5
 		},
 		{
 			"id":3,
@@ -23,7 +23,7 @@
 		{
 			"id":4,
 			"title":"Game of Thrones",
-			"grade":0
+			"grade":2
 		},
 		{
 			"id":5,
@@ -73,12 +73,12 @@
 		{
 			"id":14,
 			"title":"Vikings",
-			"grade":0
+			"grade":3
 		},
 		{
 			"id":15,
 			"title":"Mad Max: Fury Road",
-			"grade":0
+			"grade":2
 		},
 		{
 			"id":16,
@@ -88,7 +88,7 @@
 		{
 			"id":17,
 			"title":"Bloodline",
-			"grade":0
+			"grade":1
 		},
 		{
 			"id":18,
@@ -398,12 +398,12 @@
 		{
 			"id":79,
 			"title":"Fantastic Four",
-			"grade":0
+			"grade":1
 		},
 		{
 			"id":80,
 			"title":"Poltergeist",
-			"grade":0
+			"grade":4
 		},
 		{
 			"id":81,
@@ -488,69 +488,69 @@
 		{
 			"id":97,
 			"title":"Mission Impossible 5",
-			"grade":0
+			"grade":4
 		},
 		{
 			"id":98,
 			"title":"Sherlock",
-			"grade":0
+			"grade":4
 		},
 		{
 			"id":99,
 			"title":"Justified",
-			"grade":0
+			"grade":3
 		}
 	],
 	"recommendations":[
 		{
-			"id":12,
-			"title":"It Follows",
-			"grade":4.840226e+00
+			"id":0,
+			"title":"Fast & Furious 7",
+			"grade":0
 		},
 		{
-			"id":2,
-			"title":"Spectre",
-			"grade":4.823346e+00
+			"id":96,
+			"title":"Deadpool",
+			"grade":0
 		},
 		{
-			"id":44,
-			"title":"Unbreakable Kimmy Schmidt",
-			"grade":4.592586e+00
+			"id":95,
+			"title":"Dope",
+			"grade":0
 		},
 		{
-			"id":1,
-			"title":"The Walking Dead",
-			"grade":4.364991e+00
+			"id":94,
+			"title":"Night Call",
+			"grade":0
 		},
 		{
-			"id":97,
-			"title":"Mission Impossible 5",
-			"grade":4.152806e+00
+			"id":93,
+			"title":"Revenge",
+			"grade":0
 		},
 		{
-			"id":80,
-			"title":"Poltergeist",
-			"grade":3.865365e+00
+			"id":92,
+			"title":"Wild",
+			"grade":0
 		},
 		{
-			"id":98,
-			"title":"Sherlock",
-			"grade":3.678966e+00
+			"id":91,
+			"title":"The Royals",
+			"grade":0
 		},
 		{
-			"id":5,
-			"title":"Avengers: L'ère d'Ultron",
-			"grade":3.588192e+00
+			"id":90,
+			"title":"True Detective",
+			"grade":0
 		},
 		{
-			"id":11,
-			"title":"The Flash",
-			"grade":3.125443e+00
+			"id":89,
+			"title":"A Most Violent Year",
+			"grade":0
 		},
 		{
-			"id":66,
-			"title":"The Following",
-			"grade":3.072661e+00
+			"id":88,
+			"title":"Daredevil",
+			"grade":0
 		}
 	]
 }

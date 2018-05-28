@@ -1,3 +1,6 @@
+#ifndef PROJECT_FACTORISATION_H
+#define PROJECT_FACTORISATION_H
+
 #include <assert.h>
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_matrix.h>
@@ -31,3 +34,6 @@ void factor(factorisation_mat *fm, double alpha, double beta);
 
 double factorisation_beta;
 double factorisation_alpha;
+
+#endif //PROJECT_FACTORISATION_H
+
