@@ -9,8 +9,7 @@
       "actors": ["Vin Diesel", "Paul Walker", "Dwayne Johnson"],
       "duration": 137,
       "type": "Movie",
-      "synopsis": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.",
-      "grades": []
+      "synopsis": "Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother."
     },
 
     {
@@ -22,8 +21,7 @@
       "actors": ["Andrew Lincoln", "Jon Bernthal", "Sarah Wayne Callies"],
       "duration": 44,
       "type": "Serie",
-      "synopsis": "Sheriff's Deputy Rick Grimes leads a group of survivors in a world overrun by zombies.",
-      "grades": []
+      "synopsis": "Sheriff's Deputy Rick Grimes leads a group of survivors in a world overrun by zombies."
     },
 
     {
@@ -33,10 +31,8 @@
       "director": "Sam Mendes",
       "genres": ["Action", "Adventure" , "Thriller"],
       "actors": ["Daniel Craig", "Christoph Waltz", "Ralph Fiennes"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE. ",
-      "grades": []
+      "synopsis": "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE. "
     },
     
     {
@@ -48,8 +44,7 @@
       "actors": ["Lily James", "Cate Blanchett", "Richard Madden "],
       "duration": 105,
       "type": "Movie",
-      "synopsis": "When her father unexpectedly passes away, young Ella finds herself at the mercy of her cruel stepmother and her daughters. Never one to give up hope, Ella's fortunes begin to change after meeting a dashing stranger.",
-      "grades": []
+      "synopsis": "When her father unexpectedly passes away, young Ella finds herself at the mercy of her cruel stepmother and her daughters. Never one to give up hope, Ella's fortunes begin to change after meeting a dashing stranger."
     },
 
     {
@@ -60,22 +55,20 @@
       "genres": ["Adventure","Drama" , "Fantasy"],
       "actors": ["Peter Dinklage", "Lena Headey", "Kit Harington"],
       "duration": 55,
-      "type": "TV Series",
-      "synopsis": "Several noble families fight for control of the mythical land of Westeros. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Several noble families fight for control of the mythical land of Westeros. "
     },
     
     {
       "id": 5,
-      "title": " Avengers: L'ère d'Ultron",
+      "title": "Avengers: L'ère d'Ultron",
       "year": 2015,
       "director": "Joss Whedon ",
       "genres": ["Action", "Adventure" , "Sci-Fi" , "Thriller"],
       "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo "],
       "duration": 142,
       "type": "Movie",
-      "synopsis": "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and it is up to the Avengers to stop the villainous Ultron from enacting his terrible plans. ",
-      "grades": []
+      "synopsis": "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and it is up to the Avengers to stop the villainous Ultron from enacting his terrible plans. "
     },
 
     {
@@ -87,8 +80,7 @@
       "actors": ["Shailene Woodley", "Ansel Elgort", "Theo James"],
       "duration": 119,
       "type": "Movie",
-      "synopsis": "Beatrice Prior must confront her inner demons and continue her fight against a powerful alliance which threatens to tear her society apart with the help from others on her side. ",
-      "grades": []
+      "synopsis": "Beatrice Prior must confront her inner demons and continue her fight against a powerful alliance which threatens to tear her society apart with the help from others on her side. "
     },
 
     {
@@ -100,21 +92,19 @@
       "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
       "duration": 169,
       "type": "Movie",
-      "synopsis": "A team of explorers travel through a wormhole in an attempt to ensure humanity's survival.",
-      "grades": []
+      "synopsis": "A team of explorers travel through a wormhole in an attempt to ensure humanity's survival."
     },
     
     {
       "id": 8,
-      "title": ,
+      "title": "Home",
       "year": 2015,
       "director": "Tim Johnson ",
       "genres": ["Animation", "Adventure" , "Comedy" , "Family" , "Fantasy" , "Sci-Fi"],
       "actors": ["Jim Parsons", "Rihanna", "Steve Martin"],
       "duration": 94,
       "type": "Movie",
-      "synopsis": "Oh, an alien on the run from his own people, lands on Earth and makes friends with the adventurous Tip, who is on a quest of her own. ",
-      "grades": []
+      "synopsis": "Oh, an alien on the run from his own people, lands on Earth and makes friends with the adventurous Tip, who is on a quest of her own. "
     },
     
     {
@@ -126,8 +116,7 @@
       "actors": ["Will Ferrell", "Kevin Hart", "Alison Brie"],
       "duration": 100,
       "type": "Movie",
-      "synopsis": "When millionaire James King is jailed for fraud and bound for San Quentin, he turns to Darnell Lewis to prep him to go behind bars. ",
-      "grades": []
+      "synopsis": "When millionaire James King is jailed for fraud and bound for San Quentin, he turns to Darnell Lewis to prep him to go behind bars. "
     },
     
     {
@@ -137,10 +126,8 @@
       "director": "Zack Snyder",
       "genres": ["Action" , "Adventure" ," Fantasy" , "Sci-Fi"],
       "actors": ["Ben Affleck", "Henry Cavill", "Amy Adams"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "",
-      "grades": []
+      "synopsis": ""
     },
 
     {
@@ -151,9 +138,8 @@
       "genres": ["Action" , "Adventure" , "Drama" , "Fantasy" ,"Sci-Fi"],
       "actors": ["Grant Gustin", "Candice Patton", "Danielle Panabaker"],
       "duration": 43,
-      "type": "TV Series",
-      "synopsis": "Barry Allen wakes up 9 months after he was struck by lightning and discovers that the bolt gave him the power of super speed. With his new team and powers, Barry becomes "The Flash" and fights crime in Central City. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Barry Allen wakes up 9 months after he was struck by lightning and discovers that the bolt gave him the power of super speed. With his new team and powers, Barry becomes \"The Flash\" and fights crime in Central City. "
     },
 
     {
@@ -165,8 +151,7 @@
       "actors": ["Maika Monroe", "Keir Gilchrist", "Olivia Luccardi"],
       "duration": 100,
       "type": "Movie",
-      "synopsis": "A young woman is followed by an unknown supernatural force after getting involved in a sexual encounter. ",
-      "grades": []
+      "synopsis": "A young woman is followed by an unknown supernatural force after getting involved in a sexual encounter. "
     },
     
     {
@@ -177,9 +162,8 @@
       "genres": ["Action" , "Adventure" , "Crime" , "Drama" , "Mystery" , "Sci-Fi"],
       "actors": ["Stephen Amell", "Katie Cassidy", "David Ramsey"],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow. "
     },
     
     {
@@ -190,9 +174,8 @@
       "genres": ["Action" , "Drama", "History" , "War"],
       "actors": ["Travis Fimmel", "Clive Standen", "Gustaf Skarsgård"],
       "duration": 44,
-      "type": "TV Series",
-      "synopsis": "The adventures of Ragnar Lothbrok: the greatest hero of his age. The series tells the saga of Ragnar's... ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The adventures of Ragnar Lothbrok: the greatest hero of his age. The series tells the saga of Ragnar's... "
     },
 
     {
@@ -202,10 +185,8 @@
       "director": "George Miller",
       "genres": ["Action" , "Adventure" , "Thriller"],
       "actors": ["Tom Hardy", "Charlize Theron", "Nicholas Hoult"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "In a post-apocalyptic world, in which people fight to the death, Max teams up with a mysterious woman, Furiousa, to try and survive. ",
-      "grades": []
+      "synopsis": "In a post-apocalyptic world, in which people fight to the death, Max teams up with a mysterious woman, Furiousa, to try and survive. "
     },
 
     {
@@ -216,9 +197,8 @@
       "genres": ["Drama" , "Horror"],
       "actors": ["Cliff Curtis", "Alycia Debnam Carey", "Kim Dickens"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "What did the world look like as it was transforming into the horrifying apocalypse depicted in "The Walking Dead"? This spin-off set in Los Angeles, following new characters as they face the beginning of the end of the world, will answer that question. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "What did the world look like as it was transforming into the horrifying apocalypse depicted in \"The Walking Dead\"? This spin-off set in Los Angeles, following new characters as they face the beginning of the end of the world, will answer that question. "
     },
 
     {
@@ -229,9 +209,8 @@
       "genres": ["Drama" , "Thriller"],
       "actors": ["Norbert Leo Butz", "Kyle Chandler", "Jamie McShane"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "A family of adult siblings find that their past secrets and scars are revealed when their black sheep of a brother returns home. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A family of adult siblings find that their past secrets and scars are revealed when their black sheep of a brother returns home. "
     },  
 
     {
@@ -242,9 +221,8 @@
       "genres": ["Crime" , "Drama"],
       "actors": ["Bob Odenkirk", "Jonathan Banks", "Rhea Seehorn"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "The trials and tribulations of criminal lawyer, Saul Goodman, in the time leading up to establishing his strip-mall law office in Albuquerque, New Mexico. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The trials and tribulations of criminal lawyer, Saul Goodman, in the time leading up to establishing his strip-mall law office in Albuquerque, New Mexico. "
     },
 
     {
@@ -255,9 +233,8 @@
       "genres": ["Adventure" , "Fantasy" , "Romance"],
       "actors": ["Ginnifer Goodwin", "Jennifer Morrison", "Lana Parrilla"],
       "duration": 44,
-      "type": "TV Series",
-      "synopsis": "A woman with a troubled past is drawn to a town in Maine where fairy tales are to be believed.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A woman with a troubled past is drawn to a town in Maine where fairy tales are to be believed."
     },
     
     {
@@ -269,8 +246,7 @@
       "actors": ["Colin Firth", "Taron Egerton", "Samuel L. Jackson "],
       "duration": 129,
       "type": "Movie",
-      "synopsis": "A spy organization recruits an unrefined, but promising street kid into the agency's ultra-competitive training program, just as a global threat emerges from a twisted tech genius.",
-      "grades": []
+      "synopsis": "A spy organization recruits an unrefined, but promising street kid into the agency's ultra-competitive training program, just as a global threat emerges from a twisted tech genius."
     },
 
     {
@@ -282,8 +258,7 @@
       "actors": ["Dakota Johnson", "Jamie Dornan", "Jennifer Ehle "],
       "duration": 125,
       "type": "Movie",
-      "synopsis": "Literature student Anastasia Steele's life changes forever when she meets handsome, yet tormented, billionaire Christian Grey.",
-      "grades": []
+      "synopsis": "Literature student Anastasia Steele's life changes forever when she meets handsome, yet tormented, billionaire Christian Grey."
     },
   
     {
@@ -295,8 +270,7 @@
       "actors": ["Anna Kendrick", "Meryl Streep", "Chris Pine"],
       "duration": 125,
       "type": "Movie",
-      "synopsis": "A witch tasks a childless baker and his wife with procuring magical items from classic fairy tales to reverse the curse put on their family tree. ",
-      "grades": []
+      "synopsis": "A witch tasks a childless baker and his wife with procuring magical items from classic fairy tales to reverse the curse put on their family tree. "
     },
     
     {
@@ -307,7 +281,7 @@
       "genres": ["Drama"],
       "actors": ["Kevin Spacey", "Michael Gill", "Robin Wright "],
       "duration": 55,
-      "type": "TV Series",
+      "type": "Serie",
       "synopsis": "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him. ",
       "grades": []
     },
@@ -319,10 +293,8 @@
       "director": "Antoine Fuqua",
       "genres": ["Drama" , "Sport"],
       "actors": ["Jake Gyllenhaal", "Rachel McAdams", "Naomie Harris"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "A boxer fights his way to the top, only to find his life falling apart around him.",
-      "grades": []
+      "synopsis": "A boxer fights his way to the top, only to find his life falling apart around him."
     },
 
     {
@@ -334,34 +306,30 @@
       "actors": ["Will Smith", "Margot Robbie", "Rodrigo Santoro"],
       "duration": 105,
       "type": "Movie",
-      "synopsis": "In the midst of veteran con man Nicky's latest scheme, a woman from his past - now an accomplished femme fatale - shows up and throws his plans for a loop.",
-      "grades": []
+      "synopsis": "In the midst of veteran con man Nicky's latest scheme, a woman from his past - now an accomplished femme fatale - shows up and throws his plans for a loop."
     },
 
     {
       "id": 26,
-      "title": " Jurassic World",
+      "title": "Jurassic World",
       "year": 2015,
       "director": "Colin Trevorrow",
       "genres": ["Action" , "Adventure" , "Sci-Fi" , "Thriller "],
       "actors": ["Chris Pratt", "Judy Greer", "Ty Simpkins"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond. After 10 years of operation and visitor rates declining, in order to fulfill a corporate mandate, a new attraction is created to re-spark visitor's interest, which backfires horribly.",
-      "grades": []
+      "synopsis": "Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond. After 10 years of operation and visitor rates declining, in order to fulfill a corporate mandate, a new attraction is created to re-spark visitor's interest, which backfires horribly."
     },
 
     {
       "id": 27,
-      "title": ,
+      "title": "Divergente",
       "year": 2014,
       "director": "Neil Burger",
       "genres": ["Adventure , Sci-Fi , Thriller"],
       "actors": ["Shailene Woodley", "Theo James", "Kate Winslet "],
       "duration": 139,
-      "type": Movie"",
-      "synopsis": "In a world divided by factions based on virtues, Tris learns she's Divergent and won't fit in. When she discovers a plot to destroy Divergents, Tris and the mysterious Four must find out what makes Divergents dangerous before it's too late.",
-      "grades": []
+      "type": "Movie",
+      "synopsis": "In a world divided by factions based on virtues, Tris learns she's Divergent and won't fit in. When she discovers a plot to destroy Divergents, Tris and the mysterious Four must find out what makes Divergents dangerous before it's too late."
     },
     
     {
@@ -372,9 +340,8 @@
       "genres": ["Drama" , "Romance" , "Sci-Fi"],
       "actors": ["Caitriona Balfe", "Sam Heughan", "Tobias Menzies"],
       "duration": 64,
-      "type": "TV Series",
-      "synopsis": "Follows the story of Claire Randall, a married combat nurse from 1945 who is mysteriously swept back in time to 1743... ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Follows the story of Claire Randall, a married combat nurse from 1945 who is mysteriously swept back in time to 1743... "
     },
 
     {
@@ -385,9 +352,8 @@
       "genres": ["Comedy"],
       "actors": ["Johnny Galecki", "Jim Parsons", "Kaley Cuoco-Sweeting "],
       "duration": 22,
-      "type": "TV Series",
-      "synopsis": "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicists shows them how little they know about life outside of the laboratory. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicists shows them how little they know about life outside of the laboratory. "
     },
 
     {
@@ -399,8 +365,7 @@
       "actors": ["Benedict Cumberbatch", "Keira Knightley", "Matthew Goode "],
       "duration": 114,
       "type": "Movie",
-      "synopsis": "During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.",
-      "grades": []
+      "synopsis": "During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians."
     },
 
     {
@@ -411,9 +376,8 @@
       "genres": ["Action" , "Comedy" , "Sci-Fi"],
       "actors": ["Will Forte", "January Jones", "Cleopatra Coleman "],
       "duration": 30,
-      "type": "TV Series",
-      "synopsis": "THE LAST MAN ON EARTH is a new single-camera comedy about the life and adventures of the last man on earth...",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "THE LAST MAN ON EARTH is a new single-camera comedy about the life and adventures of the last man on earth..."
     },
 
     {
@@ -424,22 +388,20 @@
       "genres": ["Drama" , "Fantasy" , "Horror" , "Mystery" , "Thriller"],
       "actors": ["Jared Padalecki", "Jensen Ackles","Jim Beaver "],
       "duration": 44,
-      "type": "TV Series",
-      "synopsis": "Two brothers follow their father's footsteps as "hunters" fighting evil supernatural beings of many kinds including monsters, demons, and gods that roam the earth.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Two brothers follow their father's footsteps as \"hunters\" fighting evil supernatural beings of many kinds including monsters, demons, and gods that roam the earth."
     },
 
     {
       "id": 33,
-      "title": ,
+      "title": "Breaking Bad",
       "year": 2008,
       "director": "Breaking Bad",
       "genres": ["Crime" , "Drama" , "Thriller"],
       "actors": ["Bryan Cranston", "Aaron Paul", "Anna Gunn "],
       "duration": 45,
-      "type": "TV Series",
-      "synopsis": "A chemistry teacher diagnosed with a terminal lung cancer, teams up with his former student, Jesse Pinkman, to cook and sell crystal meth. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A chemistry teacher diagnosed with a terminal lung cancer, teams up with his former student, Jesse Pinkman, to cook and sell crystal meth. "
     },
 
     {
@@ -451,8 +413,7 @@
       "actors": ["Kelsey Grammer", "Vernon Dobtcheff", "Eoin Macken"],
       "duration": 132,
       "type": "TV Movie",
-      "synopsis": "A miniseries chronicling the life of Jesus of Nazareth.",
-      "grades": []
+      "synopsis": "A miniseries chronicling the life of Jesus of Nazareth."
     },
 
     {
@@ -463,9 +424,8 @@
       "genres": ["Comedy" , "Crime" , "Drama" , "Horror" , "Sci-Fi"],
       "actors": ["Rose McIver", "Malcolm Goodwin", "Rahul Kohli "],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "A medical resident finds that being a zombie has its perks, which she uses to assist the police.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A medical resident finds that being a zombie has its perks, which she uses to assist the police."
     },
 
     {
@@ -476,9 +436,8 @@
       "genres": ["Drama" , "Romance"],
       "actors": ["Ellen Pompeo", "Justin Chambers", "Chandra Wilson"],
       "duration": 41,
-      "type": "TV Series",
-      "synopsis": "A drama centered on the personal and professional lives of five surgical interns and their supervisors. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A drama centered on the personal and professional lives of five surgical interns and their supervisors. "
     },
 
     {
@@ -489,9 +448,8 @@
       "genres": ["Drama"],
       "actors": ["Jon Hamm", "Elisabeth Moss", "Vincent Kartheiser"],
       "duration": 45,
-      "type": "TV Series",
-      "synopsis": "A drama about one of New York's most prestigious ad agencies at the beginning of the 1960s, focusing on one of the firm's most mysterious but extremely talented ad executives, Donald Draper.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A drama about one of New York's most prestigious ad agencies at the beginning of the 1960s, focusing on one of the firm's most mysterious but extremely talented ad executives, Donald Draper."
     },
 
     {
@@ -502,9 +460,8 @@
       "genres": ["Drama" , "Mystery" , "Thriller"],
       "actors": ["Lucy Hale", "Shay Mitchell", "Troian Bellisario"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "Four friends band together against an anonymous foe who threatens to reveal their darkest secrets, while unraveling the mystery of the murder of their best friend. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Four friends band together against an anonymous foe who threatens to reveal their darkest secrets, while unraveling the mystery of the murder of their best friend. "
     },
 
     {
@@ -516,8 +473,7 @@
       "actors": ["Chris Pratt", "Vin Diesel", "Bradley Cooper"],
       "duration": 121,
       "type": "Movie",
-      "synopsis": "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.",
-      "grades": []
+      "synopsis": "A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe."
     },
 
     {
@@ -529,8 +485,7 @@
       "actors": ["Vin Diesel", "Paul Walker", "Dwayne Johnson"],
       "duration": 130,
       "type": "Movie",
-      "synopsis": "Hobbs has Dominic and Brian reassemble their crew to take down a team of mercenaries: Dominic unexpectedly gets convoluted also facing his presumed deceased girlfriend, Letty. ",
-      "grades": []
+      "synopsis": "Hobbs has Dominic and Brian reassemble their crew to take down a team of mercenaries: Dominic unexpectedly gets convoluted also facing his presumed deceased girlfriend, Letty. "
     },
 
     {
@@ -542,8 +497,7 @@
       "actors": ["Ryan Potter", "Scott Adsit", "Jamie Chung"],
       "duration": 102,
       "type": "Movie",
-      "synopsis": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes. ",
-      "grades": []
+      "synopsis": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes. "
     },
 
     {
@@ -554,9 +508,8 @@
       "genres": ["Eliza Taylor", "Eli Goree", "Thomas McDonell "],
       "actors": ["Drama" , "Sci-Fi"],
       "duration": 43,
-      "type": "TV Series",
-      "synopsis": "Set 97 years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends 100 juvenile delinquents back to Earth in hopes of possibly re-populating the planet. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Set 97 years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends 100 juvenile delinquents back to Earth in hopes of possibly re-populating the planet. "
     },
 
     {
@@ -567,9 +520,8 @@
       "genres": ["Action" , "Drama" , "Sci-Fi"],
       "actors": ["Clark Gregg", "Ming-Na Wen", "Brett Dalton"],
       "duration": 45,
-      "type": "TV Series",
-      "synopsis": "The missions of the Strategic Homeland Intervention, Enforcement and Logistics Division. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The missions of the Strategic Homeland Intervention, Enforcement and Logistics Division. "
     },
 
     {
@@ -580,9 +532,8 @@
       "genres": ["Comedy"],
       "actors": ["Ellie Kemper", "Jane Krakowski", "Tituss Burgess "],
       "duration": 30,
-      "type": "TV Series",
-      "synopsis": "A woman is rescued from a doomsday cult and starts life over again in New York City. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A woman is rescued from a doomsday cult and starts life over again in New York City. "
     },
 
     {
@@ -594,8 +545,7 @@
       "actors": ["Mae Whitman", "Bella Thorne", "Robbie Amell"],
       "duration": 101,
       "type": "Movie",
-      "synopsis": "A high school senior instigates a social pecking order revolution after finding out that she has been labeled the DUFF - Designated Ugly Fat Friend - by her prettier, more popular counterparts. ",
-      "grades": []
+      "synopsis": "A high school senior instigates a social pecking order revolution after finding out that she has been labeled the DUFF - Designated Ugly Fat Friend - by her prettier, more popular counterparts. "
     },
 
     {
@@ -606,9 +556,8 @@
       "genres": ["Comedy , Drama"],
       "actors": ["Emmy Rossum", "William H. Macy", "Ethan Cutkosky "],
       "duration": 46,
-      "type": "TV Series",
-      "synopsis": "An alcoholic man lives in a perpetual stupor while his six children with whom he lives cope as best they can.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "An alcoholic man lives in a perpetual stupor while his six children with whom he lives cope as best they can."
     },
 
 
@@ -619,10 +568,8 @@
       "director": "J.J. Abrams",
       "genres": ["Action" , "Adventure" , "Fantasy" , "Sci-Fi"],
       "actors": ["Harrison Ford", "Mark Hamill", "Carrie Fisher"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "A continuation of the saga created by George Lucas set thirty years after Le retour du Jedi. ",
-      "grades": []
+      "synopsis": "A continuation of the saga created by George Lucas set thirty years after Le retour du Jedi. "
     },
 
     {
@@ -633,9 +580,8 @@
       "genres": ["Crime" , "Drama" , "Mystery" , "Thriller"],
       "actors": ["James Spader", "Megan Boone", "Diego Klattenhoff "],
       "duration": 43,
-      "type": "TV Series",
-      "synopsis": "A highly articulate, erudite and intelligent businessman and mastermind, "Red" Reddington, has allegedly... ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A highly articulate, erudite and intelligent businessman and mastermind, \"Red\" Reddington, has allegedly... "
     },
 
     {
@@ -646,9 +592,8 @@
       "genres": ["Drama" , "Horror" , "Thriller"],
       "actors": ["Evan Peters", "Jessica Lange", "Sarah Paulson"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "An anthology series that centers on different characters and locations, including a haunted house, an insane asylum, a witch coven, a freak show and a hotel. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "An anthology series that centers on different characters and locations, including a haunted house, an insane asylum, a witch coven, a freak show and a hotel. "
     },
 
     {
@@ -659,9 +604,8 @@
       "genres": ["Adventure" , "Drama"],
       "actors": ["Jessica Parker Kennedy", "Toby Stephens", "Hannah New "],
       "duration": 56,
-      "type": "TV Series",
-      "synopsis": "Captain Flint and his pirates, twenty years prior to Robert Louis Stevenson's classic "Treasure Island". ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Captain Flint and his pirates, twenty years prior to Robert Louis Stevenson's classic \"Treasure Island\". "
     },
 
     {
@@ -673,8 +617,7 @@
       "actors": ["Michael Keaton", "Zach Galifianakis", "Edward Norton "],
       "duration": 119,
       "type": "Movie",
-      "synopsis": "A washed-up actor, who once played an iconic superhero, battles his ego and attempts to recover his family, his career and himself in the days leading up to the opening of his Broadway play. ",
-      "grades": []
+      "synopsis": "A washed-up actor, who once played an iconic superhero, battles his ego and attempts to recover his family, his career and himself in the days leading up to the opening of his Broadway play. "
     },
 
     {
@@ -686,8 +629,7 @@
       "actors": ["Miles Teller", "J.K. Simmons", "Melissa Benoist"],
       "duration": 107,
       "type": "Movie",
-      "synopsis": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
-      "grades": []
+      "synopsis": "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential."
     },
 
     {
@@ -698,9 +640,8 @@
       "genres": ["Drama" , "Fantasy" , "Horror" , "Mystery" , "Romance" , "Thriller "],
       "actors": ["Nina Dobrev", "Paul Wesley", "Ian Somerhalder"],
       "duration": 43,
-      "type": "TV Series",
-      "synopsis": "A teenage girl is torn between two vampire brothers.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A teenage girl is torn between two vampire brothers."
     },
 
     {
@@ -712,8 +653,7 @@
       "actors": ["Christian Bale", "Joel Edgerton", "Ben Kingsley"],
       "duration": 150,
       "type": "Movie",
-      "synopsis": "The defiant leader Moses rises up against the Egyptian Pharaoh Ramses, setting 600,000 slaves on a monumental journey of escape from Egypt and its terrifying cycle of deadly plagues. ",
-      "grades": []
+      "synopsis": "The defiant leader Moses rises up against the Egyptian Pharaoh Ramses, setting 600,000 slaves on a monumental journey of escape from Egypt and its terrifying cycle of deadly plagues. "
     },
 
     {
@@ -725,8 +665,7 @@
       "actors": ["Ben Barnes", "Julianne Moore", "Jeff Bridges "],
       "duration": 102,
       "type": "Movie",
-      "synopsis": "Young Thomas is apprenticed to the local Spook to learn to fight evil spirits. His first great challenge comes when the powerful Mother Malkin escapes her confinement while the Spook is away. ",
-      "grades": []
+      "synopsis": "Young Thomas is apprenticed to the local Spook to learn to fight evil spirits. His first great challenge comes when the powerful Mother Malkin escapes her confinement while the Spook is away. "
     },
 
     {
@@ -737,9 +676,8 @@
       "genres": ["Crime" , "Drama" , "Thriller"],
       "actors": ["Ben McKenzie", "Jada Pinkett Smith", "Donal Logue "],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "The story behind Commissioner James Gordon's rise to prominence in Gotham City in the years before Batman's arrival. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The story behind Commissioner James Gordon's rise to prominence in Gotham City in the years before Batman's arrival. "
     },
 
     {
@@ -751,8 +689,7 @@
       "actors": ["Ben Affleck", "Rosamund Pike", "Neil Patrick Harris"],
       "duration": 149,
       "type": "Movie",
-      "synopsis": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
-      "grades": []
+      "synopsis": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent."
     },
 
     {
@@ -764,8 +701,7 @@
       "actors": ["Ian McKellen", "Martin Freeman", "Richard Armitage"],
       "duration": 144,
       "type": "Movie",
-      "synopsis": "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.",
-      "grades": []
+      "synopsis": "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
     },
 
     {
@@ -777,8 +713,7 @@
       "actors": ["Jack O'Connell", "Takamasa Ishihara", "Domhnall Gleeson"],
       "duration": 137,
       "type": "Movie",
-      "synopsis": "After a near-fatal plane crash in WWII, Olympian Louis Zamperini spends a harrowing 47 days in a raft with two fellow crewmen before he's caught by the Japanese navy and sent to a prisoner-of-war camp. ",
-      "grades": []
+      "synopsis": "After a near-fatal plane crash in WWII, Olympian Louis Zamperini spends a harrowing 47 days in a raft with two fellow crewmen before he's caught by the Japanese navy and sent to a prisoner-of-war camp. "
     },
 
     {
@@ -789,22 +724,20 @@
       "genres": ["Crime" , "Drama" , "Thriller"],
       "actors": ["Charlie Hunnam", "Mark Boone Junior", "Katey Sagal"],
       "duration": 45,
-      "type": "TV Series",
-      "synopsis": "A man in his early 30s struggles to find a balance in his life between being a new dad and his involvement in a motorcycle club. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A man in his early 30s struggles to find a balance in his life between being a new dad and his involvement in a motorcycle club. "
     },
 
     {
       "id": 61,
-      "title": "",
+      "title": "Ex Machina",
       "year": 2015,
       "director": "Alex Garland ",
       "genres": ["Drama" , "Sci-Fi"],
       "actors": ["Alicia Vikander", "Domhnall Gleeson", "Oscar Isaac"],
       "duration": 108,
       "type": "Movie",
-      "synopsis": "A young programmer is selected to participate in a breakthrough experiment in artificial intelligence by evaluating the human qualities of a breathtaking female A.I.",
-      "grades": []
+      "synopsis": "A young programmer is selected to participate in a breakthrough experiment in artificial intelligence by evaluating the human qualities of a breathtaking female A.I."
     },
 
     {
@@ -816,8 +749,7 @@
       "actors": ["Jennifer Lawrence", "Josh Hutcherson", "Liam Hemsworth "],
       "duration": 123,
       "type": "Movie",
-      "synopsis": "Katniss Everdeen is in District 13 after she shatters the games forever. Under the leadership of President Coin and the advice of her trusted friends, Katniss spreads her wings as she fights to save Peeta and a nation moved by her courage. ",
-      "grades": []
+      "synopsis": "Katniss Everdeen is in District 13 after she shatters the games forever. Under the leadership of President Coin and the advice of her trusted friends, Katniss spreads her wings as she fights to save Peeta and a nation moved by her courage. "
     },
 
     {
@@ -829,8 +761,7 @@
       "actors": ["James Marsden", "Kathryn Hahn", "Jack Black"],
       "duration": 97,
       "type": "Movie",
-      "synopsis": "The head of a high school reunion committee travels to Los Angeles to track down the most popular guy from his graduating class and convince him to go to the reunion.",
-      "grades": []
+      "synopsis": "The head of a high school reunion committee travels to Los Angeles to track down the most popular guy from his graduating class and convince him to go to the reunion."
     },
 
     {
@@ -840,10 +771,8 @@
       "director": "Jared Hess",
       "genres": ["Action" , "Comedy" , "Crime"],
       "actors": ["Kristen Wiig", "Jason Sudeikis", "Zach Galifianakis "],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "A night guard at an armored car company in the Southern U.S. organizes one of the biggest bank heists in American history.",
-      "grades": []
+      "synopsis": "A night guard at an armored car company in the Southern U.S. organizes one of the biggest bank heists in American history."
     },
 
     {
@@ -855,8 +784,7 @@
       "actors": ["Jason Statham", "Rose Byrne", "Morena Baccarin "],
       "duration": 120,
       "type": "Movie",
-      "synopsis": "A desk-bound CIA analyst volunteers to go undercover to infiltrate the world of a deadly arms dealer, and prevent diabolical global disaster. ",
-      "grades": []
+      "synopsis": "A desk-bound CIA analyst volunteers to go undercover to infiltrate the world of a deadly arms dealer, and prevent diabolical global disaster. "
     },
 
     {
@@ -867,9 +795,8 @@
       "genres": ["Crime" , "Drama" , "Mystery" , "Thriller"],
       "actors": ["Kevin Bacon", "James Purefoy", "Shawn Ashmore "],
       "duration": 43,
-      "type": "TV Series",
-      "synopsis": "A brilliant and charismatic, yet psychotic serial killer communicates with other active serial killers and activates a cult of believers following his every command. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A brilliant and charismatic, yet psychotic serial killer communicates with other active serial killers and activates a cult of believers following his every command. "
     },
 
     {
@@ -881,8 +808,7 @@
       "actors": ["Veronica McCluskey", "Lili Mirojnick", "Dale Pavinski"],
       "duration": 99,
       "type": "Movie",
-      "synopsis": "Undercover cop Lucas White joins Vin Serento's LA gang of illegal street racers. They are fast and they are furious and they plan to double cross LA crime kingpin Juan Carlos de la Sol who hides his cash in a downtown Taco Bell. The gangs outrageous plan is as daring as it is ridiculous and will see them towing the whole damn restaurant, at crazy speeds. ",
-      "grades": []
+      "synopsis": "Undercover cop Lucas White joins Vin Serento's LA gang of illegal street racers. They are fast and they are furious and they plan to double cross LA crime kingpin Juan Carlos de la Sol who hides his cash in a downtown Taco Bell. The gangs outrageous plan is as daring as it is ridiculous and will see them towing the whole damn restaurant, at crazy speeds. "
     },
 
     {
@@ -893,9 +819,8 @@
       "genres": ["Comedy" , "Romance"],
       "actors": ["Jennifer Aniston", "Courteney Cox", "Lisa Kudrow"],
       "duration": 22,
-      "type": "TV Series",
-      "synopsis": "Follows the lives of six 20-something friends living in Manhattan. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Follows the lives of six 20-something friends living in Manhattan. "
     },
 
     {
@@ -907,8 +832,7 @@
       "actors": ["Sharlto Copley", "Dev Patel", "Hugh Jackman"],
       "duration": 120,
       "type": "Movie",
-      "synopsis": "In the near future, crime is patrolled by a mechanized police force. When one police droid, Chappie, is stolen and given new programming, he becomes the first robot with the ability to think and feel for himself. ",
-      "grades": []
+      "synopsis": "In the near future, crime is patrolled by a mechanized police force. When one police droid, Chappie, is stolen and given new programming, he becomes the first robot with the ability to think and feel for himself. "
     },
 
     {
@@ -920,8 +844,7 @@
       "actors": ["Jim Sturgess", "Sam Worthington", "Ryan Kwanten"],
       "duration": 95,
       "type": "Movie",
-      "synopsis": "The inside story of the planning, execution, rousing aftermath and ultimate downfall of the kidnappers of beer tycoon Alfred "Freddy" Heineken, which resulted in the largest ransom ever paid for an individual. ",
-      "grades": []
+      "synopsis": "The inside story of the planning, execution, rousing aftermath and ultimate downfall of the kidnappers of beer tycoon Alfred \"Freddy\" Heineken, which resulted in the largest ransom ever paid for an individual. "
     },
 
     {
@@ -933,8 +856,7 @@
       "actors": ["Scott Eastwood", "Britt Robertson", "Alan Alda"],
       "duration": 139,
       "type": "Movie",
-      "synopsis": "After an automobile crash, the lives of a young couple intertwine with a much older man, as he reflects back on a past love. ",
-      "grades": []
+      "synopsis": "After an automobile crash, the lives of a young couple intertwine with a much older man, as he reflects back on a past love. "
     },
 
     {
@@ -944,10 +866,8 @@
       "director": "F. Gary Gray",
       "genres": ["Biography" , "Drama" , "Music"],
       "actors": ["Rebecca Olejniczak", "Keith Stanfield", "O'Shea Jackson Jr."],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "The group NWA emerges from the streets of Compton, California in the mid-1980s and revolutionizes pop culture with their music and tales about life in the hood. ",
-      "grades": []
+      "synopsis": "The group NWA emerges from the streets of Compton, California in the mid-1980s and revolutionizes pop culture with their music and tales about life in the hood. "
     },
         
     {
@@ -958,9 +878,8 @@
       "genres": ["Comedy" , "Drama"],
       "actors": ["Gabriel Macht", "Patrick J. Adams", "Meghan Markle"],
       "duration":44 ,
-      "type": "TV Series",
-      "synopsis": "On the run from a drug deal gone bad, Mike Ross, a brilliant college-dropout, finds himself a job working with Harvey Specter, one of New York City's best lawyers. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "On the run from a drug deal gone bad, Mike Ross, a brilliant college-dropout, finds himself a job working with Harvey Specter, one of New York City's best lawyers. "
     },
 
     {
@@ -972,8 +891,7 @@
       "actors": ["Jai Courtney", "Olga Kurylenko", "Isabel Lucas "],
       "duration": 111,
       "type": "Movie",
-      "synopsis": "An Australian man travels to Turkey after the Battle of Gallipoli to try and locate his three missing sons. ",
-      "grades": []
+      "synopsis": "An Australian man travels to Turkey after the Battle of Gallipoli to try and locate his three missing sons. "
     },
     
     {
@@ -985,8 +903,7 @@
       "actors": ["Vin Diesel", "Paul Walker", "Michelle Rodriguez"],
       "duration": 106,
       "type": "Movie",
-      "synopsis": "Los Angeles police officer Brian O'Connor must decide where his loyalties really lie when he becomes enamored with the street racing world he has been sent undercover to destroy. ",
-      "grades": []
+      "synopsis": "Los Angeles police officer Brian O'Connor must decide where his loyalties really lie when he becomes enamored with the street racing world he has been sent undercover to destroy. "
     },
 
     {
@@ -997,9 +914,8 @@
       "genres": [""],
       "actors": ["Ed O'Neill", "Sofía Vergara", "Julie Bowen"],
       "duration": 22,
-      "type": "TV Series",
-      "synopsis": "Three different, but related families face trials and tribulations in their own uniquely comedic ways.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Three different, but related families face trials and tribulations in their own uniquely comedic ways."
     },
 
     {
@@ -1010,9 +926,8 @@
       "genres": ["Drama" , "Music"],
       "actors": ["Lizzy Leigh", "Jussie Smollett", "Kaitlin Doubleday"],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "A father, who has a successful music business, has to choose one of his three sons to take over when he dies. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A father, who has a successful music business, has to choose one of his three sons to take over when he dies. "
     },
 
     {
@@ -1023,9 +938,8 @@
       "genres": ["Comedy" , "Crime" , "Drama"],
       "actors": ["Taylor Schilling", "Danielle Brooks", "Taryn Manning "],
       "duration": 55,
-      "type": "TV Series",
-      "synopsis": "The story of Piper Chapman, a woman in her thirties who is sentenced to fifteen months in prison after being convicted of a decade-old crime of transporting money for her drug-dealing girlfriend. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The story of Piper Chapman, a woman in her thirties who is sentenced to fifteen months in prison after being convicted of a decade-old crime of transporting money for her drug-dealing girlfriend. "
     },
 
   
@@ -1036,10 +950,8 @@
       "director": "Josh Trank ",
       "genres": ["Action" , "Sci-Fi"],
       "actors": ["Miles Teller", "Kate Mara", "Michael B. Jordan "],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "Four young scientists achieve superhuman abilities through a teleportation experiment gone haywire. They must now use these abilities to save the world from an uprising tyrant.",
-      "grades": []
+      "synopsis": "Four young scientists achieve superhuman abilities through a teleportation experiment gone haywire. They must now use these abilities to save the world from an uprising tyrant."
     },
 
     {
@@ -1049,10 +961,8 @@
       "director": "Gil Kenan",
       "genres": ["Horror" , "Thriller"],
       "actors": ["Sam Rockwell", "Rosemarie DeWitt", "Jane Adams"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "A family's suburban home is invaded by evil forces.",
-      "grades": []
+      "synopsis": "A family's suburban home is invaded by evil forces."
     },
 
     {
@@ -1064,8 +974,7 @@
       "actors": ["Eddie Redmayne", "Felicity Jones", "Tom Prior"],
       "duration": 123,
       "type": "Movie",
-      "synopsis": "A look at the relationship between the famous physicist Stephen Hawking and his wife. ",
-      "grades": []
+      "synopsis": "A look at the relationship between the famous physicist Stephen Hawking and his wife. "
     },
 
     {
@@ -1076,9 +985,8 @@
       "genres": ["Drama" , "Mystery" , "Thriller"],
       "actors": ["Vera Farmiga", "Freddie Highmore", "Max Thieriot"],
       "duration": 45,
-      "type": "TV Series",
-      "synopsis": ""Bates Motel" is a contemporary prequel to the genre-defining film Psycho, and gives a portrayal of... ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "\"Bates Motel\" is a contemporary prequel to the genre-defining film Psycho, and gives a portrayal of... "
     },
 
     {
@@ -1089,9 +997,8 @@
       "genres": ["Crime" ,"Drama" , "Mystery" , "Thriller"],
       "actors": ["Shemar Moore", "Matthew Gray Gubler", "Thomas Gibson"],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "The cases of the BAU, an elite group of profilers who analyze the nation's most dangerous criminal minds in an effort to anticipate their next moves before they strike again.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "The cases of the BAU, an elite group of profilers who analyze the nation's most dangerous criminal minds in an effort to anticipate their next moves before they strike again."
     },
     
     {
@@ -1103,8 +1010,7 @@
       "actors": ["Simon Pegg", "Teresa Palmer", "Alice Braga"],
       "duration": 90,
       "type": "Movie",
-      "synopsis": "Professional hit-man Charlie Wolfe finds himself in three tales of murder, blackmail and revenge after a botched contract assignment.",
-      "grades": []
+      "synopsis": "Professional hit-man Charlie Wolfe finds himself in three tales of murder, blackmail and revenge after a botched contract assignment."
     },
 
     {
@@ -1116,8 +1022,7 @@
       "actors": ["Tom Kenny", "Antonio Banderas", "Bill Fagerbakke"],
       "duration": 92,
       "type": "Movie",
-      "synopsis": "When a diabolical pirate above the sea steals the secret Krabby Patty formula, SpongeBob and his nemesis Plankton must team up in order to get it back. ",
-      "grades": []
+      "synopsis": "When a diabolical pirate above the sea steals the secret Krabby Patty formula, SpongeBob and his nemesis Plankton must team up in order to get it back. "
     },
 
     {
@@ -1129,8 +1034,7 @@
       "actors": ["John Travolta", "Abigail Spencer", "Jennifer Ehle"],
       "duration": 92,
       "type": "Movie",
-      "synopsis": "A thief (John Travolta) works with his father (Christopher Plummer) and son to forge a painting by Monet and steal the original. Together, they plan the heist of their lives. ",
-      "grades": []
+      "synopsis": "A thief (John Travolta) works with his father (Christopher Plummer) and son to forge a painting by Monet and steal the original. Together, they plan the heist of their lives. "
     },
 
     {
@@ -1142,8 +1046,7 @@
       "actors": ["Liam Neeson", "Ed Harris", "Joel Kinnaman "],
       "duration": 114,
       "type": "",
-      "synopsis": "Mobster and hit man Jimmy Conlon has one night to figure out where his loyalties lie: with his estranged son, Mike, whose life is in danger, or his longtime best friend, mob boss Shawn Maguire, who wants Mike to pay for the death of his own son. ",
-      "grades": []
+      "synopsis": "Mobster and hit man Jimmy Conlon has one night to figure out where his loyalties lie: with his estranged son, Mike, whose life is in danger, or his longtime best friend, mob boss Shawn Maguire, who wants Mike to pay for the death of his own son. "
     },
 
     {
@@ -1154,9 +1057,8 @@
       "genres": ["Action" , "Sci-Fi"],
       "actors": ["Charlie Cox", "Deborah Ann Woll", "Elden Henson"],
       "duration": 60,
-      "type": "TV Series",
-      "synopsis": "A blind lawyer with his other senses superhumanly enhanced fights crime as a costumed superhero.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A blind lawyer with his other senses superhumanly enhanced fights crime as a costumed superhero."
     },
         
     {
@@ -1168,8 +1070,7 @@
       "actors": ["Oscar Isaac", "Jessica Chastain", "David Oyelowo"],
       "duration": 125,
       "type": "Movie",
-      "synopsis": "In New York City 1981, an ambitious immigrant fights to protect his business and family during the most dangerous year in the city's history.",
-      "grades": []
+      "synopsis": "In New York City 1981, an ambitious immigrant fights to protect his business and family during the most dangerous year in the city's history."
     },
     
     {
@@ -1180,9 +1081,8 @@
       "genres": ["Crime" , "Drama" , "Mystery"],
       "actors": ["Matthew McConaughey", "Woody Harrelson", "Michelle Monaghan "],
       "duration": 55,
-      "type": "TV Series",
-      "synopsis": "An anthology police detective series in which investigations seem to unearth both personal and professional secrets of those involved, both within or outside the law.",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "An anthology police detective series in which investigations seem to unearth both personal and professional secrets of those involved, both within or outside the law."
     },
 
     {
@@ -1193,9 +1093,8 @@
       "genres": ["Drama"],
       "actors": ["William Moseley", "Alexandra Park", "Merritt Patterson "],
       "duration": 42,
-      "type": "TV Series",
-      "synopsis": "Drama about a fictional British Royal family set in modern day London, who inhabit a world of opulence... ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "Drama about a fictional British Royal family set in modern day London, who inhabit a world of opulence... "
     },
 
     {
@@ -1207,8 +1106,7 @@
       "actors": ["Reese Witherspoon", "Laura Dern", "Gaby Hoffmann"],
       "duration": 115,
       "type": "Movie",
-      "synopsis": "A chronicle of one woman's 1,100-mile solo hike undertaken as a way to recover from a recent catastrophe. ",
-      "grades": []
+      "synopsis": "A chronicle of one woman's 1,100-mile solo hike undertaken as a way to recover from a recent catastrophe. "
     },
 
     {
@@ -1219,9 +1117,8 @@
       "genres": ["Drama" , "Mystery" , "Thriller"],
       "actors": ["Madeleine Stowe", "Emily VanCamp","Gabriel Mann "],
       "duration": 44,
-      "type": "TV Series",
-      "synopsis": "An emotionally troubled young woman makes it her mission to exact revenge against the people who wronged her father. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "An emotionally troubled young woman makes it her mission to exact revenge against the people who wronged her father. "
     },
 
     {
@@ -1233,8 +1130,7 @@
       "actors": ["Jake Gyllenhaal", "Rene Russo", "Bill Paxton"],
       "duration": 117,
       "type": "Movie",
-      "synopsis": "When Lou Bloom, a driven man desperate for work, muscles into the world of L.A. crime journalism, he blurs the line between observer and participant to become the star of his own story. Aiding him in his effort is Nina, a TV-news veteran.",
-      "grades": []
+      "synopsis": "When Lou Bloom, a driven man desperate for work, muscles into the world of L.A. crime journalism, he blurs the line between observer and participant to become the star of his own story. Aiding him in his effort is Nina, a TV-news veteran."
     },
 
     {
@@ -1246,8 +1142,7 @@
       "actors": ["Zoë Kravitz", "Keith Stanfield", "Forest Whitaker"],
       "duration": 115,
       "type": "Movie",
-      "synopsis": "A coming of age comedy/drama for the post hip hop generation. Malcolm is a geek, carefully surviving life in The Bottoms... ",
-      "grades": []
+      "synopsis": "A coming of age comedy/drama for the post hip hop generation. Malcolm is a geek, carefully surviving life in The Bottoms... "
     },
 
     {
@@ -1257,24 +1152,19 @@
       "director": "Tim Miller",
       "genres": [""],
       "actors": ["Ryan Reynolds", "Morena Baccarin", "Gina Carano"],
-      "duration": ,
       "type": "Movie",
-      "synopsis": "
-A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers and adopts the alter ego Deadpool. ",
-      "grades": []
+      "synopsis": "A former Special Forces operative turned mercenary is subjected to a rogue experiment that leaves him with accelerated healing powers and adopts the alter ego Deadpool. "
     },
 
     {
       "id": 97,
       "title": "Mission Impossible 5",
-      "year": ,
+      "year": 2015,
       "director": "Christopher McQuarrie ",
       "genres": ["Action" , "Adventure" , "Thriller"],
       "actors": ["Tom Cruise", "Jeremy Renner", "Simon Pegg"],
-      "duration": ,
-      "type": "",
-      "synopsis": "Ethan and team take on their most impossible mission yet, eradicating the Syndicate - an International rogue organization as highly skilled as they are, committed to destroying the IMF. ",
-      "grades": []
+      "type": "Movie",
+      "synopsis": "Ethan and team take on their most impossible mission yet, eradicating the Syndicate - an International rogue organization as highly skilled as they are, committed to destroying the IMF. "
     },
 
     {
@@ -1285,9 +1175,8 @@ A former Special Forces operative turned mercenary is subjected to a rogue exper
       "genres": ["Crime" , "Drama" , "Mystery"],
       "actors": ["Benedict Cumberbatch", "Martin Freeman", "Rupert Graves "],
       "duration": 90,
-      "type": "TV Series",
-      "synopsis": "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London. ",
-      "grades": []
+      "type": "Serie",
+      "synopsis": "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London. "
     },
 
     {
@@ -1296,11 +1185,10 @@ A former Special Forces operative turned mercenary is subjected to a rogue exper
       "year": 2010,
       "director": "",
       "genres": ["Action" ,"Crime" , "Drama" , "Thriller"],
-      "actors": [Timothy Olyphant", "Nick Searcy", "Joelle Carter""],
+      "actors": ["Timothy Olyphant", "Nick Searcy", "Joelle Carter"],
       "duration": 44,
-      "type": "TV Series",
-      "synopsis": "Old-school U.S. Marshal Raylan Givens is reassigned from Miami to his childhood home in the poor, rural coal-mining towns in Eastern Kentucky. ",
-      "grades": []
-    },
+      "type": "Serie",
+      "synopsis": "Old-school U.S. Marshal Raylan Givens is reassigned from Miami to his childhood home in the poor, rural coal-mining towns in Eastern Kentucky. "
+    }
   ]
 }
