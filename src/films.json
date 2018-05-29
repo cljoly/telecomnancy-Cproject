@@ -1045,7 +1045,7 @@
       "genres": ["Action" , "Crime" , "Drama" , "Mystery" , "Thriller"],
       "actors": ["Liam Neeson", "Ed Harris", "Joel Kinnaman "],
       "duration": 114,
-      "type": "",
+      "type": "Movie",
       "synopsis": "Mobster and hit man Jimmy Conlon has one night to figure out where his loyalties lie: with his estranged son, Mike, whose life is in danger, or his longtime best friend, mob boss Shawn Maguire, who wants Mike to pay for the death of his own son. "
     },
 
