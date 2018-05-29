@@ -6,8 +6,10 @@
 
 void recommendations_factorisation(movies* movies_list){
     //efface recommandation précédentes
-    destroy_recommendations_list(movies_list->recommendations);
-    movies_list->recommendations=NULL;
+    if(movies_list->recommendations!=NULL) {
+        destroy_recommendations_list(movies_list->recommendations);
+        movies_list->recommendations = NULL;
+    }
     //remplissage de la matrice de note
     gsl_matrix* R=load_matrix(movies_list);
     //préparation de la structure pour la factorisation
@@ -27,15 +29,16 @@ void recommendations_factorisation(movies* movies_list){
             movies_list->recommendations=add_recommendations(movies_list->recommendations,i,g);
         }
     }
-    print_matrix(fm->R);
+
     //libération de la mémoire
-    //gsl_matrix_free(R);
     gsl_matrix_free(fm->R);
     gsl_matrix_free(fm->P);
     gsl_matrix_free(fm->Q);
     gsl_matrix_free(R_approx);
     free(fm);
     rdm_free();
+    printf("8\n");
+
 
 }
 

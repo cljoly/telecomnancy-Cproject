@@ -241,7 +241,7 @@ gsl_matrix* load_matrix(movies* movies_list){
         }
     }
     c++;
-    printf("%d\n",c);
+    //printf("%d\n",c);
     gsl_matrix* m= gsl_matrix_alloc(c, movies_list->max_length);
 
     //retour au début du répertoire
@@ -299,8 +299,4 @@ gsl_matrix* load_matrix(movies* movies_list){
         exit(-1);
     return m;
 }
-
-//recomandation complémentaire
-//utilisateurs
-//sauvegarde recommandation
 

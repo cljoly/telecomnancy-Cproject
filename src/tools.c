@@ -46,6 +46,7 @@ void rdm_init() {
 void rdm_free() {
   if (seeded)
     gsl_rng_free(r);
+  seeded=0;
 }
 
 gsl_matrix *gen_random_matrix(int nb_row, int nb_col) {
