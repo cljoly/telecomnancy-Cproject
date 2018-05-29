@@ -70,6 +70,14 @@ void vote_bien(gpointer user_data, char *nom)
 	gtk_image_set_from_file(image,filename);
 	g_free(filename);
 }
+void note0(GtkWidget *widget, gpointer user_data)
+{
+    vote_nul(user_data, "image1");
+    vote_nul(user_data, "image2");
+	vote_nul(user_data, "image3");
+	vote_nul(user_data, "image4");
+	vote_nul(user_data,"image5");
+}
 
 void note1(GtkWidget *widget, gpointer user_data)
 {
@@ -154,50 +162,49 @@ void chargement_principale(GtkWidget* widget, gpointer user_data)
 	g_free(filename1);
 }
 
-void chargement_fiche(GtkWidget* widget, gpointer user_data)
+
+
+void chargement_biblio(GtkWidget* widget, gpointer user_data)
 {
 	SGlobalData *data = (SGlobalData*) user_data;
 	gchar *filename1;
 	GtkImage *image;
-	char nom[21] ;
-	int titre = 100;
+	char nom[21];
+	char im_nom[5];
 	
-	sprintf(nom, "./ressources/%d.jpg", titre);
 
-	
-	filename1 =  g_build_filename (nom, NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "im_fiche"));
-	gtk_image_set_from_file(image,filename1);
-	
 	/* Mise en place des images du menu */
 	filename1 = g_build_filename ("./ressources/op1.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op11"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op6"));
 	gtk_image_set_from_file(image,filename1);
 	filename1 = g_build_filename ("./ressources/op2.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op12"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op7"));
 	gtk_image_set_from_file(image,filename1);
 	filename1 = g_build_filename ("./ressources/op3.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op13"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op8"));
 	gtk_image_set_from_file(image,filename1);
 	filename1 = g_build_filename ("./ressources/op4.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op14"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op9"));
 	gtk_image_set_from_file(image,filename1);
 	filename1 = g_build_filename ("./ressources/op5.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op15"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op10"));
 	gtk_image_set_from_file(image,filename1);
 	
 	filename1 = g_build_filename ("./ressources/accueil2.png", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ3"));
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ2"));
 	gtk_image_set_from_file(image,filename1);
 	
-	/* Mise en place de l'image du film */
-
-
+	for (int i=1; i<101; i++)
+	{	
+		sprintf(nom, "./ressources/%d.jpg", i);
+		sprintf(im_nom, "h%d",i);
+		filename1 =  g_build_filename (nom, NULL);
+		image = GTK_IMAGE(gtk_builder_get_object(data->builder, im_nom));
+		gtk_image_set_from_file(image,filename1);
+	}
 	
 	g_free(filename1);
 }
-
-
 
 
 /*--------------------------------------------------------------------------*/
