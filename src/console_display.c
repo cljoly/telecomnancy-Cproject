@@ -31,7 +31,7 @@ void print_movie_details(movie *m) {
 
   printf("Acteurs : ");
   i = 0;
-  while (get_string(m->genre, i) != NULL && i < 10) {
+  while (get_string(m->actors, i) != NULL && i < 10) {
     printf("%s, ", get_string(m->actors, i));
     i++;
   }
