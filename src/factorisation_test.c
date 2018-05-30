@@ -48,18 +48,18 @@ void run_test(gsl_matrix *R, int k) {
   start = clock();
 
   factorisation_mat *fm = initialize_mat(k, R);
-  if (VERBOSE) {
+  if (VERBOSE >= 2) {
     printf("R\n");
     print_matrix(fm->R);
   }
-  if (VERBOSE >= 3) {
+  if (VERBOSE >= 4) {
     printf("P\n");
     print_matrix(fm->P);
     printf("Q\n");
     print_matrix(fm->Q);
   }
   factor(fm, factorisation_alpha, factorisation_beta);
-  if (VERBOSE >= 2) {
+  if (VERBOSE >= 3) {
     printf("P =");
     print_matrix(fm->P);
     printf("Q =");
