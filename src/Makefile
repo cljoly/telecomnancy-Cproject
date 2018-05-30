@@ -27,7 +27,7 @@ test_console_display: movie.o stringlist.o movies_list_loader.o test_console_dis
 test_prg_console: movie.o stringlist.o movies_list_loader.o console_display.o console_controler.o test_prg_console.o tools.o recommendation_list.o recommendation.o factorisation.o
 	gcc -o $@ $^ $(CFLAGS)
 
-interface: interface.o
+interface: interface.o movie.o stringlist.o movies_list_loader.o console_display.o console_controler.o tools.o recommendation_list.o recommendation.o factorisation.o biblio_interface.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 projetcsd: $(OBJ)
