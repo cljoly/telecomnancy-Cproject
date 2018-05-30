@@ -1,12 +1,13 @@
 CC=gcc
 DEPS = movie.h stringlist.h movies_list_loader.h tools.h factorisation.h biblio_interface.h console_controler.h console_display.h recommendation_list.h recommendation.h
-CFLAGS   = -Wall -fPIC -I.  -D REENTRANT -g -lwjelement -lwjreader
+CFLAGS   = -Wall -fPIC -I.  -D REENTRANT -lwjelement -lwjreader
 CFLAGS  += `gsl-config --cflags --libs`
 
 CFLAGS  += -DGTK_DISABLE_DEPRECATED=1 -DGDK_DISABLE_DEPRECATED
 CFLAGS  += -DGDK_PIXBUF_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED
 CFLAGS  += -DGTK_MULTIHEAD_SAFE=1 -DGTK_MULTIDEVICE_SAFE=1
 CFLAGS  += `pkg-config gtk+-3.0 --cflags`
+CFLAGS  += -g
 
 OBJ = factorisation.o factorisation_test.o tools.o
 LDFLAGS  = `pkg-config gtk+-3.0 --libs`
