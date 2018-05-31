@@ -16,6 +16,8 @@ Contient les documents relatifs à la gestion de projet.
    [licence GPL](https://www.gnu.org/licenses/gpl.html). Pour l’installation,
    utiliser le paquet `libgsl-dev` sous Ubuntu.
 
+ + [WJElement](https://github.com/netmail-open/wjelement) 
+
 ## Licence
 
     Copyright (C) 2018 Dubourdieu Lucas
