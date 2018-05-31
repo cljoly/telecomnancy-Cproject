@@ -159,7 +159,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
+                <signal name="clicked" handler="quitter" swapped="no"/>
               </object>
               <packing>
                 <property name="x">1336</property>
@@ -200,11 +200,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="connexion_id">
+              <object class="GtkEntry" id="connexion">
                 <property name="width_request">166</property>
                 <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="input_purpose">name</property>
               </object>
               <packing>
                 <property name="x">309</property>
@@ -668,6 +669,7 @@ un robot ?</property>
                 <property name="height_request">828</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="expanded">True</property>
                 <child>
                   <object class="GtkBox">
                     <property name="visible">True</property>
@@ -753,7 +755,7 @@ un robot ?</property>
                         <property name="receives_default">True</property>
                         <property name="image">op5</property>
                         <property name="relief">none</property>
-                        <signal name="clicked" handler="gtk_main_quit" swapped="no"/>
+                        <signal name="clicked" handler="quitter" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -789,6 +791,276 @@ un robot ?</property>
               </object>
               <packing>
                 <property name="x">400</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="width_request">1136</property>
+                <property name="height_request">800</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="shadow_type">in</property>
+                <child>
+                  <object class="GtkViewport">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkGrid">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkImage" id="rec1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec4">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec5">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec6">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec7">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec8">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec9">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="rec10">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="stock">gtk-missing-image</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 1</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 2</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 3</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 4</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 5</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 6</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 7</property>
+                            <property name="height_request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">2</property>
+                            <property name="top_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 8</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">3</property>
+                            <property name="top_attach">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 9</property>
+                            <property name="height_request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Fiche du film 10</property>
+                            <property name="height_request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">250</property>
               </packing>
             </child>
           </object>
@@ -1844,10 +2116,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b2">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 2</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -1856,10 +2130,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b3">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 3</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -1868,10 +2144,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b4">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 4</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -1880,10 +2158,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b5">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 5</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -1892,10 +2172,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b6">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 6</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -1904,10 +2186,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b7">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 7</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -1916,10 +2200,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b8">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 8</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -1928,10 +2214,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b9">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 9</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -1940,10 +2228,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b10">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 10</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -1952,10 +2242,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b11">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 11</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -1964,10 +2256,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b12">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 12</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -1976,10 +2270,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b13">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 13</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -1988,10 +2284,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b14">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 14</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2000,10 +2298,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b15">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 15</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2012,10 +2312,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b16">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 16</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2024,10 +2326,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b17">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 17</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2036,10 +2340,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b18">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 18</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2048,10 +2354,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b19">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 19</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2060,10 +2368,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b20">
-                            <property name="label" translatable="yes">Fiche du film</property>
+                            <property name="label" translatable="yes">Fiche du film 20</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2072,10 +2382,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b21">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 21</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2084,10 +2396,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b22">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 22</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2096,10 +2410,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b23">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 23</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2108,10 +2424,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b24">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 24</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2120,10 +2438,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b25">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 25</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2132,10 +2452,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b26">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 26</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2144,10 +2466,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b27">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 27</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2156,10 +2480,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b28">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 28</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2168,10 +2494,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b29">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 29</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2180,10 +2508,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b30">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 30</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2192,10 +2522,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b31">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 31</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2204,10 +2536,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b32">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 32</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2216,10 +2550,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b33">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 33</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2228,10 +2564,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b34">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 34</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2240,10 +2578,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b35">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 35</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2252,10 +2592,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b36">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 36</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2264,10 +2606,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b37">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 37</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2276,10 +2620,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b38">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 38</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2288,10 +2634,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b39">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 39</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2300,10 +2648,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b40">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 40</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2312,10 +2662,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b41">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 41</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2324,10 +2676,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b42">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 42</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2336,10 +2690,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b43">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 43</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2348,10 +2704,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b44">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 44</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2360,10 +2718,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b45">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 45</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2372,10 +2732,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b46">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 46</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2384,10 +2746,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b47">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 47</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2396,10 +2760,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b48">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 48</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2408,10 +2774,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b49">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 49</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2420,10 +2788,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b50">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 50</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2432,10 +2802,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b51">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 51</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2444,10 +2816,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b52">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 52</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2456,10 +2830,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b53">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 53</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2468,10 +2844,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b54">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 54</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2480,10 +2858,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b55">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 55</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2492,10 +2872,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b56">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 56</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2504,10 +2886,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b57">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 57</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2516,10 +2900,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b58">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 58</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2528,10 +2914,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b59">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 59</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2540,10 +2928,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b60">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 60</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2552,10 +2942,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b61">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 61</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2564,10 +2956,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b62">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 62</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2576,10 +2970,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b63">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 63</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2588,10 +2984,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b64">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 64</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2600,10 +2998,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b65">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 65</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2612,10 +3012,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b66">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 66</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2624,10 +3026,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b67">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 67</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2636,10 +3040,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b68">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 68</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2648,10 +3054,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b69">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 69</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2660,10 +3068,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b70">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 70</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2672,10 +3082,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b71">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 71</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2684,10 +3096,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b72">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 72</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2696,10 +3110,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b73">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 73</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2708,10 +3124,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b74">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 74</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2720,10 +3138,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b75">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 75</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2732,10 +3152,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b76">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 76</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2744,10 +3166,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b77">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 77</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2756,10 +3180,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b78">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 78</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2768,10 +3194,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b79">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 79</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2780,10 +3208,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b80">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 80</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2792,10 +3222,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b81">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 81</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2804,10 +3236,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b82">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 82</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2816,10 +3250,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b83">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 83</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2828,10 +3264,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b84">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 84</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2840,10 +3278,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b85">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 85</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2852,10 +3292,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b86">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 86</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2864,10 +3306,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b87">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 87</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2876,10 +3320,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b88">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 88</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2888,10 +3334,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b89">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 89</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2900,10 +3348,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b90">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 90</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2912,10 +3362,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b91">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 91</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2924,10 +3376,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b92">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 92</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2936,10 +3390,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b93">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 93</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2948,10 +3404,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b94">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 94</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -2960,10 +3418,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b95">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 95</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -2972,10 +3432,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b96">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 96</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -2984,10 +3446,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b97">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 97</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -2996,10 +3460,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b98">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 98</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -3008,10 +3474,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b99">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 99</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -3020,10 +3488,12 @@ un robot ?</property>
                         </child>
                         <child>
                           <object class="GtkButton" id="b100">
-                            <property name="label" translatable="yes">button</property>
+                            <property name="label" translatable="yes">Fiche du film 100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
