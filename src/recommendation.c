@@ -14,7 +14,7 @@ void recommendations_factorisation(movies* movies_list){
     gsl_matrix* R=load_matrix(movies_list);
     //préparation de la structure pour la factorisation
     rdm_init();
-    factorisation_mat* fm=initialize_mat(3, R);
+    factorisation_mat* fm=initialize_mat(6, R);
     // factorisation
     factor(fm, factorisation_alpha, factorisation_beta);
     //produit P*Q

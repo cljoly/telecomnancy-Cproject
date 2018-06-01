@@ -1,6 +1,18 @@
 #include <gtk/gtk.h>
 #include"biblio_interface.h"
+#include"console_display.h"
+#include "movies_list_loader.h"
+#include "recommendation_list.h"
+#include "movie.h"
+#include"stringlist.h"
+#include"recommendation.h"
+#include <wjelement.h>
 
+
+#define MOVIE_NB 100
+char *nom_utilisateur;
+int liste_reco[10];
+int indice_film;
 /*-----------------------------------------------------------------------------*/
 /* FONCTIONS DE CHANGEMENT DE PAGE*/
 void page_suivante(gpointer user_data, int page)
@@ -43,6 +55,7 @@ void vers_page_info(GtkWidget* widget, gpointer user_data)
 {
 	page_suivante(user_data, 4);
 }
+
 
 /*-----------------------------------------------------------------------------*/
 /* FONCTIONS POUR NOTER LES FILMS */
@@ -87,6 +100,7 @@ void note1(GtkWidget *widget, gpointer user_data)
 	vote_nul(user_data, "image3");
 	vote_nul(user_data, "image4");
 	vote_nul(user_data,"image5");
+	changer_note(widget, user_data,1);
 }
 
 void note2(GtkWidget *widget, gpointer user_data)
@@ -97,6 +111,7 @@ void note2(GtkWidget *widget, gpointer user_data)
 	vote_nul(user_data, "image3");
 	vote_nul(user_data,"image4");
 	vote_nul(user_data,"image5");
+	changer_note(widget, user_data,2);
 }
 
 void note3(GtkWidget *widget, gpointer user_data)
@@ -107,6 +122,7 @@ void note3(GtkWidget *widget, gpointer user_data)
 	
 	vote_nul(user_data, "image4");
 	vote_nul(user_data, "image5");
+	changer_note(widget, user_data,3);
 }
 
 void note4(GtkWidget *widget, gpointer user_data)
@@ -117,6 +133,7 @@ void note4(GtkWidget *widget, gpointer user_data)
 	vote_bien(user_data, "image4");
 	
 	vote_nul(user_data, "image5");
+	changer_note(widget, user_data,4);
 }
 
 void note5(GtkWidget *widget, gpointer user_data)
@@ -126,10 +143,311 @@ void note5(GtkWidget *widget, gpointer user_data)
 	vote_bien(user_data,"image3");
 	vote_bien(user_data, "image4");
 	vote_bien(user_data, "image5");
+	changer_note(widget, user_data,5);
+}
+
+void changer_note(GtkWidget *widget, gpointer user_data, int note)
+{
+	FILE *f = fopen("films.json", "r");
+
+     // préparation du reader afin de lire dans le fichier json
+    WJReader doc = WJROpenFILEDocument(f, NULL, 0);
+    WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+    movies *m = load_movies(elem, MOVIE_NB);
+    //  movies_list->tab[m->id]->grade = (int)grade;
+    m->tab[indice_film]->grade = (int) note;
+    m->user = nom_utilisateur;
+    printf("Ceci est la note !!!%d !!!!",m->tab[indice_film]->grade);
+    save_grade(m);
+    // libéré l'espace mémoire de la liste de film
+	destroy_movies_list(m);
+	// fermeture de l'élément de la librairie jwelement + libération en mémoire
+	WJECloseDocument(elem);
+	WJRCloseDocument(doc);
+	// fermeture du fichier
+	fclose(f);
 }
 /*--------------------------------------------------------------------------*/
 /* CHARGEMENT DES PAGES */
 
+void chargement_fiche(GtkWidget* widget, gpointer user_data)
+{
+	SGlobalData *data = (SGlobalData*) user_data;
+	gchar *filename1;
+	GtkImage *image;
+	GtkButton *button;
+	char nom[21];
+	char try[16];
+	GtkLabel *texte;
+    char title[100];
+    char syno[500];
+    char pb1[10];
+	char pb2[10];
+	char pb3[10];
+	int number;
+	/* Mise en place des images du menu */
+	filename1 = g_build_filename ("./ressources/op1.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op11"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op12"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op3.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op13"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op4.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op14"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op5.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op15"));
+	gtk_image_set_from_file(image,filename1);
+	
+	filename1 = g_build_filename ("./ressources/accueil2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ3"));
+	gtk_image_set_from_file(image,filename1);
+	
+      // ouverture du fichier json
+	FILE *f = fopen("films.json", "r");
+      // test si l'ouverture est un succès
+	if (f == NULL) {
+        printf("impossible d'ouvrir le fichier");
+
+	}
+	
+      // préparation du reader afin de lire dans le fichier json
+	WJReader doc = WJROpenFILEDocument(f, NULL, 0);
+	WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+	movies *m = load_movies(elem, 100);
+
+	/* Récuperation de l'indice du film voulu */
+	button = GTK_BUTTON(widget);
+	strcat(try,gtk_button_get_label (button));
+	sscanf(try, "%s %s %s %d", pb1, pb2, pb3, &number);
+	indice_film = number-1;
+	/* Mise de la fiche du film */
+	sprintf(nom, "./ressources/%i.jpg",number);
+	filename1 =  g_build_filename (nom, NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "im_fiche"));
+	gtk_image_set_from_file(image,filename1);
+    number = number-1;
+	/*Titre du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"titre_fiche"));
+	strcpy(title,(m->tab[number])->title);
+	gtk_label_set_text(texte, title);
+	/*Type du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"type_fiche"));
+	switch ((m->tab[number])->type) {
+	case SERIE:
+		strcpy(title,"Série");
+		break;
+	case MOVIE:
+		strcpy(title,"Film");
+		break;
+	}
+	gtk_label_set_text(texte,title);
+	/* Durée du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"duree_fiche"));
+	sprintf(title, "%d", (m->tab[number])->duration);
+	gtk_label_set_text(texte, title);
+	/* Année du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"annee_fiche"));
+	sprintf(title, "%d", (m->tab[number])->year);
+	gtk_label_set_text(texte,title);
+	/*Genre du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"genre_fiche"));
+	int i = 0;
+	strcpy(title,"");
+	while (get_string((m->tab[number])->genre, i) != NULL && i < 10) {
+		if (i!=0) {
+			strcat(title, ", ");
+		}
+    	strcat(title,get_string((m->tab[number])->genre, i));
+		i++;
+  }
+	gtk_label_set_text(texte, title);
+	/* Realisateur du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"realisateur_fiche"));
+	strcpy(title,(m->tab[number])->director);
+	gtk_label_set_text(texte,title);
+	/* Acteurs du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"acteurs_fiche"));
+	i = 0;
+	strcpy(title,"");
+	while (get_string((m->tab[number])->actors, i) != NULL && i < 10) {
+		if (i!=0) {
+			strcat(title, ", ");
+		}
+		strcat(title, get_string((m->tab[number])->actors, i));
+		i++;
+	}
+	gtk_label_set_text(texte, title);
+	/* Description du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"description_fiche"));
+	strcpy(syno,(m->tab[number])->synopsis);
+	gtk_label_set_text(texte,syno);
+
+	/* Note */
+	
+	if ((m->tab[number])->grade == 5) {note5(widget, user_data);}
+	else if ((m->tab[number])->grade == 4) {note4(widget, user_data);}
+	else if ((m->tab[number])->grade == 3) {note3(widget, user_data);}
+	else if ((m->tab[number])->grade == 2) {note2(widget, user_data);}
+	else if ((m->tab[number])->grade == 1) {note1(widget, user_data);}
+	else {note0(widget, user_data);}
+	destroy_movies_list(m);
+      // fermeture de l'élément de la librairie jwelement + libération en mémoire
+	WJECloseDocument(elem);
+	WJRCloseDocument(doc);
+      // fermeture du fichier
+	fclose(f);
+
+	g_free(filename1);
+}
+
+void chargement_fiche2(GtkWidget* widget, gpointer user_data)
+{
+	SGlobalData *data = (SGlobalData*) user_data;
+	gchar *filename1;
+	GtkImage *image;
+	GtkButton *button;
+	char nom[21];
+	char try[16];
+	GtkLabel *texte;
+    char title[100];
+    char syno[500];
+    char pb1[10];
+	char pb2[10];
+	char pb3[10];
+	int number;
+	int identifiant;
+	
+	/* Mise en place des images du menu */
+	filename1 = g_build_filename ("./ressources/op1.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op11"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op12"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op3.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op13"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op4.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op14"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op5.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op15"));
+	gtk_image_set_from_file(image,filename1);
+	
+	filename1 = g_build_filename ("./ressources/accueil2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ3"));
+	gtk_image_set_from_file(image,filename1);
+	
+      // ouverture du fichier json
+	FILE *f = fopen("films.json", "r");
+      // test si l'ouverture est un succès
+	if (f == NULL) {
+        printf("impossible d'ouvrir le fichier");
+
+	}
+	
+      // préparation du reader afin de lire dans le fichier json
+	WJReader doc = WJROpenFILEDocument(f, NULL, 0);
+	WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+	movies *m = load_movies(elem, 100);
+
+ 
+	/* Récuperation de l'indice du film voulu */
+	button = GTK_BUTTON(widget);
+	strcat(try,gtk_button_get_label (button));
+	sscanf(try, "%s %s %s %d", pb1, pb2, pb3, &number);
+	
+	m->user = nom_utilisateur;
+    load_grade(m);
+	/* Chargement des images */
+
+	identifiant = liste_reco[number-1];
+	printf("%d", identifiant);
+	indice_film = identifiant;
+	printf("NOTE MODIFIE %d  ici identifiant %d\n", m->tab[indice_film]->grade, indice_film);
+	/* Mise de la fiche du film */
+	
+	sprintf(nom, "./ressources/%i.jpg",identifiant+1);
+	filename1 =  g_build_filename (nom, NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "im_fiche"));
+	gtk_image_set_from_file(image,filename1);
+
+	/*Titre du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"titre_fiche"));
+	strcpy(title,(m->tab[identifiant])->title);
+	gtk_label_set_text(texte, title);
+	/*Type du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"type_fiche"));
+	switch ((m->tab[identifiant])->type) {
+	case SERIE:
+		strcpy(title,"Série");
+		break;
+	case MOVIE:
+		strcpy(title,"Film");
+		break;
+	}
+	gtk_label_set_text(texte,title);
+	/* Durée du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"duree_fiche"));
+	sprintf(title, "%d", (m->tab[identifiant])->duration);
+	gtk_label_set_text(texte, title);
+	/* Année du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"annee_fiche"));
+	sprintf(title, "%d", (m->tab[identifiant])->year);
+	gtk_label_set_text(texte,title);
+	/*Genre du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"genre_fiche"));
+	int i = 0;
+	strcpy(title,"");
+	while (get_string((m->tab[identifiant])->genre, i) != NULL && i < 10) {
+		if (i!=0) {
+			strcat(title, ", ");
+		}
+    	strcat(title,get_string((m->tab[identifiant])->genre, i));
+		i++;
+  }
+	gtk_label_set_text(texte, title);
+	/* Realisateur du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"realisateur_fiche"));
+	strcpy(title,(m->tab[identifiant])->director);
+	gtk_label_set_text(texte,title);
+	/* Acteurs du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"acteurs_fiche"));
+	i = 0;
+	strcpy(title,"");
+	while (get_string((m->tab[identifiant])->actors, i) != NULL && i < 10) {
+		if (i!=0) {
+			strcat(title, ", ");
+		}
+		strcat(title, get_string((m->tab[identifiant])->actors, i));
+		i++;
+	}
+	gtk_label_set_text(texte, title);
+	/* Description du film */
+	texte = GTK_LABEL(gtk_builder_get_object(data->builder,"description_fiche"));
+	strcpy(syno,(m->tab[identifiant])->synopsis);
+	gtk_label_set_text(texte,syno);
+
+	/* Note */
+	if ((m->tab[identifiant])->grade == 5) {note5(widget, user_data);}
+	else if ((m->tab[identifiant])->grade == 4) {note4(widget, user_data);}
+	else if ((m->tab[identifiant])->grade == 3) {note3(widget, user_data);}
+	else if ((m->tab[identifiant])->grade == 2) {note2(widget, user_data);}
+	else if ((m->tab[identifiant])->grade == 1) {note1(widget, user_data);}
+	else {note0(widget, user_data);}
+	destroy_movies_list(m);
+      // fermeture de l'élément de la librairie jwelement + libération en mémoire
+	WJECloseDocument(elem);
+	WJRCloseDocument(doc);
+      // fermeture du fichier
+	fclose(f);
+
+	g_free(filename1);
+}
 
 
 void chargement_principale(GtkWidget* widget, gpointer user_data)
@@ -137,7 +455,9 @@ void chargement_principale(GtkWidget* widget, gpointer user_data)
 	SGlobalData *data = (SGlobalData*) user_data;
 	gchar *filename1;
 	GtkImage *image;
-	
+	int number;
+	char nom[21];
+	char im_nom[5];
 	/* Mise en place des images du menu */
 	filename1 = g_build_filename ("./ressources/op1.png", NULL);
 	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op1"));
@@ -159,9 +479,12 @@ void chargement_principale(GtkWidget* widget, gpointer user_data)
 	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ1"));
 	gtk_image_set_from_file(image,filename1);
 	
+
+	
+
+	
 	g_free(filename1);
 }
-
 
 
 void chargement_biblio(GtkWidget* widget, gpointer user_data)
@@ -171,8 +494,6 @@ void chargement_biblio(GtkWidget* widget, gpointer user_data)
 	GtkImage *image;
 	char nom[21];
 	char im_nom[5];
-	
-
 	/* Mise en place des images du menu */
 	filename1 = g_build_filename ("./ressources/op1.png", NULL);
 	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op6"));
@@ -209,7 +530,7 @@ void chargement_biblio(GtkWidget* widget, gpointer user_data)
 
 /*--------------------------------------------------------------------------*/
 /* FONCTIONS IMAGE */
-void changer_image(gpointer user_data) 
+/*void changer_image_bib(gpointer user_data) 
 {
 	SGlobalData *data = (SGlobalData*) user_data;
 	GtkImage *image;
@@ -233,7 +554,7 @@ void changer_image(gpointer user_data)
 		gtk_image_set_from_file(image,filename);
     g_free(filename);
 }
-
+*/
 
 
 void test2(GtkWidget* widget, gpointer user_data)
@@ -252,11 +573,12 @@ void test2(GtkWidget* widget, gpointer user_data)
 
     g_free(filename);
 }
-void test(GtkWidget* widget, gpointer user_data)
+
+/*void test(GtkWidget* widget, gpointer user_data)
 {
     changer_image(user_data);
 }
-
+*/
    
    
 /* https://cps-static.rovicorp.com/2/Open/20th_Century_Fox_39/Program/125613/_9by13/_derived_jpg_q90_410x410_m0/Titanic-Poster3x4.jpg?partner=allrovi.com */ 
@@ -268,7 +590,7 @@ void test(GtkWidget* widget, gpointer user_data)
 /*--------------------------------------------------------------------------*/
 /*FONCTIONS DE CREATION DE COMPTE*/
 
-void *nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data)
+void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data)
 {
 	SGlobalData *data = (SGlobalData*) user_data;
 	SLocalData *local = (SLocalData*) local_data;
@@ -276,9 +598,9 @@ void *nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_dat
 	GtkToggleButton *button;
 	GtkWidget *msg;
 	const char *mdp2;
-	gboolean robot;
-	int erreur = 0;
-    
+	gboolean robot=0;
+	int erreur;
+    erreur =1;
 	entree = GTK_ENTRY(gtk_builder_get_object(data->builder,"nom"));
 	if (gtk_entry_get_text_length(entree) == 0)
 	{
@@ -367,30 +689,101 @@ void *nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_dat
 	return local;
 	
 }
+
+SGlobalData *create_data()
+{
+  SGlobalData *data = malloc(sizeof(SGlobalData));
+  return data;
+}
+
+SLocalData *create_local()
+{
+	SLocalData *local =  malloc(sizeof(SLocalData));
+    return local;
+}
+
+Fichier *create_fichier()
+{
+	Fichier *fichier = malloc(sizeof(Fichier));
+}
+
+
 /*-----------------------------------------------------------------------------*/
 /* FONCTIONS CONNEXION */
+//gchar *user;
+void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data, gpointer fichier)
+{	
+    SGlobalData *data =  create_data();
+	data = (SGlobalData*) user_data;
+	Fichier *fich = create_fichier();
+	fich = (Fichier*) fichier;
+    SLocalData *local = create_local();
+	local = (SLocalData*) local_data;
+    gchar *user;
+	int erreur = 0;
+	GtkEntry *entree;
 
-void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data)
-{
-//	SGlobalData *data = (SGlobalData*) user_data;
-//	SLocalData *local = (SLocalData*) local_data;
-//	char *entree1;
-//	GtkEntry *entree;
+	gchar *filename1;
+	GtkImage *image;
+	int number;
+	char nom[27];
+	char im_nom[8];
+	    FILE *f;
+    WJReader doc;
+    WJElement elem;
+	entree=GTK_ENTRY(gtk_builder_get_object(data->builder,"connexion"));
 	
+	if (gtk_entry_get_text_length(entree) == 0)
+	{
+		erreur =1;
+	}
+	else
+	{	
+		user = gtk_entry_get_text(entree);
+		data->identifiant = user;
+		(data->m)->user=user;
+		load_grade(data->m);
+		
+			  FILE *f = fopen("films.json", "r");
+	// test si l'ouverture est un succès
+	if (f == NULL) 
+	{
+		printf("impossible d'ouvrir le fichier");
+		return 1;
+	 }
+	// préparation du reader afin de lire dans le fichier json
+	WJReader doc = WJROpenFILEDocument(f, NULL, 0);
+	WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+	// charge la liste de film
+	movies *m = load_movies(elem, MOVIE_NB);
 
-//	if (local->robot==0)
-//	{
-//		entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "connexion_id"));
-//		entree1 = gtk_entry_get_text(entree);
-//		if (strcmp(local->identifiant, entree1)==0)
-//		{
-//			entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "connexion_mdp"));
-//			entree1 = gtk_entry_get_text(entree);
-//			if(strcmp(local->mdp,entree1)==0)
-//			{
-				page_suivante(user_data, 2);
-//			}
-//		}
-//	}
+	m->user = user;
+	nom_utilisateur=user;		
+	//movies *mov = data->m;
+	recommendations_factorisation(m);
+	save_grade(m);
+	/* Chargement des images */
+	for (int i=0; i<10; i++)
+	{	
+		number = get_id(m->recommendations,i);
+		liste_reco[i]=number;
+		sprintf(nom, "./ressources/%d.jpg", number+1);
+		sprintf(im_nom, "rec%d",i+1);
+		filename1 =  g_build_filename (nom, NULL);
+		image = GTK_IMAGE(gtk_builder_get_object(data->builder, im_nom));
+		gtk_image_set_from_file(image,filename1);
+	}
+	// libéré l'espace mémoire de la liste de film
+	destroy_movies_list(m);
+	// fermeture de l'élément de la librairie jwelement + libération en mémoire
+	 WJECloseDocument(elem);
+	WJRCloseDocument(doc);
+		page_suivante(user_data, 2);
+	}
+}
+
+void quitter(GtkWidget *widget, gpointer user_data)
+{
+    gtk_main_quit();
 }
 

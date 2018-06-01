@@ -3,7 +3,7 @@
 		{
 			"id":0,
 			"title":"Fast & Furious 7",
-			"grade":4
+			"grade":0
 		},
 		{
 			"id":1,
@@ -98,7 +98,7 @@
 		{
 			"id":19,
 			"title":"Once Upon a Time",
-			"grade":0
+			"grade":2
 		},
 		{
 			"id":20,
@@ -293,7 +293,7 @@
 		{
 			"id":58,
 			"title":"Le Hobbit: La bataille des cinq armées",
-			"grade":0
+			"grade":5
 		},
 		{
 			"id":59,
@@ -313,7 +313,7 @@
 		{
 			"id":62,
 			"title":"Hunger Games: La révolte - 1ère partie",
-			"grade":0
+			"grade":5
 		},
 		{
 			"id":63,
@@ -383,7 +383,7 @@
 		{
 			"id":76,
 			"title":"Modern Family",
-			"grade":0
+			"grade":1
 		},
 		{
 			"id":77,
@@ -488,7 +488,7 @@
 		{
 			"id":97,
 			"title":"Mission Impossible 5",
-			"grade":0
+			"grade":5
 		},
 		{
 			"id":98,
@@ -503,54 +503,54 @@
 	],
 	"recommendations":[
 		{
-			"id":2,
-			"title":"Spectre",
-			"grade":5.946604e+00
-		},
-		{
-			"id":12,
-			"title":"It Follows",
-			"grade":5.615948e+00
+			"id":98,
+			"title":"Sherlock",
+			"grade":4.444098e+00
 		},
 		{
 			"id":44,
 			"title":"Unbreakable Kimmy Schmidt",
-			"grade":5.576243e+00
+			"grade":4.443755e+00
 		},
 		{
-			"id":1,
-			"title":"The Walking Dead",
-			"grade":5.082901e+00
+			"id":12,
+			"title":"It Follows",
+			"grade":4.405043e+00
 		},
 		{
-			"id":97,
-			"title":"Mission Impossible 5",
-			"grade":4.879385e+00
+			"id":39,
+			"title":"Les Gardiens de la Galaxie",
+			"grade":4.384949e+00
 		},
 		{
-			"id":80,
-			"title":"Poltergeist",
-			"grade":4.737990e+00
+			"id":2,
+			"title":"Spectre",
+			"grade":4.289222e+00
 		},
 		{
-			"id":98,
-			"title":"Sherlock",
-			"grade":4.692198e+00
+			"id":78,
+			"title":"Orange Is the New Black",
+			"grade":4.159600e+00
 		},
 		{
-			"id":5,
-			"title":"Avengers: L'ère d'Ultron",
-			"grade":4.305985e+00
+			"id":84,
+			"title":"Kill Me Three Times",
+			"grade":3.960210e+00
 		},
 		{
-			"id":11,
-			"title":"The Flash",
-			"grade":3.741119e+00
+			"id":31,
+			"title":"The Last Man on Earth",
+			"grade":3.932656e+00
 		},
 		{
-			"id":14,
-			"title":"Vikings",
-			"grade":3.647684e+00
+			"id":68,
+			"title":"Friends",
+			"grade":3.854325e+00
+		},
+		{
+			"id":54,
+			"title":"Exodus",
+			"grade":3.685535e+00
 		}
 	]
 }

@@ -3,7 +3,7 @@
 		{
 			"id":0,
 			"title":"Fast & Furious 7",
-			"grade":4
+			"grade":0
 		},
 		{
 			"id":1,
@@ -483,7 +483,7 @@
 		{
 			"id":96,
 			"title":"Deadpool",
-			"grade":4
+			"grade":0
 		},
 		{
 			"id":97,
@@ -503,54 +503,54 @@
 	],
 	"recommendations":[
 		{
+			"id":44,
+			"title":"Unbreakable Kimmy Schmidt",
+			"grade":2.072164e+00
+		},
+		{
 			"id":2,
 			"title":"Spectre",
-			"grade":5.946604e+00
+			"grade":1.835158e+00
 		},
 		{
 			"id":12,
 			"title":"It Follows",
-			"grade":5.615948e+00
-		},
-		{
-			"id":44,
-			"title":"Unbreakable Kimmy Schmidt",
-			"grade":5.576243e+00
-		},
-		{
-			"id":1,
-			"title":"The Walking Dead",
-			"grade":5.082901e+00
+			"grade":1.747574e+00
 		},
 		{
 			"id":97,
 			"title":"Mission Impossible 5",
-			"grade":4.879385e+00
+			"grade":1.446430e+00
 		},
 		{
-			"id":80,
-			"title":"Poltergeist",
-			"grade":4.737990e+00
+			"id":1,
+			"title":"The Walking Dead",
+			"grade":1.373621e+00
 		},
 		{
 			"id":98,
 			"title":"Sherlock",
-			"grade":4.692198e+00
+			"grade":1.345253e+00
 		},
 		{
 			"id":5,
 			"title":"Avengers: L'ère d'Ultron",
-			"grade":4.305985e+00
+			"grade":1.312148e+00
 		},
 		{
-			"id":11,
-			"title":"The Flash",
-			"grade":3.741119e+00
+			"id":8,
+			"title":"Home",
+			"grade":1.231578e+00
 		},
 		{
-			"id":14,
-			"title":"Vikings",
-			"grade":3.647684e+00
+			"id":63,
+			"title":"The D Train",
+			"grade":1.224458e+00
+		},
+		{
+			"id":34,
+			"title":"Killing Jesus",
+			"grade":1.194184e+00
 		}
 	]
 }
