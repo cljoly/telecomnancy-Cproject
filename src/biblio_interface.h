@@ -56,11 +56,10 @@ void chargement_principale(GtkWidget* widget, gpointer user_data);
 void chargement_biblio(GtkWidget* widget, gpointer user_data);
 void chargement_fiche(GtkWidget* widget, gpointer user_data);
 void chargement_fiche2(GtkWidget* widget, gpointer user_data);
-//void changer_image_bib(gpointer user_data);
-void test2(GtkWidget* widget, gpointer user_data);
-//void test(GtkWidget* widget, gpointer user_data);
-void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data);
-void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data, gpointer fichier);
+int nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data);
+SGlobalData *create_data();
+SLocalData *create_local();
+int connexion(GtkWidget* widget, gpointer user_data);
 void quitter(GtkWidget *widget, gpointer user_data);
 
 

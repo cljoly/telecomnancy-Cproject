@@ -134,6 +134,9 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>
+              <packing>
+                <property name="x">30</property>
+              </packing>
             </child>
             <child>
               <object class="GtkButton" id="btn_accueil">
@@ -175,7 +178,7 @@
                 <property name="input_purpose">name</property>
               </object>
               <packing>
-                <property name="x">297</property>
+                <property name="x">327</property>
                 <property name="y">556</property>
               </packing>
             </child>
@@ -192,7 +195,7 @@
                 </attributes>
               </object>
               <packing>
-                <property name="x">304</property>
+                <property name="x">334</property>
                 <property name="y">499</property>
               </packing>
             </child>
@@ -210,7 +213,7 @@ D'UN COMPTE</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">962</property>
+                <property name="x">992</property>
                 <property name="y">350</property>
               </packing>
             </child>
@@ -228,7 +231,7 @@ D'UN COMPTE</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">194</property>
+                <property name="x">224</property>
                 <property name="y">350</property>
               </packing>
             </child>
@@ -243,7 +246,7 @@ D'UN COMPTE</property>
                 <signal name="clicked" handler="vers_page_creation" swapped="no"/>
               </object>
               <packing>
-                <property name="x">1052</property>
+                <property name="x">1082</property>
                 <property name="y">590</property>
               </packing>
             </child>
@@ -260,7 +263,7 @@ D'UN COMPTE</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">718</property>
+                <property name="x">748</property>
                 <property name="y">550</property>
               </packing>
             </child>
@@ -3553,6 +3556,8 @@ un robot ?</property>
                         <property name="receives_default">True</property>
                         <property name="image">op8</property>
                         <property name="relief">none</property>
+                        <signal name="clicked" handler="chargement_principale2" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_principale" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -3707,6 +3712,8 @@ un robot ?</property>
                         <property name="receives_default">True</property>
                         <property name="image">op13</property>
                         <property name="relief">none</property>
+                        <signal name="clicked" handler="chargement_principale2" swapped="no"/>
+                        <signal name="clicked" handler="vers_page_principale" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -3776,7 +3783,7 @@ un robot ?</property>
                 <property name="receives_default">True</property>
                 <property name="image">princ3</property>
                 <property name="relief">none</property>
-                <signal name="clicked" handler="chargement_principale" swapped="no"/>
+                <signal name="clicked" handler="chargement_principale2" swapped="no"/>
                 <signal name="clicked" handler="vers_page_principale" swapped="no"/>
               </object>
               <packing>
