@@ -154,10 +154,10 @@ void changer_note(GtkWidget *widget, gpointer user_data, int note)
     WJReader doc = WJROpenFILEDocument(f, NULL, 0);
     WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
     movies *m = load_movies(elem, MOVIE_NB);
-    //  movies_list->tab[m->id]->grade = (int)grade;
-    m->tab[indice_film]->grade = (int) note;
     m->user = nom_utilisateur;
-    printf("Ceci est la note !!!%d !!!!",m->tab[indice_film]->grade);
+    load_grade(m);
+    m->tab[indice_film]->grade = (int) note;
+
     save_grade(m);
     // libéré l'espace mémoire de la liste de film
 	destroy_movies_list(m);
@@ -185,6 +185,7 @@ void chargement_fiche(GtkWidget* widget, gpointer user_data)
 	char pb2[10];
 	char pb3[10];
 	int number;
+	int identifiant;
 	/* Mise en place des images du menu */
 	filename1 = g_build_filename ("./ressources/op1.png", NULL);
 	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op11"));
@@ -224,6 +225,8 @@ void chargement_fiche(GtkWidget* widget, gpointer user_data)
 	strcat(try,gtk_button_get_label (button));
 	sscanf(try, "%s %s %s %d", pb1, pb2, pb3, &number);
 	indice_film = number-1;
+	m->user = nom_utilisateur;
+    load_grade(m);
 	/* Mise de la fiche du film */
 	sprintf(nom, "./ressources/%i.jpg",number);
 	filename1 =  g_build_filename (nom, NULL);
@@ -366,9 +369,7 @@ void chargement_fiche2(GtkWidget* widget, gpointer user_data)
 	/* Chargement des images */
 
 	identifiant = liste_reco[number-1];
-	printf("%d", identifiant);
 	indice_film = identifiant;
-	printf("NOTE MODIFIE %d  ici identifiant %d\n", m->tab[indice_film]->grade, indice_film);
 	/* Mise de la fiche du film */
 	
 	sprintf(nom, "./ressources/%i.jpg",identifiant+1);
@@ -450,6 +451,75 @@ void chargement_fiche2(GtkWidget* widget, gpointer user_data)
 }
 
 
+void chargement_principale2(GtkWidget* widget, gpointer user_data)
+{
+	SGlobalData *data = (SGlobalData*) user_data;
+	gchar *filename1;
+	GtkImage *image;
+	int number;
+	char nom[25];
+	char im_nom[10];
+
+	/* Mise en place des images du menu */
+	filename1 = g_build_filename ("./ressources/op1.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op1"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op2"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op3.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op3"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op4.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op4"));
+	gtk_image_set_from_file(image,filename1);
+	filename1 = g_build_filename ("./ressources/op5.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op5"));
+	gtk_image_set_from_file(image,filename1);
+	
+	filename1 = g_build_filename ("./ressources/accueil2.png", NULL);
+	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "princ1"));
+	gtk_image_set_from_file(image,filename1);
+		
+	FILE *f = fopen("films.json", "r");
+	// test si l'ouverture est un succès
+	if (f == NULL) 
+	{
+		printf("impossible d'ouvrir le fichier");
+		return 1;
+	 }
+	// préparation du reader afin de lire dans le fichier json
+	WJReader doc = WJROpenFILEDocument(f, NULL, 0);
+	WJElement elem = WJEOpenDocument(doc, NULL, NULL, NULL);
+	// charge la liste de film
+	movies *m = load_movies(elem, MOVIE_NB);
+
+	m->user = nom_utilisateur;
+	load_grade(m);
+	//movies *mov = data->m;
+	recommendations_factorisation(m);
+	save_grade(m);
+	/* Chargement des images */
+	for (int i=0; i<10; i++)
+	{	
+		number = get_id(m->recommendations,i);
+		liste_reco[i]=number;
+		sprintf(nom, "./ressources/%d.jpg", number+1);
+		sprintf(im_nom, "rec%d",i+1);
+		filename1 =  g_build_filename (nom, NULL);
+		image = GTK_IMAGE(gtk_builder_get_object(data->builder, im_nom));
+		gtk_image_set_from_file(image,filename1);
+	}
+	// libéré l'espace mémoire de la liste de film
+	destroy_movies_list(m);
+	// fermeture de l'élément de la librairie jwelement + libération en mémoire
+	 WJECloseDocument(elem);
+	WJRCloseDocument(doc);
+
+	fclose(f);
+	g_free(filename1);
+}
+
 void chargement_principale(GtkWidget* widget, gpointer user_data)
 {
 	SGlobalData *data = (SGlobalData*) user_data;
@@ -458,6 +528,7 @@ void chargement_principale(GtkWidget* widget, gpointer user_data)
 	int number;
 	char nom[21];
 	char im_nom[5];
+
 	/* Mise en place des images du menu */
 	filename1 = g_build_filename ("./ressources/op1.png", NULL);
 	image = GTK_IMAGE(gtk_builder_get_object(data->builder, "op1"));
@@ -480,12 +551,8 @@ void chargement_principale(GtkWidget* widget, gpointer user_data)
 	gtk_image_set_from_file(image,filename1);
 	
 
-	
-
-	
 	g_free(filename1);
 }
-
 
 void chargement_biblio(GtkWidget* widget, gpointer user_data)
 {
@@ -527,70 +594,11 @@ void chargement_biblio(GtkWidget* widget, gpointer user_data)
 	g_free(filename1);
 }
 
-
-/*--------------------------------------------------------------------------*/
-/* FONCTIONS IMAGE */
-/*void changer_image_bib(gpointer user_data) 
-{
-	SGlobalData *data = (SGlobalData*) user_data;
-	GtkImage *image;
-
-    gchar *filename;
-
-        char cle3[3];
-
-        strcat(cle3,"h");
-        //sprintf(cle3, "%d", 1);
-        strcat(cle3,"1"); 
-		
-        printf( "%s", cle3);
-        filename = g_build_filename ("./ressources/titanic.jpg", NULL);
-		image = GTK_IMAGE(gtk_builder_get_object(data->builder, cle3));
-		gtk_image_set_from_file(image,filename);
-		strcpy(cle3,"h2");
-		printf( "%s", cle3);
-		        filename = g_build_filename ("./ressources/test.png", NULL);
-		image = GTK_IMAGE(gtk_builder_get_object(data->builder, cle3));
-		gtk_image_set_from_file(image,filename);
-    g_free(filename);
-}
-*/
-
-
-void test2(GtkWidget* widget, gpointer user_data)
-{
-    SGlobalData *data = (SGlobalData*) user_data;
-	GtkImage *image;
-    gchar *filename;
-	char cle3[3];
-	
-	strcat(cle3,"h");
-	//sprintf(cle3, "%d", 1);
-	strcat(cle3,"1"); 
-	filename = g_build_filename ("./ressources/titanic.jpg", NULL);
-	image = GTK_IMAGE(gtk_builder_get_object(data->builder, cle3));
-	gtk_image_set_from_file(image,filename);
-
-    g_free(filename);
-}
-
-/*void test(GtkWidget* widget, gpointer user_data)
-{
-    changer_image(user_data);
-}
-*/
-   
-   
-/* https://cps-static.rovicorp.com/2/Open/20th_Century_Fox_39/Program/125613/_9by13/_derived_jpg_q90_410x410_m0/Titanic-Poster3x4.jpg?partner=allrovi.com */ 
-    
-/*--------------------------------------------------------------------------*/
-/* Initialisation des structures */
-
     
 /*--------------------------------------------------------------------------*/
 /*FONCTIONS DE CREATION DE COMPTE*/
 
-void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data)
+int nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data)
 {
 	SGlobalData *data = (SGlobalData*) user_data;
 	SLocalData *local = (SLocalData*) local_data;
@@ -599,64 +607,83 @@ void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data
 	GtkWidget *msg;
 	const char *mdp2;
 	gboolean robot=0;
-	int erreur;
-    erreur =1;
+
 	entree = GTK_ENTRY(gtk_builder_get_object(data->builder,"nom"));
 	if (gtk_entry_get_text_length(entree) == 0)
 	{
-		erreur=1;
+		msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+		gtk_widget_show(msg);
+		return 1;
 	}
 	else
 	{
-		local->nom = gtk_entry_get_text(entree);
+		//local->nom = gtk_entry_get_text(entree);
 		entree = GTK_ENTRY(gtk_builder_get_object(data->builder,"prenom"));
 		if (gtk_entry_get_text_length(entree) == 0)
 		{
-			erreur=1;
+			printf("1");
+			msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+			gtk_widget_show(msg);
+			return 1;;
 		}
 		else
 		{
-			local->prenom = gtk_entry_get_text(entree);
+			//local->prenom = gtk_entry_get_text(entree);
 			entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "identifiant"));
 			if (gtk_entry_get_text_length(entree) == 0)
 			{
-				erreur=1;
+				printf("2");
+				msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+				gtk_widget_show(msg);
+				return 1;
 			}
 			else
 			{
-				local->identifiant = gtk_entry_get_text(entree);
+				//local->identifiant = gtk_entry_get_text(entree);
 				entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "mail"));
 			
 				if (gtk_entry_get_text_length(entree) == 0)
 				{
-					erreur=1;
+					printf("3");
+					msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+					gtk_widget_show(msg);
+					return 1;
 				}
 				else
 				{
-					local->mail = gtk_entry_get_text(entree);
+					//local->mail = gtk_entry_get_text(entree);
 					entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "mdp"));
 					if (gtk_entry_get_text_length(entree) == 0)
 					{
-						erreur=1;
+						printf("4");
+						msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+						gtk_widget_show(msg);
+						return 1;
 					}
 					else
 					{
 						local->mdp = gtk_entry_get_text(entree);
 						entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "mdp2"));
 						mdp2 = gtk_entry_get_text(entree);
-						if (strcmp(local->mdp, mdp2))
+						if (strcmp(local->mdp, mdp2)!=0)
 						{
-							erreur=1;
+							printf("5");
+							msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+							gtk_widget_show(msg);
+							return 1;
 						}
 						else
 						{
 							button = GTK_TOGGLE_BUTTON(gtk_builder_get_object(data->builder,"homme"));
-							local->sexe = gtk_toggle_button_get_active(button);
+							//local->sexe = gtk_toggle_button_get_active(button);
 							button = GTK_TOGGLE_BUTTON(gtk_builder_get_object(data->builder,"femme"));
 							/* 1 pour homme 0 pour femme */
 							if ( local->sexe == gtk_toggle_button_get_active(button))
 							{
-								erreur=1;;
+							printf("6");
+								msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+								gtk_widget_show(msg);
+								return 1;
 							}
 							else
 							{
@@ -664,8 +691,10 @@ void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data
 								robot = gtk_toggle_button_get_active(button);
 								if (!robot)
 								{
-									//local.robot =1;
-									erreur=1;
+								printf("7");
+									msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
+									gtk_widget_show(msg);;
+									return 1;
 								}
 							}
 						}
@@ -674,19 +703,13 @@ void nouveau_compte (GtkWidget* widget , gpointer user_data, gpointer local_data
 			}
 		}
 	}
-	if (erreur)
-	{
-		strcpy(local->identifiant, "null");
-		strcpy(local->mdp, "null");
-		erreur =0;
-		msg = GTK_WIDGET(gtk_builder_get_object(data->builder, "enr_erreur"));
-		gtk_widget_show(msg);
-	}
-	else
-	{
-		page_suivante(user_data, 0);
-	}
-	return local;
+
+	entree = GTK_ENTRY(gtk_builder_get_object(data->builder, "identifiant"));
+	nom_utilisateur= gtk_entry_get_text(entree);
+	
+	chargement_principale2(widget, user_data); 
+	page_suivante(user_data, 2);
+	return 0;
 	
 }
 
@@ -702,49 +725,35 @@ SLocalData *create_local()
     return local;
 }
 
-Fichier *create_fichier()
-{
-	Fichier *fichier = malloc(sizeof(Fichier));
-}
 
 
 /*-----------------------------------------------------------------------------*/
 /* FONCTIONS CONNEXION */
 //gchar *user;
-void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data, gpointer fichier)
+int connexion(GtkWidget* widget, gpointer user_data)
 {	
     SGlobalData *data =  create_data();
 	data = (SGlobalData*) user_data;
-	Fichier *fich = create_fichier();
-	fich = (Fichier*) fichier;
-    SLocalData *local = create_local();
-	local = (SLocalData*) local_data;
-    gchar *user;
-	int erreur = 0;
+    const gchar *user;
 	GtkEntry *entree;
-
 	gchar *filename1;
 	GtkImage *image;
 	int number;
 	char nom[27];
 	char im_nom[8];
-	    FILE *f;
-    WJReader doc;
-    WJElement elem;
 	entree=GTK_ENTRY(gtk_builder_get_object(data->builder,"connexion"));
 	
 	if (gtk_entry_get_text_length(entree) == 0)
 	{
-		erreur =1;
 	}
 	else
 	{	
 		user = gtk_entry_get_text(entree);
 		data->identifiant = user;
 		(data->m)->user=user;
-		load_grade(data->m);
 		
-			  FILE *f = fopen("films.json", "r");
+		
+	FILE *f = fopen("films.json", "r");
 	// test si l'ouverture est un succès
 	if (f == NULL) 
 	{
@@ -758,7 +767,8 @@ void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data, gpoin
 	movies *m = load_movies(elem, MOVIE_NB);
 
 	m->user = user;
-	nom_utilisateur=user;		
+	load_grade(m);
+	nom_utilisateur = user;		
 	//movies *mov = data->m;
 	recommendations_factorisation(m);
 	save_grade(m);
@@ -780,6 +790,8 @@ void connexion(GtkWidget* widget, gpointer user_data, gpointer local_data, gpoin
 	WJRCloseDocument(doc);
 		page_suivante(user_data, 2);
 	}
+	return 0;
+	
 }
 
 void quitter(GtkWidget *widget, gpointer user_data)
