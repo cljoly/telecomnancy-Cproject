@@ -88,10 +88,16 @@ int main() {
   int R1_val[] = {
       4, 1, 1, 2, 5, 4, 5, 0, 0, 5, 0, 0,
   };
+  int R6_val[] = {
+      0, 0, 0, 0, 0, 5, 0, 5, 0, 3, 2, 1, 0, 5, 3, 1, 0, 3, 0, 1, 0,
+      0, 4, 1, 1, 0, 5, 4, 5, 0, 3, 2, 1, 0, 5, 3, 1, 0, 3, 1, 1, 0,
+  };
   gsl_matrix *R2 = gsl_matrix_alloc(9, 8);
   gsl_matrix *R3 = gsl_matrix_alloc(30, 40);
   gsl_matrix *R4 = gsl_matrix_alloc(70, 80);
   gsl_matrix *R5 = gsl_matrix_alloc(100, 100);
+  // Matrice avec un nouvel utilisateur (une ligne de zéro)
+  gsl_matrix *R6 = gsl_matrix_alloc(6, 4);
 
   init(R1, R1_val);
   run_test(R1, 2);
@@ -136,7 +142,11 @@ int main() {
     run_test(R5, 80);
     run_test(R5, 90);
   }
-
+  if (LONG_TEST) {
+    printf("-----------------------\n");
+    init(R6, R6_val);
+    run_test(R6, 3);
+  }
   rdm_free();
 
   return 0;
