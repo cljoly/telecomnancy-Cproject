@@ -16,7 +16,16 @@ Contient les documents relatifs à la gestion de projet.
    [licence GPL](https://www.gnu.org/licenses/gpl.html). Pour l’installation,
    utiliser le paquet `libgsl-dev` sous Ubuntu.
 
- + [WJElement](https://github.com/netmail-open/wjelement) 
+ + [WJElement](https://github.com/netmail-open/wjelement) : Licence [LGPL](https://www.gnu.org/licenses/lgpl.html)
+
+ + [GTK](https://www.gtk.org/) : Licence [LGPL](https://www.gnu.org/licenses/lgpl.html)
+
+
+
+## Utilisation
+
+`make interface` pour utiliser l'interface graphique.      
+`make interface_console` pour utiliser l'interface console.
 
 ## Licence
 
