@@ -113,8 +113,8 @@
     <property name="stock">gtk-missing-image</property>
   </object>
   <object class="GtkWindow" id="MainWindow">
-    <property name="width_request">1536</property>
-    <property name="height_request">800</property>
+    <property name="width_request">1596</property>
+    <property name="height_request">200</property>
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
@@ -162,41 +162,8 @@
                 <signal name="clicked" handler="quitter" swapped="no"/>
               </object>
               <packing>
-                <property name="x">1336</property>
-                <property name="y">758</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkEntry" id="connexion_mdp">
-                <property name="width_request">166</property>
-                <property name="height_request">30</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="visibility">False</property>
-                <property name="invisible_char">•</property>
-                <property name="input_purpose">password</property>
-                <property name="input_hints">GTK_INPUT_HINT_UPPERCASE_CHARS | GTK_INPUT_HINT_NONE</property>
-              </object>
-              <packing>
-                <property name="x">309</property>
-                <property name="y">630</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="width_request">176</property>
-                <property name="height_request">34</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Mot de passe</property>
-                <attributes>
-                  <attribute name="scale" value="2"/>
-                  <attribute name="underline" value="True"/>
-                </attributes>
-              </object>
-              <packing>
-                <property name="x">309</property>
-                <property name="y">580</property>
+                <property name="x">1394</property>
+                <property name="y">730</property>
               </packing>
             </child>
             <child>
@@ -208,8 +175,8 @@
                 <property name="input_purpose">name</property>
               </object>
               <packing>
-                <property name="x">309</property>
-                <property name="y">530</property>
+                <property name="x">297</property>
+                <property name="y">556</property>
               </packing>
             </child>
             <child>
@@ -225,8 +192,8 @@
                 </attributes>
               </object>
               <packing>
-                <property name="x">309</property>
-                <property name="y">475</property>
+                <property name="x">304</property>
+                <property name="y">499</property>
               </packing>
             </child>
             <child>
@@ -665,8 +632,8 @@ un robot ?</property>
             <property name="can_focus">False</property>
             <child>
               <object class="GtkExpander">
-                <property name="width_request">400</property>
-                <property name="height_request">828</property>
+                <property name="width_request">270</property>
+                <property name="height_request">700</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="expanded">True</property>
@@ -767,7 +734,7 @@ un robot ?</property>
                 </child>
                 <child type="label">
                   <object class="GtkLabel">
-                    <property name="width_request">380</property>
+                    <property name="width_request">270</property>
                     <property name="height_request">114</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -795,8 +762,8 @@ un robot ?</property>
             </child>
             <child>
               <object class="GtkScrolledWindow">
-                <property name="width_request">1136</property>
-                <property name="height_request">800</property>
+                <property name="width_request">1190</property>
+                <property name="height_request">550</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
@@ -924,6 +891,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -936,6 +905,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -948,6 +919,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -960,6 +933,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -972,6 +947,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -984,6 +961,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -997,6 +976,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">2</property>
@@ -1009,6 +990,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">3</property>
@@ -1022,6 +1005,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">0</property>
@@ -1035,6 +1020,8 @@ un robot ?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <signal name="clicked" handler="chargement_fiche2" swapped="no"/>
+                            <signal name="clicked" handler="vers_page_info" swapped="no"/>
                           </object>
                           <packing>
                             <property name="left_attach">1</property>
@@ -1082,13 +1069,12 @@ un robot ?</property>
         <child>
           <object class="GtkFixed">
             <property name="width_request">800</property>
-            <property name="height_request">450</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
               <object class="GtkScrolledWindow">
-                <property name="width_request">1136</property>
-                <property name="height_request">800</property>
+                <property name="width_request">1190</property>
+                <property name="height_request">550</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
@@ -3512,7 +3498,7 @@ un robot ?</property>
             </child>
             <child>
               <object class="GtkExpander">
-                <property name="width_request">100</property>
+                <property name="width_request">250</property>
                 <property name="height_request">80</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -3612,7 +3598,7 @@ un robot ?</property>
                 </child>
                 <child type="label">
                   <object class="GtkLabel">
-                    <property name="width_request">380</property>
+                    <property name="width_request">270</property>
                     <property name="height_request">114</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -3766,7 +3752,7 @@ un robot ?</property>
                 </child>
                 <child type="label">
                   <object class="GtkLabel">
-                    <property name="width_request">380</property>
+                    <property name="width_request">270</property>
                     <property name="height_request">114</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -3794,7 +3780,7 @@ un robot ?</property>
                 <signal name="clicked" handler="vers_page_principale" swapped="no"/>
               </object>
               <packing>
-                <property name="x">400</property>
+                <property name="x">310</property>
               </packing>
             </child>
             <child>
@@ -3806,14 +3792,14 @@ un robot ?</property>
                 <property name="stock">gtk-about</property>
               </object>
               <packing>
-                <property name="x">500</property>
-                <property name="y">260</property>
+                <property name="x">432</property>
+                <property name="y">234</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">85</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">TITRE :</property>
@@ -3824,14 +3810,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
-                <property name="y">230</property>
+                <property name="x">750</property>
+                <property name="y">236</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">120</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">ACTEURS :</property>
@@ -3842,7 +3828,7 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">650</property>
               </packing>
             </child>
@@ -3860,14 +3846,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">500</property>
-                <property name="y">750</property>
+                <property name="x">351</property>
+                <property name="y">699</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">ANNÉE :</property>
@@ -3878,14 +3864,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">440</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">GENRE :</property>
@@ -3896,14 +3882,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">510</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">166</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">RÉALISATEUR :</property>
@@ -3914,7 +3900,7 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">580</property>
               </packing>
             </child>
@@ -3931,8 +3917,8 @@ un robot ?</property>
                 <signal name="clicked" handler="note1" swapped="no"/>
               </object>
               <packing>
-                <property name="x">490</property>
-                <property name="y">680</property>
+                <property name="x">425</property>
+                <property name="y">645</property>
               </packing>
             </child>
             <child>
@@ -3948,8 +3934,8 @@ un robot ?</property>
                 <signal name="clicked" handler="note2" swapped="no"/>
               </object>
               <packing>
-                <property name="x">551</property>
-                <property name="y">680</property>
+                <property name="x">486</property>
+                <property name="y">645</property>
               </packing>
             </child>
             <child>
@@ -3965,8 +3951,8 @@ un robot ?</property>
                 <signal name="clicked" handler="note3" swapped="no"/>
               </object>
               <packing>
-                <property name="x">612</property>
-                <property name="y">680</property>
+                <property name="x">547</property>
+                <property name="y">645</property>
               </packing>
             </child>
             <child>
@@ -3982,8 +3968,8 @@ un robot ?</property>
                 <signal name="clicked" handler="note4" swapped="no"/>
               </object>
               <packing>
-                <property name="x">673</property>
-                <property name="y">680</property>
+                <property name="x">608</property>
+                <property name="y">645</property>
               </packing>
             </child>
             <child>
@@ -3999,14 +3985,14 @@ un robot ?</property>
                 <signal name="clicked" handler="note5" swapped="no"/>
               </object>
               <packing>
-                <property name="x">734</property>
-                <property name="y">680</property>
+                <property name="x">669</property>
+                <property name="y">645</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">75</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">TYPE :</property>
@@ -4017,14 +4003,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">300</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel">
                 <property name="width_request">95</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">DURÉE :</property>
@@ -4035,14 +4021,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">900</property>
+                <property name="x">750</property>
                 <property name="y">370</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="titre_fiche">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4051,15 +4037,15 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">999</property>
-                <property name="y">230</property>
+                <property name="x">838</property>
+                <property name="y">236</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="type_fiche">
                 <property name="name">40</property>
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4068,14 +4054,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">989</property>
+                <property name="x">829</property>
                 <property name="y">300</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="duree_fiche">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4084,14 +4070,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">1009</property>
+                <property name="x">847</property>
                 <property name="y">370</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="annee_fiche">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4100,7 +4086,7 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">1014</property>
+                <property name="x">852</property>
                 <property name="y">440</property>
               </packing>
             </child>
@@ -4108,7 +4094,7 @@ un robot ?</property>
               <object class="GtkLabel" id="genre_fiche">
                 <property name="name">40</property>
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4117,14 +4103,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">1014</property>
+                <property name="x">850</property>
                 <property name="y">510</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="realisateur_fiche">
                 <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4133,15 +4119,15 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">1080</property>
+                <property name="x">922</property>
                 <property name="y">580</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="acteurs_fiche">
                 <property name="name">454</property>
-                <property name="width_request">100</property>
-                <property name="height_request">80</property>
+                <property name="width_request">118</property>
+                <property name="height_request">30</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...</property>
@@ -4150,14 +4136,14 @@ un robot ?</property>
                 </attributes>
               </object>
               <packing>
-                <property name="x">1034</property>
+                <property name="x">878</property>
                 <property name="y">650</property>
               </packing>
             </child>
             <child>
               <object class="GtkLabel" id="description_fiche">
-                <property name="width_request">800</property>
-                <property name="height_request">0</property>
+                <property name="width_request">931</property>
+                <property name="height_request">106</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">...
@@ -4165,15 +4151,16 @@ un robot ?</property>
 
 
 </property>
+                <property name="justify">fill</property>
                 <property name="wrap">True</property>
                 <property name="wrap_mode">word-char</property>
                 <attributes>
-                  <attribute name="font-desc" value="Abyssinica SIL 16"/>
+                  <attribute name="font-desc" value="Abyssinica SIL 12"/>
                 </attributes>
               </object>
               <packing>
-                <property name="x">670</property>
-                <property name="y">750</property>
+                <property name="x">516</property>
+                <property name="y">694</property>
               </packing>
             </child>
           </object>

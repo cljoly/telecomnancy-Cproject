@@ -17,13 +17,13 @@ typedef struct
 typedef struct
 {
 	GtkBuilder *builder;
-    const char *nom;
-    const char *prenom;
+     char *nom;
+     char *prenom;
 	gchar *identifiant;
-    const char *mail;
+     char *mail;
     gboolean sexe;
-    const char *mdp;
-    const int robot;
+     char *mdp;
+     int robot;
     gpointer local_data;
 } SLocalData;
 
@@ -51,9 +51,11 @@ void note2(GtkWidget *widget, gpointer user_data);
 void note3(GtkWidget *widget, gpointer user_data);
 void note4(GtkWidget *widget, gpointer user_data);
 void note5(GtkWidget *widget, gpointer user_data);
+void changer_note(GtkWidget *widget, gpointer user_data, int note);
 void chargement_principale(GtkWidget* widget, gpointer user_data);
 void chargement_biblio(GtkWidget* widget, gpointer user_data);
 void chargement_fiche(GtkWidget* widget, gpointer user_data);
+void chargement_fiche2(GtkWidget* widget, gpointer user_data);
 //void changer_image_bib(gpointer user_data);
 void test2(GtkWidget* widget, gpointer user_data);
 //void test(GtkWidget* widget, gpointer user_data);
