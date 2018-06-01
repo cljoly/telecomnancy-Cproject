@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Projet C" company="Groupe 4" webLink="" view-date="2018-06-20" view-index="0" gantt-divider-location="413" resource-divider-location="300" version="2.8.6" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet C" company="Groupe 4" webLink="" view-date="2018-04-13" view-index="0" gantt-divider-location="623" resource-divider-location="300" version="2.8.6" locale="en_US">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Name" width="196" order="0"/>
-        <field id="tpd4" name="Begin date" width="95" order="1"/>
-        <field id="tpd5" name="End date" width="118" order="2"/>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Name" width="460" order="0"/>
+        <field id="tpd4" name="Begin date" width="77" order="1"/>
+        <field id="tpd5" name="End date" width="82" order="2"/>
         <timeline><![CDATA[0]]></timeline>
     </view>
     <view id="resource-table">
@@ -34,60 +34,52 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Recherches préliminaires" color="#8cb6ce" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2018-03-14" duration="18" complete="91" thirdDate="2018-03-21" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Recherches préliminaires" color="#8cb6ce" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2018-03-14" duration="18" complete="100" thirdDate="2018-03-21" thirdDate-constraint="0" expand="true">
             <depend id="22" type="2" difference="0" hardness="Strong"/>
             <task id="31" name="Définition du problème" color="#8cb6ce" meeting="false" start="2018-03-14" duration="3" complete="100" thirdDate="2018-03-14" thirdDate-constraint="0" expand="true">
                 <depend id="55" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="55" name="Trouver documentation" color="#8cb6ce" meeting="false" start="2018-03-19" duration="15" complete="90" thirdDate="2018-03-19" thirdDate-constraint="0" expand="true">
+            <task id="55" name="Trouver documentation" color="#8cb6ce" meeting="false" start="2018-03-19" duration="15" complete="100" thirdDate="2018-03-19" thirdDate-constraint="0" expand="true">
                 <depend id="145" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="3" name="Traiter les données" meeting="false" start="2018-03-27" duration="17" complete="61" expand="true">
+        <task id="3" name="Traiter les données" meeting="false" start="2018-03-27" duration="15" complete="100" expand="true">
             <depend id="13" type="2" difference="0" hardness="Strong"/>
-            <task id="28" name="Écrire un parseur des données" color="#8cb6ce" meeting="false" start="2018-03-29" duration="7" complete="80" thirdDate="2018-03-29" thirdDate-constraint="0" expand="true">
-                <depend id="54" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="54" name="Créer une représentation en JSON des entrée (un objet par film)" color="#8cb6ce" meeting="false" start="2018-04-09" duration="8" complete="100" thirdDate="2018-04-09" thirdDate-constraint="0" expand="true"/>
-            <task id="69" name="Générer des préférences utilisateurs" color="#8cb6ce" meeting="false" start="2018-03-27" duration="7" complete="0" thirdDate="2018-03-22" thirdDate-constraint="0" expand="true">
+            <task id="54" name="Créer une représentation en JSON des entrée (un objet par film)" color="#8cb6ce" meeting="false" start="2018-04-05" duration="8" complete="100" thirdDate="2018-04-09" thirdDate-constraint="0" expand="true"/>
+            <task id="69" name="Générer des préférences utilisateurs" color="#8cb6ce" meeting="false" start="2018-03-27" duration="7" complete="100" thirdDate="2018-03-22" thirdDate-constraint="0" expand="true">
                 <depend id="54" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="22" name="Implantation des algorithmes sélectionnés en phase de recherche" meeting="false" start="2018-04-30" duration="44" complete="24" expand="true">
+        <task id="22" name="Implantation des algorithmes sélectionnés en phase de recherche" meeting="false" start="2018-04-30" duration="23" complete="100" expand="true">
             <depend id="13" type="2" difference="0" hardness="Strong"/>
-            <task id="71" name="Préparation du dépôt (structure, outil de formattage du code)" color="#8cb6ce" meeting="false" start="2018-04-30" duration="3" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
-                <depend id="34" type="2" difference="0" hardness="Strong"/>
+            <task id="71" name="Préparation du dépôt (structure, outil de formattage du code)" color="#8cb6ce" meeting="false" start="2018-05-08" duration="1" complete="100" thirdDate="2018-04-30" thirdDate-constraint="0" expand="true">
                 <depend id="37" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="29" name="Test des implémentations" color="#8cb6ce" meeting="false" start="2018-06-15" duration="10" complete="0" thirdDate="2018-05-30" thirdDate-constraint="0" expand="true"/>
-            <task id="34" name="Recommandation par similarité (même genre…)" color="#8cb6ce" meeting="false" start="2018-05-03" duration="21" complete="0" thirdDate="2018-05-01" thirdDate-constraint="0" expand="true">
+            <task id="29" name="Test des implémentations" color="#8cb6ce" meeting="false" start="2018-05-30" duration="1" complete="100" thirdDate="2018-05-31" thirdDate-constraint="0" expand="true"/>
+            <task id="37" name="Recommandation à partir de notes (factorisation de matrice)" color="#8cb6ce" meeting="false" start="2018-05-09" duration="15" complete="100" thirdDate="2018-05-09" thirdDate-constraint="0" expand="true">
                 <depend id="29" type="2" difference="0" hardness="Strong"/>
                 <depend id="51" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="37" name="Recommandation à partir de notes (factorisation de matrice)" color="#8cb6ce" meeting="false" start="2018-05-03" duration="31" complete="50" thirdDate="2018-05-03" thirdDate-constraint="0" expand="true">
-                <depend id="29" type="2" difference="0" hardness="Strong"/>
-                <depend id="51" type="2" difference="0" hardness="Strong"/>
-            </task>
-            <task id="51" name="Interface en JSON de présentation des résultats (écriture dans le fichier utilisateur)" color="#8cb6ce" meeting="false" start="2018-06-15" duration="10" complete="0" thirdDate="2018-05-30" thirdDate-constraint="0" expand="true"/>
+            <task id="172" name="Interface console" color="#8cb6ce" meeting="false" start="2018-04-30" duration="20" complete="100" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true"/>
+            <task id="51" name="Interface en JSON de présentation des résultats (écriture dans le fichier utilisateur)" color="#8cb6ce" meeting="false" start="2018-05-30" duration="1" complete="100" thirdDate="2018-05-31" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="13" name="Code opérationnel" color="#8cb6ce" meeting="true" start="2018-06-29" duration="0" complete="0" thirdDate="2018-06-29" thirdDate-constraint="0" expand="true">
-            <depend id="2" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="2" name="Création d’une interface graphique" color="#8cb6ce" meeting="false" start="2018-06-29" duration="20" complete="0" thirdDate="2018-03-26" thirdDate-constraint="0" expand="true">
-            <task id="46" name="Présentation des résultats" color="#8cb6ce" meeting="false" start="2018-06-29" duration="15" complete="0" thirdDate="2018-06-13" thirdDate-constraint="0" expand="true">
+        <task id="13" name="Code opérationnel" color="#8cb6ce" meeting="true" start="2018-06-01" duration="0" complete="0" thirdDate="2018-06-29" thirdDate-constraint="0" expand="true"/>
+        <task id="2" name="Création d’une interface graphique" color="#8cb6ce" meeting="false" start="2018-05-04" duration="20" complete="100" thirdDate="2018-06-11" thirdDate-constraint="0" expand="true">
+            <depend id="13" type="2" difference="0" hardness="Strong"/>
+            <task id="46" name="Présentation des résultats" color="#8cb6ce" meeting="false" start="2018-05-04" duration="15" complete="100" thirdDate="2018-05-21" thirdDate-constraint="0" expand="true">
                 <depend id="44" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="44" name="Ajout de liens vers une bande d’annonce, des données IMDB…" color="#8cb6ce" meeting="false" start="2018-07-20" duration="3" complete="0" thirdDate="2018-07-04" thirdDate-constraint="0" expand="true">
+            <task id="44" name="Ajout de liens vers une bande d’annonce, des données IMDB…" color="#8cb6ce" meeting="false" start="2018-05-25" duration="3" complete="100" thirdDate="2018-07-04" thirdDate-constraint="0" expand="true">
                 <depend id="50" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="50" name="Interface JSON : compléter avec les liens" color="#8cb6ce" meeting="false" start="2018-07-25" duration="2" complete="0" thirdDate="2018-07-09" thirdDate-constraint="0" expand="true"/>
+            <task id="50" name="Interface JSON : compléter avec les liens" color="#8cb6ce" meeting="false" start="2018-05-30" duration="2" complete="100" thirdDate="2018-07-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="144" name="Rapport" meeting="false" start="2018-04-09" duration="47" complete="0" expand="true">
-            <task id="142" name="Rédaction" color="#8cb6ce" meeting="false" start="2018-05-14" duration="15" complete="0" thirdDate="2018-05-07" thirdDate-constraint="0" expand="true">
+        <task id="144" name="Rapport" meeting="false" start="2018-04-09" duration="40" complete="100" expand="true">
+            <task id="142" name="Rédaction" color="#8cb6ce" meeting="false" start="2018-05-22" duration="8" complete="100" thirdDate="2018-05-22" thirdDate-constraint="0" expand="true">
                 <depend id="159" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="145" name="Rédaction de l’état de l’art" color="#8cb6ce" meeting="false" start="2018-04-09" duration="15" complete="0" thirdDate="2018-04-09" thirdDate-constraint="0" expand="true"/>
-            <task id="159" name="Relecture" color="#8cb6ce" meeting="false" start="2018-06-04" duration="7" complete="0" thirdDate="2018-05-14" thirdDate-constraint="0" expand="true"/>
+            <task id="145" name="Rédaction de l’état de l’art" color="#8cb6ce" meeting="false" start="2018-04-09" duration="31" complete="100" thirdDate="2018-04-09" thirdDate-constraint="0" expand="true"/>
+            <task id="159" name="Relecture" color="#8cb6ce" meeting="false" start="2018-06-01" duration="1" complete="100" thirdDate="2018-06-01" thirdDate-constraint="0" expand="true"/>
         </task>
     </tasks>
     <resources>
@@ -97,8 +89,6 @@
     </resources>
     <allocations>
         <allocation task-id="37" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
-        <allocation task-id="28" resource-id="3" function="Default:0" responsible="true" load="100.0"/>
-        <allocation task-id="34" resource-id="4" function="Default:0" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
